@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -15,6 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< HEAD
     <CheckBox
         android:id="@+id/kingsLanding"
         android:layout_width="200dp"
@@ -26,5 +28,32 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="552dp" />
 
+=======
+<<<<<<< HEAD
+    <Button
+        android:id="@+id/button_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testing"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="77dp" />
+=======
+    <TextView
+        android:id="@+id/tingYi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="190dp"
+        android:layout_marginRight="190dp"
+        android:layout_marginBottom="173dp"
+        android:text="tingYi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+>>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
+>>>>>>> 48e2dd58cbadfda451506bfe75e7e29cc951f5e6
 
 </androidx.constraintlayout.widget.ConstraintLayout>

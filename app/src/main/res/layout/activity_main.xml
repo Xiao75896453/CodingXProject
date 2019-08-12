@@ -55,7 +55,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 <<<<<<< HEAD
 
-    >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
+    >
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="weeeeeee"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="87dp" />>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
 =======
 >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
 >>>>>>> 48e2dd58cbadfda451506bfe75e7e29cc951f5e6

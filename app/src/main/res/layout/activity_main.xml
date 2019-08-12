@@ -49,6 +49,18 @@
 <<<<<<< HEAD
 
 <<<<<<< HEAD
+    >
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="weeeeeee"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="87dp" />>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
+=======
+<<<<<<< HEAD
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
@@ -67,6 +79,7 @@
 =======
 >>>>>>> 17f916a459adcca6d0086364eb87bbf2a622d3bb
     >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
+>>>>>>> 3147b257b1e05372a953a162659277485b53e9da
 =======
 >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
 >>>>>>> 48e2dd58cbadfda451506bfe75e7e29cc951f5e6

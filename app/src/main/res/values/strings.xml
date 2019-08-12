@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CodingXProject</string>
+    <string name="title_activity_data_record">DataRecord</string>
 </resources>

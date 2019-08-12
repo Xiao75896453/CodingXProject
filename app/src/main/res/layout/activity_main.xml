@@ -68,13 +68,6 @@
         tools:layout_editor_absoluteX="87dp" />>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
 =======
 <<<<<<< HEAD
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="wweeeeeee"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="189dp" />
 
     <Button
         android:id="@+id/eliza"

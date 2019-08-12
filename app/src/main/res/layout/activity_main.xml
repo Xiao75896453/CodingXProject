@@ -17,6 +17,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 <<<<<<< HEAD
+    <CheckBox
+        android:id="@+id/kingsLanding"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="King"
+        android:textsize = "200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="552dp" />
+
+=======
+<<<<<<< HEAD
     <Button
         android:id="@+id/button_hello"
         android:layout_width="wrap_content"
@@ -40,6 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+<<<<<<< HEAD
 
     <Switch
         android:id="@+id/switch1"
@@ -49,5 +63,9 @@
         tools:layout_editor_absoluteX="178dp"
         tools:layout_editor_absoluteY="189dp" />
     >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
+=======
+>>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
+>>>>>>> 48e2dd58cbadfda451506bfe75e7e29cc951f5e6
+>>>>>>> 16901766b735f3e78b000ff921bab073179243fa
 
 </androidx.constraintlayout.widget.ConstraintLayout>

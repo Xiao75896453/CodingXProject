@@ -55,6 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 <<<<<<< HEAD
 
+<<<<<<< HEAD
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
@@ -70,6 +71,8 @@
         android:text="eliza"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="410dp" />
+=======
+>>>>>>> 17f916a459adcca6d0086364eb87bbf2a622d3bb
     >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
 =======
 >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8

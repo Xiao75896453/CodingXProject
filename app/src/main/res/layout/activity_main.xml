@@ -30,14 +30,7 @@
 
 =======
 <<<<<<< HEAD
-    <Button
-        android:id="@+id/button_hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="testing"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="77dp" />
-=======
+    =======
     <TextView
         android:id="@+id/tingYi"
         android:layout_width="wrap_content"

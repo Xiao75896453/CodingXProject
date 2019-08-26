@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <<<<<<< HEAD
-
-    =======
-<<<<<<< HEAD
-    =======
-
-<<<<<<< HEAD
-    <<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-    =======
     <TextView
         android:id="@+id/tingYi"
         android:layout_width="wrap_content"
@@ -31,27 +19,31 @@
         android:text="tingYi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-<<<<<<< HEAD
->>>>>>> 9855cdfaa4fc1446e5dbc41c5973881378bc2e96
+        app:layout_constraintStart_toStartOf="parent"></TextView>
 
-<<<<<<< HEAD
-    ><![CDATA[
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="launch_drug_time"
+        android:text="toPage Drug_Time"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="26dp" />
 
-    >>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
-=======
-]]>
-
-    <<<<<<< HEAD
-
-    =======
->>>>>>> 17f916a459adcca6d0086364eb87bbf2a622d3bb
-    >>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
->>>>>>> 3147b257b1e05372a953a162659277485b53e9da
-=======
->>>>>>> 2ed96176c10b1a65c5cae74fc9db7628634345a8
->>>>>>> 48e2dd58cbadfda451506bfe75e7e29cc951f5e6
->>>>>>> 16901766b735f3e78b000ff921bab073179243fa
+    <Button
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="launch_timer"
+        android:text="timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

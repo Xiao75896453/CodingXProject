@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">CodingXProject</string>
     <string name="title_activity_data_record">DataRecord</string>
+    <string name="drug_time_title">定期使用藥物資訊</string>
+    <string name="getup">睡醒</string>
+    <string name="breakfast">早餐</string>
+    <string name="lunch">午餐</string>
+    <string name="dinner">晚餐</string>
+    <string name="sleep">睡前</string>
+    <string name="took_medicine_pill">經常吃</string>
+    <string-array name="numbers">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
 </resources>

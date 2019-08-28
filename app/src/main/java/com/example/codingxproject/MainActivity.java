@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button bRemindRecord = (Button) findViewById(R.id.bToRemindRecord);
         Button bRemindTakeMed = (Button) findViewById(R.id.bToRemindTakeMed);
         Button bSetTime = (Button) findViewById(R.id.bToSetTime);
+        Button bDetailDrugList=(Button) findViewById(R.id.bToDetailDrugList);
 
         Button.OnClickListener listener = new OnClickListener() {
             @Override
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 if (view.getId() == R.id.bToSetTime) {
                     intent = new Intent(MainActivity.this, SetTime.class);
                 }
+                if (view.getId() == R.id.bToDetailDrugList) {
+                    intent = new Intent(MainActivity.this, DrugsInfo.class);
+                }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 MainActivity.this.startActivity(intent);
             }
@@ -61,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         bRemindRecord.setOnClickListener(listener);
         bRemindTakeMed.setOnClickListener(listener);
         bSetTime.setOnClickListener(listener);
+        bDetailDrugList.setOnClickListener(listener);
     }
 
 

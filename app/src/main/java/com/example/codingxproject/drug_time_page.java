@@ -28,7 +28,6 @@ public class drug_time_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_time_page);
-        Intent intent = getIntent();
         mMorningTable = findViewById(R.id.morning_table);
         mBreakfastTable = findViewById(R.id.breakfast_table);
         mLunchTable = findViewById(R.id.lunch_table);
@@ -106,7 +105,7 @@ public class drug_time_page extends AppCompatActivity {
         btmNight.setBackgroundColor(Color.GREEN);
     }
 
-    public void showNiight(View view) {
+    public void showNight(View view) {
         coverText.setVisibility(View.GONE);
         mMorningTable.setVisibility(View.GONE);
         mBreakfastTable.setVisibility(View.GONE);

@@ -8,15 +8,16 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 
 public class DrugTimePage extends AppCompatActivity {
 
-    private TableLayout mMorningTable;
-    private TableLayout mBreakfastTable;
-    private TableLayout mLunchTable;
-    private TableLayout mDinnerTable;
-    private TableLayout mNightTable;
+    private ScrollView mMorningSV;
+    private ScrollView mBreakfastSV;
+    private ScrollView mLunchSV;
+    private ScrollView mDinnerSV;
+    private ScrollView mNightSV;
     private Button btmMorning;
     private Button btmBreakfast;
     private Button btmLunch;
@@ -28,11 +29,11 @@ public class DrugTimePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_time_page);
-        mMorningTable = findViewById(R.id.morning_table);
-        mBreakfastTable = findViewById(R.id.breakfast_table);
-        mLunchTable = findViewById(R.id.lunch_table);
-        mDinnerTable = findViewById(R.id.dinner_table);
-        mNightTable = findViewById(R.id.night_table);
+        mMorningSV = findViewById(R.id.MorningScrollView);
+        mBreakfastSV = findViewById(R.id.BreakfastScrollView);
+        mLunchSV = findViewById(R.id.LunchScrollview);
+        mDinnerSV = findViewById(R.id.DinnerScrollView);
+        mNightSV = findViewById(R.id.NightScrollVIEW);
 
         btmMorning = findViewById(R.id.morning_btm);
         btmBreakfast = findViewById(R.id.breakfast_btm);
@@ -51,11 +52,11 @@ public class DrugTimePage extends AppCompatActivity {
 
     public void showMorning(View view) {
         coverText.setVisibility(View.GONE);
-        mMorningTable.setVisibility(View.VISIBLE);
-        mBreakfastTable.setVisibility(View.GONE);
-        mLunchTable.setVisibility(View.GONE);
-        mDinnerTable.setVisibility(View.GONE);
-        mNightTable.setVisibility(View.GONE);
+        mMorningSV.setVisibility(View.VISIBLE);
+        mBreakfastSV.setVisibility(View.GONE);
+        mLunchSV.setVisibility(View.GONE);
+        mDinnerSV.setVisibility(View.GONE);
+        mNightSV.setVisibility(View.GONE);
         btmMorning.setBackgroundColor(Color.WHITE);
         btmBreakfast.setBackgroundColor(Color.GREEN);
         btmLunch.setBackgroundColor(Color.GREEN);
@@ -65,11 +66,11 @@ public class DrugTimePage extends AppCompatActivity {
 
     public void showBreakfast(View view) {
         coverText.setVisibility(View.GONE);
-        mMorningTable.setVisibility(View.GONE);
-        mBreakfastTable.setVisibility(View.VISIBLE);
-        mLunchTable.setVisibility(View.GONE);
-        mDinnerTable.setVisibility(View.GONE);
-        mNightTable.setVisibility(View.GONE);
+        mMorningSV.setVisibility(View.GONE);
+        mBreakfastSV.setVisibility(View.VISIBLE);
+        mLunchSV.setVisibility(View.GONE);
+        mDinnerSV.setVisibility(View.GONE);
+        mNightSV.setVisibility(View.GONE);
         btmMorning.setBackgroundColor(Color.GREEN);
         btmBreakfast.setBackgroundColor(Color.WHITE);
         btmLunch.setBackgroundColor(Color.GREEN);
@@ -79,11 +80,11 @@ public class DrugTimePage extends AppCompatActivity {
 
     public void showLunch(View view) {
         coverText.setVisibility(View.GONE);
-        mMorningTable.setVisibility(View.GONE);
-        mBreakfastTable.setVisibility(View.GONE);
-        mLunchTable.setVisibility(View.VISIBLE);
-        mDinnerTable.setVisibility(View.GONE);
-        mNightTable.setVisibility(View.GONE);
+        mMorningSV.setVisibility(View.GONE);
+        mBreakfastSV.setVisibility(View.GONE);
+        mLunchSV.setVisibility(View.VISIBLE);
+        mDinnerSV.setVisibility(View.GONE);
+        mNightSV.setVisibility(View.GONE);
         btmMorning.setBackgroundColor(Color.GREEN);
         btmBreakfast.setBackgroundColor(Color.GREEN);
         btmLunch.setBackgroundColor(Color.WHITE);
@@ -93,11 +94,11 @@ public class DrugTimePage extends AppCompatActivity {
 
     public void showDinner(View view) {
         coverText.setVisibility(View.GONE);
-        mMorningTable.setVisibility(View.GONE);
-        mBreakfastTable.setVisibility(View.GONE);
-        mLunchTable.setVisibility(View.GONE);
-        mDinnerTable.setVisibility(View.VISIBLE);
-        mNightTable.setVisibility(View.GONE);
+        mMorningSV.setVisibility(View.GONE);
+        mBreakfastSV.setVisibility(View.GONE);
+        mLunchSV.setVisibility(View.GONE);
+        mDinnerSV.setVisibility(View.VISIBLE);
+        mNightSV.setVisibility(View.GONE);
         btmMorning.setBackgroundColor(Color.GREEN);
         btmBreakfast.setBackgroundColor(Color.GREEN);
         btmLunch.setBackgroundColor(Color.GREEN);
@@ -107,11 +108,11 @@ public class DrugTimePage extends AppCompatActivity {
 
     public void showNight(View view) {
         coverText.setVisibility(View.GONE);
-        mMorningTable.setVisibility(View.GONE);
-        mBreakfastTable.setVisibility(View.GONE);
-        mLunchTable.setVisibility(View.GONE);
-        mDinnerTable.setVisibility(View.GONE);
-        mNightTable.setVisibility(View.VISIBLE);
+        mMorningSV.setVisibility(View.GONE);
+        mBreakfastSV.setVisibility(View.GONE);
+        mLunchSV.setVisibility(View.GONE);
+        mDinnerSV.setVisibility(View.GONE);
+        mNightSV.setVisibility(View.VISIBLE);
         btmMorning.setBackgroundColor(Color.GREEN);
         btmBreakfast.setBackgroundColor(Color.GREEN);
         btmLunch.setBackgroundColor(Color.GREEN);

@@ -20,34 +20,31 @@
         </activity>
 
         <!--remind_record activity-->
-        <activity android:name=".remind_Record">
+        <activity android:name=".RemindRecord">
 
         </activity>
 
-        <!--remind_DrugTaking activity-->
-        <activity android:name=".remind_DrugTaking" >
+        <!--RemindDrugTaking activity-->
+        <activity android:name=".RemindDrugTaking" >
 
         </activity>
 
         <!--remind_takedMedicine-->
-        <activity android:name=".remind_takeMedicine" >
+        <activity android:name=".RemindTakeMed" >
 
         </activity>
 
-        <!--set_time-->
-        <activity android:name=".set_time">
+        <!--SetTime-->
+        <activity android:name=".SetTime">
 
         </activity>
 
-        <!--drug_time_page activity-->
-        <activity android:name=".drug_time_page" >
+        <!--DrugTimePage activity-->
+        <activity android:name=".DrugTimePage" >
 
         </activity>
 
-        <!--drug_time activity-->
-        <activity android:name=".drug_time" >
-
-        </activity>
+        <!--DrugTime activity-->
 
         <!--DateRecord activity-->
         <activity

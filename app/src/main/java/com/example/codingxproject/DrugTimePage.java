@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 
-public class drug_time_page extends AppCompatActivity {
+public class DrugTimePage extends AppCompatActivity {
 
     private TableLayout mMorningTable;
     private TableLayout mBreakfastTable;

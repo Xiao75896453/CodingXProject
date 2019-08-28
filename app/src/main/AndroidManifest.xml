@@ -9,27 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
+
         android:theme="@style/AppTheme">
-        <activity android:name=".remind_Record"></activity>
-        <activity android:name=".remind_DrugTaking" />
-        <activity android:name=".remind_takeMedicine" />
-=======
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".set_time"></activity>
-        <activity
-            android:name=".drug_time_page" />
-            android:parentActivityName=".MainActivity">
-             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.twoactivities.MainActivity" />
-        <activity android:name=".drug_time" />
->>>>>>> 7e15f0243c356a99bfa43be1071c98fe474bfdc3
-        <activity
-            android:name=".DataRecord"
-            android:label="@string/title_activity_data_record"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +18,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--remind_record activity-->
+        <activity android:name=".remind_Record">
+
+        </activity>
+
+        <!--remind_DrugTaking activity-->
+        <activity android:name=".remind_DrugTaking" >
+
+        </activity>
+
+        <!--remind_takedMedicine-->
+        <activity android:name=".remind_takeMedicine" >
+
+        </activity>
+
+        <!--set_time-->
+        <activity android:name=".set_time">
+
+        </activity>
+
+        <!--drug_time_page activity-->
+        <activity android:name=".drug_time_page" >
+
+        </activity>
+
+        <!--drug_time activity-->
+        <activity android:name=".drug_time" >
+
+        </activity>
+
+        <!--DateRecord activity-->
+        <activity
+            android:name=".DataRecord"
+            android:label="@string/title_activity_data_record"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--<meta-data-->
+        <!--android:name="android.support.PARENT_ACTIVITY"-->
+        <!--android:value="com.example.android.twoactivities.MainActivity" />-->
     </application>
 
 </manifest>

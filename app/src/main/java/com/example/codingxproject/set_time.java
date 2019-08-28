@@ -13,7 +13,7 @@ public class set_time extends AppCompatActivity {
         setContentView(R.layout.activity_set_time);
         NumberPicker numberPicker = (NumberPicker) findViewById(R.id.picker);
         //final String[] numbers = getResources().getStringArray(R.array.numbers);
-        Integer[] numbers = {0,1,2,3,4,5,6,7,8,9};
+        Integer[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         numberPicker.setMinValue(0);
         numberPicker.setMaxValue(numbers.length - 1);
         //numberPicker.setDisplayedValues(numbers);

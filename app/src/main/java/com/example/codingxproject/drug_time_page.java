@@ -12,11 +12,11 @@ import android.widget.TableLayout;
 
 public class drug_time_page extends AppCompatActivity {
 
-    private  TableLayout mMorningTable;
-    private  TableLayout mBreakfastTable;
-    private  TableLayout mLunchTable;
-    private  TableLayout mDinnerTable;
-    private  TableLayout mNightTable;
+    private TableLayout mMorningTable;
+    private TableLayout mBreakfastTable;
+    private TableLayout mLunchTable;
+    private TableLayout mDinnerTable;
+    private TableLayout mNightTable;
     private Button btmMorning;
     private Button btmBreakfast;
     private Button btmLunch;
@@ -35,7 +35,7 @@ public class drug_time_page extends AppCompatActivity {
         mDinnerTable = findViewById(R.id.dinner_table);
         mNightTable = findViewById(R.id.night_table);
 
-        btmMorning  = findViewById(R.id.morning_btm);
+        btmMorning = findViewById(R.id.morning_btm);
         btmBreakfast = findViewById(R.id.breakfast_btm);
         btmLunch = findViewById(R.id.lunch_btm);
         btmDinner = findViewById(R.id.dinner_btm);

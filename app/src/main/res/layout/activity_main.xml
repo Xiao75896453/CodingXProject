@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".MainActivity"/>=======
-=======
     tools:context=".MainActivity">
 
     <TextView
@@ -31,6 +28,7 @@
         android:layout_marginTop="16dp"
         android:onClick="launch_drug_time"
         android:text="toPage Drug_Time"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="26dp" />
 
@@ -49,5 +47,4 @@
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> 7e15f0243c356a99bfa43be1071c98fe474bfdc3
+</androidx.constraintlayout.widget.ConstraintLayout><!--7e15f0243c356a99bfa43be1071c98fe474bfdc3-->

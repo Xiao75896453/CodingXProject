@@ -21,6 +21,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launch_data_review(View view) {
+        Log.d("btm", "to Data Review Button clicked!");
+        Intent intent = new Intent(this, DataReview.class);
+        startActivity(intent);
+    }
+
     public void launch_timer(View view) {
         Log.d("btm", "to Timer Button clicked!");
         Intent intent = new Intent(this, set_time.class);

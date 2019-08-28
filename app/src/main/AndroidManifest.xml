@@ -10,51 +10,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".DataReview"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--remind_record activity-->
-        <activity android:name=".remind_Record">
-
-        </activity>
-
-        <!--remind_DrugTaking activity-->
-        <activity android:name=".remind_DrugTaking" >
-
-        </activity>
-
-        <!--remind_takedMedicine-->
-        <activity android:name=".remind_takeMedicine" >
-
-        </activity>
-
-        <!--set_time-->
-        <activity android:name=".set_time">
-
-        </activity>
-
-        <!--drug_time_page activity-->
-        <activity android:name=".drug_time_page" >
-
-        </activity>
-
-        <!--drug_time activity-->
-        <activity android:name=".drug_time" >
-
-        </activity>
-
-        <!--DateRecord activity-->
+        </activity> <!-- remind_record activity -->
+        <activity android:name=".remind_Record"></activity> <!-- remind_DrugTaking activity -->
+        <activity android:name=".remind_DrugTaking"></activity> <!-- remind_takedMedicine -->
+        <activity android:name=".remind_takeMedicine"></activity> <!-- set_time -->
+        <activity android:name=".set_time"></activity> <!-- drug_time_page activity -->
+        <activity android:name=".drug_time_page"></activity> <!-- drug_time activity -->
+        <activity android:name=".drug_time"></activity> <!-- DateRecord activity -->
         <activity
             android:name=".DataRecord"
             android:label="@string/title_activity_data_record"
             android:theme="@style/AppTheme.NoActionBar" />
-
     </application>
 
 </manifest>

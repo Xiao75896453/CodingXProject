@@ -89,7 +89,7 @@
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
-                    android:onClick="showNiight"
+                    android:onClick="showNight"
                     android:text="@string/sleep"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold"

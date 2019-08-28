@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DetailDrugInfo extends AppCompatActivity {
+public class DetailDrugInfoActivity extends AppCompatActivity {
 
     private WebView webDrugDetail;
 

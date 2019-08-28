@@ -22,6 +22,11 @@
         <!--app:layout_constraintEnd_toEndOf="parent"-->
         <!--app:layout_constraintStart_toStartOf="parent"></TextView>-->
     <Button
+        android:id="@+id/bLoginRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login and Register Page"/>
+    <Button
         android:id="@+id/bToDataRecord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

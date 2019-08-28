@@ -2,10 +2,8 @@ package com.example.codingxproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button bLoginAndRegister=(Button)findViewById(R.id.bLoginRegister);
         Button bDataRecord = (Button) findViewById(R.id.bToDataRecord);
         Button bDrugTimePage = (Button) findViewById(R.id.bToDrugTimePage);
         Button bRemindDrugTaking = (Button) findViewById(R.id.bToRemindDrugTaking);
@@ -34,31 +33,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 if (view.getId() == R.id.bToDataRecord) {
-                    intent = new Intent(MainActivity.this, DataRecord.class);
-                }
-                if (view.getId() == R.id.bToDrugTimePage) {
-                    intent = new Intent(MainActivity.this, DrugTimePage.class);
-                }
-                if (view.getId() == R.id.bToRemindDrugTaking) {
-                    intent = new Intent(MainActivity.this, RemindDrugTaking.class);
-                }
-                if (view.getId() == R.id.bToRemindRecord) {
-                    intent = new Intent(MainActivity.this, RemindRecord.class);
-                }
-                if (view.getId() == R.id.bToRemindTakeMed) {
-                    intent = new Intent(MainActivity.this, RemindTakeMed.class);
-                }
-                if (view.getId() == R.id.bToSetTime) {
-                    intent = new Intent(MainActivity.this, SetTime.class);
-                }
-                if (view.getId() == R.id.bToDetailDrugList) {
-                    intent = new Intent(MainActivity.this, DrugsInfo.class);
+                    intent = new Intent(MainActivity.this, DataRecordActivity.class);
+                }else if (view.getId() == R.id.bToDrugTimePage) {
+                    intent = new Intent(MainActivity.this, DrugTimePageActivity.class);
+                }else if (view.getId() == R.id.bToRemindDrugTaking) {
+                    intent = new Intent(MainActivity.this, RemindDrugTakingActivity.class);
+                }else if (view.getId() == R.id.bToRemindRecord) {
+                    intent = new Intent(MainActivity.this, RemindRecordActivity.class);
+                }else if (view.getId() == R.id.bToRemindTakeMed) {
+                    intent = new Intent(MainActivity.this, RemindTakeMedActivity.class);
+                }else if (view.getId() == R.id.bToSetTime) {
+                    intent = new Intent(MainActivity.this, SetTimeActivity.class);
+                }else if (view.getId() == R.id.bToDetailDrugList) {
+                    intent = new Intent(MainActivity.this, DrugsInfoActivity.class);
+                }else if(view.getId()==R.id.bLoginRegister){
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 MainActivity.this.startActivity(intent);
             }
         };
-
+        bLoginAndRegister.setOnClickListener(listener);
         bDataRecord.setOnClickListener(listener);
         bDrugTimePage.setOnClickListener(listener);
         bRemindDrugTaking.setOnClickListener(listener);

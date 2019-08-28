@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class RemindTakeMed extends AppCompatActivity {
+public class RemindDrugTakingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_remind_take_medicine);
+        setContentView(R.layout.activity_remind__drug_taking);
     }
 }

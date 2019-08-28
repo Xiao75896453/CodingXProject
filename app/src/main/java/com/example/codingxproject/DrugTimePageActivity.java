@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 
-public class DrugTimePage extends AppCompatActivity {
+public class DrugTimePageActivity extends AppCompatActivity {
 
     private ScrollView mMorningSV;
     private ScrollView mBreakfastSV;

@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,7 +43,7 @@ class DrugListAdapter extends RecyclerView.Adapter<DrugListAdapter.ViewHolder> {
             public void onClick(View v) {
 //                Toast toast = Toast.makeText(context, "213", Toast.LENGTH_SHORT);
 //                toast.show();
-                Intent toDetail = new Intent(context, DetailDrugInfo.class);
+                Intent toDetail = new Intent(context, DetailDrugInfoActivity.class);
                 toDetail.putExtra("destinSite",drugCard.getDetailInfo());
                 context.startActivity(toDetail);
             }

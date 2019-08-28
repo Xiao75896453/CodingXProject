@@ -19,6 +19,10 @@
         <activity android:name=".DrugsInfoActivity" />
         <activity android:name=".DrugCard" />
         <activity android:name=".DetailDrugInfoActivity" />
+        android:theme="@style/AppTheme">
+        <activity android:name=".DataRecord_BloodSugar"></activity>
+        <activity android:name=".DataRecord_BloodPressure_DBP" />
+        <activity android:name=".DataRecord_BloodPressure_SBP" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +36,13 @@
         <activity android:name=".SetTimeActivity" /> <!-- DrugTimePageActivity activity -->
         <activity android:name=".DrugTimePageActivity" /> <!-- DrugTime activity -->
         <!-- DateRecord activity -->
+        </activity> <!-- remind_record activity -->
+        <activity android:name=".remind_Record" /> <!-- remind_DrugTaking activity -->
+        <activity android:name=".remind_DrugTaking" /> <!-- remind_takedMedicine -->
+        <activity android:name=".remind_takeMedicine" /> <!-- set_time -->
+        <activity android:name=".set_time" /> <!-- drug_time_page activity -->
+        <activity android:name=".drug_time_page" /> <!-- drug_time activity -->
+        <activity android:name=".drug_time" /> <!-- DateRecord activity -->
         <activity
             android:name=".DataRecordActivity"
             android:label="@string/title_activity_data_record"

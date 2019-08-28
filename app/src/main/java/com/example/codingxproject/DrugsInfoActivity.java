@@ -13,7 +13,7 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 
 //implements DrugListAdapter.OnCardListener
-public class DrugsInfo extends AppCompatActivity {
+public class DrugsInfoActivity extends AppCompatActivity {
 
     public ArrayList<DrugCard> drugList=new ArrayList<DrugCard>();
     @Override
@@ -29,7 +29,7 @@ public class DrugsInfo extends AppCompatActivity {
         drugList.add(new DrugCard(6,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.string.drug_descriptions,"https://medium.com/@evanhou/%E6%B7%BA%E8%AB%87android-recyclerview-375f9c0eea58"));
 
         RecyclerView recyclerDrugList=(RecyclerView) findViewById(R.id.drugList);
-        recyclerDrugList.setLayoutManager(new LinearLayoutManager(DrugsInfo.this));
+        recyclerDrugList.setLayoutManager(new LinearLayoutManager(DrugsInfoActivity.this));
         recyclerDrugList.setAdapter(new DrugListAdapter(this,drugList));
 
     }

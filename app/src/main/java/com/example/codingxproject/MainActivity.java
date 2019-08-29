@@ -24,25 +24,23 @@ public class MainActivity extends AppCompatActivity {
     public Intent mainIntent = new Intent();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bSetDrugTime=(Button)findViewById(R.id.bSetDrugTime);
-        Button bLoginAndRegister=(Button)findViewById(R.id.bLoginRegister);
+        Button bSetDrugTime = (Button) findViewById(R.id.bSetDrugTime);
+        Button bLoginAndRegister = (Button) findViewById(R.id.bLoginRegister);
         Button bRecordBloodPressureDBP = (Button) findViewById(R.id.bRecordBloodPressureDBP);
         Button bRecordBloodPressureSBP = (Button) findViewById(R.id.bRecordBloodPressureSBP);
-        Button bRecordBloodSugar=(Button)findViewById(R.id.bRecordBloodSugar);
+        Button bRecordBloodSugar = (Button) findViewById(R.id.bRecordBloodSugar);
         Button bDrugTimePage = (Button) findViewById(R.id.bToDrugTimePage);
         Button bRemindDrugTaking = (Button) findViewById(R.id.bToRemindDrugGet);
         Button bRemindRecord = (Button) findViewById(R.id.bToRemindRecord);
         Button bRemindTakeMed = (Button) findViewById(R.id.bToRemindTakeMed);
         Button bSetTime = (Button) findViewById(R.id.bToSetTime);
-        Button bDetailDrugList=(Button) findViewById(R.id.bToDetailDrugList);
-        final Button bDateReview=(Button)findViewById(R.id.bDataReview);
-
+        Button bDetailDrugList = (Button) findViewById(R.id.bToDetailDrugList);
+        final Button bDateReview = (Button) findViewById(R.id.bDataReview);
 
 
         Button.OnClickListener listener = new OnClickListener() {
@@ -51,27 +49,27 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 if (view.getId() == R.id.bRecordBloodPressureDBP) {
                     intent = new Intent(MainActivity.this, DataRecord_BloodPressure_DBP.class);
-                }else if(view.getId()==R.id.bRecordBloodPressureSBP){
+                } else if (view.getId() == R.id.bRecordBloodPressureSBP) {
                     intent = new Intent(MainActivity.this, DataRecord_BloodPressure_SBP.class);
-                }else if(view.getId()==R.id.bRecordBloodSugar){
+                } else if (view.getId() == R.id.bRecordBloodSugar) {
                     intent = new Intent(MainActivity.this, DataRecord_BloodSugar.class);
-                }else if (view.getId() == R.id.bToDrugTimePage) {
+                } else if (view.getId() == R.id.bToDrugTimePage) {
                     intent = new Intent(MainActivity.this, DrugTimePageActivity.class);
-                }else if (view.getId() == R.id.bToRemindDrugGet) {
+                } else if (view.getId() == R.id.bToRemindDrugGet) {
                     intent = new Intent(MainActivity.this, RemindDrugGetActivity.class);
-                }else if (view.getId() == R.id.bToRemindRecord) {
+                } else if (view.getId() == R.id.bToRemindRecord) {
                     intent = new Intent(MainActivity.this, RemindRecordActivity.class);
-                }else if (view.getId() == R.id.bToRemindTakeMed) {
+                } else if (view.getId() == R.id.bToRemindTakeMed) {
                     intent = new Intent(MainActivity.this, RemindTakeMedActivity.class);
-                }else if (view.getId() == R.id.bToSetTime) {
+                } else if (view.getId() == R.id.bToSetTime) {
                     intent = new Intent(MainActivity.this, SetTimeActivity.class);
-                }else if (view.getId() == R.id.bToDetailDrugList) {
+                } else if (view.getId() == R.id.bToDetailDrugList) {
                     intent = new Intent(MainActivity.this, DrugsInfoActivity.class);
-                }else if(view.getId()==R.id.bLoginRegister){
+                } else if (view.getId() == R.id.bLoginRegister) {
                     intent = new Intent(MainActivity.this, LoginActivity.class);
-                }else if(view.getId()==R.id.bDataReview){
+                } else if (view.getId() == R.id.bDataReview) {
                     intent = new Intent(MainActivity.this, DataReview.class);
-                }else if(view.getId()==R.id.bSetDrugTime){
+                } else if (view.getId() == R.id.bSetDrugTime) {
                     intent = new Intent(MainActivity.this, NotificationSetting.class);
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

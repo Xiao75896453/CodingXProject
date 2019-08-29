@@ -4,59 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="5"
     tools:context=".DataRecord.DataRecord_BloodSugar"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="111dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="7"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/time"
-            android:layout_width="295dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:gravity="center"
             android:text="現在時間:"
             android:textSize="36sp" />
 
         <Button
             android:id="@+id/timechange"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:text="更改"
             android:textSize="32sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="384dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:weightSum="3"
         android:orientation="vertical">
 
         <NumberPicker
             android:id="@+id/numberpicker_bloodsugar"
             android:layout_width="match_parent"
-            android:layout_height="145dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:scrollbarSize="36dp" />
 
         <TextView
             android:id="@+id/title_bloodsugar"
             android:layout_width="match_parent"
-            android:layout_height="132dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="血糖(mg/dL)"
             android:textSize="36sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
             android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/AC_bloodsugar"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
@@ -65,30 +74,21 @@
 
             <CheckBox
                 android:id="@+id/PC_bloodsugar"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="餐後"
                 android:textSize="36sp" />
         </LinearLayout>
+
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <Button
+        android:id="@+id/confirm_bloodsugar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="確認"
+        android:textSize="36sp" />
 
-        <Button
-            android:id="@+id/confirm_bloodsugar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="確認"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

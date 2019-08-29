@@ -26,7 +26,8 @@
         android:layout_width="0dp"
         android:layout_weight="2"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
+        android:layoutDirection="ltr"
+
         android:textOff="@string/off_switch"
         android:textOn="@string/on_switch"
         android:textSize="24sp"

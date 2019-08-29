@@ -16,8 +16,8 @@ import java.util.Calendar;
 public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
     public static final String EXTRA_REPLY = "com.example.datarecord.extra.REPLY";
     //public static final int nowValue = "com.example.datarecord.extra.REPLY";
-    private TextView time= (TextView)findViewById(R.id.time);;
-    private Button timechange = (Button)findViewById(R.id.timechange);
+    private TextView time;
+    private Button timechange ;
     private  static final int REQUEST_CODE =1 ;
     private NumberPicker mNumberPicker;
 
@@ -25,9 +25,10 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_record__blood_pressure__sbp);
+        time= (TextView)findViewById(R.id.time);
+        timechange = (Button)findViewById(R.id.timechange);
         Intent intent_SBP = getIntent();
         startActivityForResult(intent_SBP,REQUEST_CODE);
-
         timechange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

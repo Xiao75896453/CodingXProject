@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
+import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;

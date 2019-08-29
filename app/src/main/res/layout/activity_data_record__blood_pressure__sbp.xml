@@ -4,26 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DataRecord_BloodPressure_SBP"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="7"
+    tools:context=".DataRecord_BloodPressure_SBP">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="111dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/time"
-            android:layout_width="295dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:gravity="center"
             android:text="現在時間:"
             android:textSize="36sp" />
 
         <Button
             android:id="@+id/timechange"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="更改"
@@ -32,39 +34,39 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="384dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:orientation="vertical">
 
         <NumberPicker
             android:id="@+id/numberpicker_SBP"
             android:layout_width="match_parent"
-            android:layout_height="193dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:scrollbarSize="36dp" />
 
         <TextView
             android:id="@+id/title_SBP"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="收縮壓 (mmHg)"
             android:textSize="36sp" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <Button
+        android:id="@+id/confirm_SBP"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="下一項"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/confirm_SBP"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="下一項"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -40,10 +40,10 @@
                 android:layout_height="wrap_content"
                 android:text="Record Blood PressureSBP"/>
             <Button
-                android:id="@+id/bToRemindDrugTaking"
+                android:id="@+id/bToRemindDrugGet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="To Remind Drug Taking"/>
+                android:text="To Remind Drug Get"/>
             <Button
                 android:id="@+id/bToRemindRecord"
                 android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                 android:id="@+id/bToRemindTakeMed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="To Remind TakeMed"/>
+                android:text="To Remind Take Med"/>
             <Button
                 android:id="@+id/bToSetTime"
                 android:layout_width="match_parent"

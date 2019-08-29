@@ -1,4 +1,4 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DataRecord;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.example.codingxproject.R;
 
 import java.util.Calendar;
 

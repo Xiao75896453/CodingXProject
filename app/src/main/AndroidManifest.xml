@@ -21,20 +21,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".DataRecord_BloodPressure_DBP"/>
-        <activity android:name=".DataRecord_BloodPressure_SBP"/>
-        <activity android:name=".DataRecord_BloodSugar"/>
+        <activity android:name=".DataRecord.DataRecord_BloodPressure_DBP"/>
+        <activity android:name=".DataRecord.DataRecord_BloodPressure_SBP"/>
+        <activity android:name=".DataRecord.DataRecord_BloodSugar"/>
         <activity android:name=".DataReview"/>
-        <activity android:name=".DetailDrugInfoActivity"/>
-        <activity android:name=".DrugsInfoActivity"/>
+        <activity android:name=".DetailDrugMessage.DetailDrugInfoActivity"/>
+        <activity android:name=".DetailDrugMessage.DrugsInfoActivity"/>
         <activity android:name=".DrugTimePageActivity"/>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".RemindDrugTakingActivity"/>
-        <activity android:name=".RemindRecordActivity"/>
-        <activity android:name=".RemindTakeMedActivity"/>
+        <activity android:name=".LoginRegister.LoginActivity"/>
+        <activity android:name=".LoginRegister.RegisterActivity"/>
+        <activity android:name=".Remind.RemindDrugGetActivity"/>
+        <activity android:name=".Remind.RemindRecordActivity"/>
+        <activity android:name=".Remind.RemindTakeMedActivity"/>
         <activity android:name=".SetTimeActivity"/>
-        <activity android:name=".UserAreaActivity"/>
+        <activity android:name=".LoginRegister.UserAreaActivity"/>
 
 
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="7"
-    tools:context=".DataRecord_BloodPressure_SBP">
+    tools:context=".DataRecord.DataRecord_BloodPressure_SBP">
 
     <LinearLayout
         android:layout_width="match_parent"

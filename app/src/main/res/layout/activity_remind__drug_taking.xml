@@ -5,10 +5,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RemindDrugTakingActivity"
+    tools:context=".Remind.RemindDrugGetActivity"
     android:paddingTop="20dp"
     android:paddingBottom="20dp"
-    android:paddingHorizontal="15dp"
+    android:paddingHorizontal="8dp"
     android:weightSum="4">
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,13 +71,12 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
         <TextView
-            android:paddingTop=""
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:foregroundGravity="left"
-            android:gravity="left|center_vertical"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
             android:text="藥局LOGO/名字"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,19 +89,21 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:weightSum="2"
         android:orientation="horizontal"
-        android:layout_margin="30dp"
-        android:paddingHorizontal="20dp">
+        android:layout_margin="30dp">
         <Button
 
             android:id="@+id/DBP"
-            android:layout_width="147dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:text="檢視藥物" />
 
         <Button
             android:id="@+id/add_data"
-            android:layout_width="147dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:text="確定" />
 

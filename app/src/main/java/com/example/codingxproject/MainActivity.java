@@ -9,6 +9,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
+import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
+import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
+import com.example.codingxproject.LoginRegister.LoginActivity;
+import com.example.codingxproject.Remind.RemindDrugGetActivity;
+import com.example.codingxproject.Remind.RemindRecordActivity;
+import com.example.codingxproject.Remind.RemindTakeMedActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     public Intent mainIntent = new Intent();
@@ -25,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button bRecordBloodPressureSBP = (Button) findViewById(R.id.bRecordBloodPressureSBP);
         Button bRecordBloodSugar=(Button)findViewById(R.id.bRecordBloodSugar);
         Button bDrugTimePage = (Button) findViewById(R.id.bToDrugTimePage);
-        Button bRemindDrugTaking = (Button) findViewById(R.id.bToRemindDrugTaking);
+        Button bRemindDrugTaking = (Button) findViewById(R.id.bToRemindDrugGet);
         Button bRemindRecord = (Button) findViewById(R.id.bToRemindRecord);
         Button bRemindTakeMed = (Button) findViewById(R.id.bToRemindTakeMed);
         Button bSetTime = (Button) findViewById(R.id.bToSetTime);
@@ -46,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, DataRecord_BloodSugar.class);
                 }else if (view.getId() == R.id.bToDrugTimePage) {
                     intent = new Intent(MainActivity.this, DrugTimePageActivity.class);
-                }else if (view.getId() == R.id.bToRemindDrugTaking) {
-                    intent = new Intent(MainActivity.this, RemindDrugTakingActivity.class);
+                }else if (view.getId() == R.id.bToRemindDrugGet) {
+                    intent = new Intent(MainActivity.this, RemindDrugGetActivity.class);
                 }else if (view.getId() == R.id.bToRemindRecord) {
                     intent = new Intent(MainActivity.this, RemindRecordActivity.class);
                 }else if (view.getId() == R.id.bToRemindTakeMed) {

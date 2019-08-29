@@ -1,4 +1,4 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DetailDrugMessage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.codingxproject.R;
 
 public class DetailDrugInfoActivity extends AppCompatActivity {
 

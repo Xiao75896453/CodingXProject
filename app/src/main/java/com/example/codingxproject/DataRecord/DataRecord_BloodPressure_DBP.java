@@ -1,8 +1,10 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DataRecord;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.codingxproject.R;
 
 public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
 

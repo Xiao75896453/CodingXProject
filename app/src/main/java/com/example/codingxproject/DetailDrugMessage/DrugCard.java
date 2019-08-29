@@ -1,4 +1,4 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DetailDrugMessage;
 
 public class DrugCard {
 

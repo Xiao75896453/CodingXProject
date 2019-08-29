@@ -1,14 +1,12 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DetailDrugMessage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.ScrollView;
+
+import com.example.codingxproject.R;
 
 import java.util.ArrayList;
 

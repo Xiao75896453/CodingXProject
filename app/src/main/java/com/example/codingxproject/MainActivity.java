@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -31,11 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Button bDetailDrugList=(Button) findViewById(R.id.bToDetailDrugList);
         final Button bDateReview=(Button)findViewById(R.id.bDataReview);
 
-//    public void launch_data_review(View view) {
-//        Log.d("btm", "to Data Review Button clicked!");
-//        Intent intent = new Intent(this, DataReview.class);
-//        startActivity(intent);
-//    }
+
 
         Button.OnClickListener listener = new OnClickListener() {
             @Override
@@ -56,12 +53,14 @@ public class MainActivity extends AppCompatActivity {
                 }else if (view.getId() == R.id.bToRemindTakeMed) {
                     intent = new Intent(MainActivity.this, RemindTakeMedActivity.class);
                 }else if (view.getId() == R.id.bToSetTime) {
+
                     intent = new Intent(MainActivity.this, SetTimeActivity.class);
                 }else if (view.getId() == R.id.bToDetailDrugList) {
                     intent = new Intent(MainActivity.this, DrugsInfoActivity.class);
                 }else if(view.getId()==R.id.bLoginRegister){
                     intent = new Intent(MainActivity.this, LoginActivity.class);
                 }else if(view.getId()==R.id.bDataReview){
+                    Log.d("MainActivity", "Hello World");
                     intent = new Intent(MainActivity.this, DataReview.class);
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

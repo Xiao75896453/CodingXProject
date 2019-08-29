@@ -18,16 +18,16 @@ import lecho.lib.hellocharts.view.LineChartView;
 
 public class DataReview extends AppCompatActivity {
 
-    LineChartView lineChartView;
-    String[] axisData = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept",
-            "Oct", "Nov", "Dec"};
-    int[] yAxisData = {83, 85, 84, 83, 83, 86, 85, 82, 83, 83, 82, 82};
-    int[] yAxisData2 = {20, 10, 15, 30, 20, 60, 15, 40, 45, 10, 90, 18};
+//    LineChartView lineChartView;
+//    String[] axisData = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept",
+//            "Oct", "Nov", "Dec"};
+//    int[] yAxisData = {83, 85, 84, 83, 83, 86, 85, 82, 83, 83, 82, 82};
+//    int[] yAxisData2 = {20, 10, 15, 30, 20, 60, 15, 40, 45, 10, 90, 18};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_data_review);
 
 //        lineChartView = findViewById(R.id.chart);
 //

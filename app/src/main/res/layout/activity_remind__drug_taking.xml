@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/DBP"
         android:layout_width="147dp"
         android:layout_height="145dp"
         android:layout_marginStart="38dp"
@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/add_data"
         android:layout_width="147dp"
         android:layout_height="145dp"
         android:layout_marginEnd="31dp"

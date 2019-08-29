@@ -29,44 +29,44 @@ public class DataReview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lineChartView = findViewById(R.id.chart);
-
-        List yAxisValues = new ArrayList();
-        List axisValues = new ArrayList();
-
-
-        Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));
-
-        for (int i = 0; i < axisData.length; i++) {
-            axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
-        }
-
-        for (int i = 0; i < yAxisData.length; i++) {
-            yAxisValues.add(new PointValue(i, yAxisData[i]));
-        }
-
-        List lines = new ArrayList();
-        lines.add(line);
-
-        LineChartData data = new LineChartData();
-        data.setLines(lines);
-
-        Axis axis = new Axis();
-        axis.setValues(axisValues);
-        axis.setTextSize(16);
-        axis.setTextColor(Color.parseColor("#03A9F4"));
-        data.setAxisXBottom(axis);
-
-        Axis yAxis = new Axis();
-        yAxis.setName("mm-hg");
-        yAxis.setTextColor(Color.parseColor("#03A9F4"));
-        yAxis.setTextSize(16);
-        data.setAxisYLeft(yAxis);
-
-        lineChartView.setLineChartData(data);
-        Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        //viewport.top = 110;
-        lineChartView.setMaximumViewport(viewport);
-        lineChartView.setCurrentViewport(viewport);
+//        lineChartView = findViewById(R.id.chart);
+//
+//        List yAxisValues = new ArrayList();
+//        List axisValues = new ArrayList();
+//
+//
+//        Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));
+//
+//        for (int i = 0; i < axisData.length; i++) {
+//            axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
+//        }
+//
+//        for (int i = 0; i < yAxisData.length; i++) {
+//            yAxisValues.add(new PointValue(i, yAxisData[i]));
+//        }
+//
+//        List lines = new ArrayList();
+//        lines.add(line);
+//
+//        LineChartData data = new LineChartData();
+//        data.setLines(lines);
+//
+//        Axis axis = new Axis();
+//        axis.setValues(axisValues);
+//        axis.setTextSize(16);
+//        axis.setTextColor(Color.parseColor("#03A9F4"));
+//        data.setAxisXBottom(axis);
+//
+//        Axis yAxis = new Axis();
+//        yAxis.setName("mm-hg");
+//        yAxis.setTextColor(Color.parseColor("#03A9F4"));
+//        yAxis.setTextSize(16);
+//        data.setAxisYLeft(yAxis);
+//
+//        lineChartView.setLineChartData(data);
+//        Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
+//        //viewport.top = 110;
+//        lineChartView.setMaximumViewport(viewport);
+//        lineChartView.setCurrentViewport(viewport);
     }
 }

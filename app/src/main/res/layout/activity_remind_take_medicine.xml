@@ -26,7 +26,7 @@
         android:gravity="center"
         android:text="普拿疼"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/SBP"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
@@ -49,7 +49,7 @@
         android:gravity="center"
         android:text="普拿疼"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/HbA1c"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -123,7 +123,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SBP"
         android:layout_width="147dp"
         android:layout_height="145dp"
         android:layout_marginEnd="31dp"
@@ -135,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/HbA1c"
         android:layout_width="147dp"
         android:layout_height="145dp"
         android:layout_marginStart="38dp"

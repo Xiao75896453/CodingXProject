@@ -7,7 +7,7 @@
     tools:context=".DataReview">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SBP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,7 +17,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/darker_gray"
-        android:text="@string/button1"
+        android:text="@string/SBP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -26,21 +26,21 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/HbA1c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="88dp"
         android:layout_marginRight="88dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/button2"
+        android:text="@string/HbA1c"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/DBP"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/DBP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
@@ -48,9 +48,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/darker_gray"
-        android:text="@string/button3"
+        android:text="@string/DBP"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/SBP"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04" />
 
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/add_data"
         android:layout_width="140dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"

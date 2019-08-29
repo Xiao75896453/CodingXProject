@@ -21,8 +21,12 @@
         <item>9</item>
     </string-array>
 
+
     <string name="button2">血糖</string>
     <string name="button1">收縮壓</string>
     <string name="button3">舒張壓</string>
     <string name="add_data">新增數據</string>
+
+    <string name="drug_descriptions">nalevna.fnvjnvan:　fvjanlfnanbkaeof\n sne;rjgnsrtjbrbsn;rb\n nsldfbnsbfv: labrhvalebvrlhv\n</string>
+
 </resources>

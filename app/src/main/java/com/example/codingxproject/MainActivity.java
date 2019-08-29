@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.NotificationSetting;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button bSetDrugTime=(Button)findViewById(R.id.bSetDrugTime);
         Button bLoginAndRegister=(Button)findViewById(R.id.bLoginRegister);
         Button bRecordBloodPressureDBP = (Button) findViewById(R.id.bRecordBloodPressureDBP);
         Button bRecordBloodPressureSBP = (Button) findViewById(R.id.bRecordBloodPressureSBP);
@@ -69,11 +71,14 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, LoginActivity.class);
                 }else if(view.getId()==R.id.bDataReview){
                     intent = new Intent(MainActivity.this, DataReview.class);
+                }else if(view.getId()==R.id.bSetDrugTime){
+                    intent = new Intent(MainActivity.this, NotificationSetting.class);
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 MainActivity.this.startActivity(intent);
             }
         };
+        bSetDrugTime.setOnClickListener(listener);
         bLoginAndRegister.setOnClickListener(listener);
         bRecordBloodPressureDBP.setOnClickListener(listener);
         bRecordBloodPressureSBP.setOnClickListener(listener);

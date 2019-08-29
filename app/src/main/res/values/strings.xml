@@ -35,4 +35,31 @@
 
     <string name="drug_descriptions">nalevna.fnvjnvan:　fvjanlfnanbkaeof\n sne;rjgnsrtjbrbsn;rb\n nsldfbnsbfv: labrhvalebvrlhv\n</string>
 
+    <string name="date">2019年8月22日</string>
+    <string name="off_switch">OFF</string>
+    <string name="on_switch">ON</string>
+
+    <string-array name="items">
+        <item>睡醒</item>
+        <item>早餐</item>
+        <item>午餐</item>
+        <item>晚餐</item>
+        <item>睡前</item>
+    </string-array>
+
+    <string-array name="alarms">
+        <item>提醒</item>
+        <item>提醒</item>
+        <item>提醒</item>
+        <item>提醒</item>
+        <item>提醒</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>08:00</item>
+        <item>10:00</item>
+        <item>12:00</item>
+        <item>18:00</item>
+        <item>22:00</item>
+    </string-array>
 </resources>

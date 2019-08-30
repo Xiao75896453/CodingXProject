@@ -47,9 +47,9 @@ public class ItemAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         final View v = mInflater.inflate(R.layout.activity_item_adapter, null);
-        final TextView nameTextView = (TextView) v.findViewById(R.id.periodTextView);
-        TextView descriptionTextView = (TextView) v.findViewById(R.id.timeTextView);
-        TextView alarmTextView = (TextView) v.findViewById(R.id.switchButton);
+        final TextView nameTextView = (TextView) v.findViewById(R.id.tvPeriodTitle);
+        TextView descriptionTextView = (TextView) v.findViewById(R.id.tvPeriodTime);
+        TextView alarmTextView = (TextView) v.findViewById(R.id.sbTimeSwitch);
 
         String name = items[i];
         String desc = descriptions[i];

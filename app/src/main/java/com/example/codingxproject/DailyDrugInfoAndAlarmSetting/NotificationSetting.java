@@ -10,7 +10,7 @@ import com.example.codingxproject.R;
 
 public class NotificationSetting extends AppCompatActivity {
 
-    ListView myListView;
+    ListView lvAlarmList;
     String[] items;
 
     String[] alarms;
@@ -23,14 +23,14 @@ public class NotificationSetting extends AppCompatActivity {
         setContentView(R.layout.activity_notification_setting);
 
         Resources res = getResources();
-        myListView = (ListView) findViewById(R.id.myListView);
+        lvAlarmList = (ListView) findViewById(R.id.lvAlarmList);
         items = res.getStringArray(R.array.items);
 
         alarms = res.getStringArray(R.array.alarms);
         descriptions = res.getStringArray(R.array.descriptions);
 
         ItemAdapter itemAdapter = new ItemAdapter(this, items,alarms,descriptions);
-        myListView.setAdapter(itemAdapter);
+        lvAlarmList.setAdapter(itemAdapter);
 
 
 

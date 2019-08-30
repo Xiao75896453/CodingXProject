@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="5"
-    tools:context=".DataRecord.DataRecord_BloodSugar"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="7"
+    tools:context=".DataRecord.DataRecord_BloodPressure_DBP">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,19 +16,19 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/time"
+            android:id="@+id/tvCurrentTime"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="4"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="現在時間:"
             android:textSize="36sp" />
 
         <Button
-            android:id="@+id/timechange"
+            android:id="@+id/tvChangeTime"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="3"
+            android:layout_height="match_parent"
             android:text="更改"
             android:textSize="32sp" />
     </LinearLayout>
@@ -36,59 +36,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:weightSum="3"
+        android:layout_weight="4"
+        android:weightSum="2"
         android:orientation="vertical">
 
         <NumberPicker
-            android:id="@+id/numberpicker_bloodsugar"
+            android:id="@+id/numberpicker_DBP"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:scrollbarSize="36dp" />
 
         <TextView
-            android:id="@+id/title_bloodsugar"
+            android:id="@+id/tvTitle_DBP"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="血糖(mg/dL)"
+            android:text="舒張壓 (mmHg)"
             android:textSize="36sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/AC_bloodsugar"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="餐前"
-                android:textSize="36sp" />
-
-            <CheckBox
-                android:id="@+id/PC_bloodsugar"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="餐後"
-                android:textSize="36sp" />
-        </LinearLayout>
-
     </LinearLayout>
+
     <Button
-        android:id="@+id/confirm_bloodsugar"
+        android:id="@+id/bConfirm_DBP"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="確認"
+        android:layout_weight="2"
+        android:text="下一項"
         android:textSize="36sp" />
 
 </LinearLayout>

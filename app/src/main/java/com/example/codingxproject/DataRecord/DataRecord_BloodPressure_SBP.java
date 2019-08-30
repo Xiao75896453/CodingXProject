@@ -18,20 +18,20 @@ import java.util.Calendar;
 public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
     public static final String EXTRA_REPLY = "com.example.datarecord.extra.REPLY";
     //public static final int nowValue = "com.example.datarecord.extra.REPLY";
-    private TextView time;
-    private Button timechange ;
+    private TextView tvTime;
+    private Button bTimeChange ;
     private  static final int REQUEST_CODE =1 ;
     private NumberPicker mNumberPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_record__blood_pressure__sbp);
-        time= (TextView)findViewById(R.id.time);
-        timechange = (Button)findViewById(R.id.timechange);
+        setContentView(R.layout.activity_data_record_blood_pressure_sbp);
+        tvTime= (TextView)findViewById(R.id.tvTime);
+        bTimeChange = (Button)findViewById(R.id.tvChangeTime);
         Intent intent_SBP = getIntent();
         startActivityForResult(intent_SBP,REQUEST_CODE);
-        timechange.setOnClickListener(new View.OnClickListener() {
+        bTimeChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //預設為系統時間
@@ -42,7 +42,7 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
                 new TimePickerDialog(DataRecord_BloodPressure_SBP.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int houreOfDay, int minute) {
-                        time.setText("現在時間是" + houreOfDay + ":" + minute);
+                        tvTime.setText("現在時間是" + houreOfDay + ":" + minute);
                     }
                 }, hour,minute,true).show();
             }

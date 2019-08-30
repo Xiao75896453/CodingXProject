@@ -19,7 +19,7 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/ivRemindRecordIcon"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:srcCompat="@mipmap/ic_launcher" />
@@ -27,7 +27,7 @@
         <TextView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:id="@+id/textView11"
+            android:id="@+id/tvRemindRecordTitle"
             android:layout_gravity="center"
             android:gravity="center_vertical"
             android:textAlignment="center"
@@ -53,7 +53,7 @@
             android:background="@drawable/underline">
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/tvRecordItem1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/tvRecordValue1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             android:background="@drawable/underline">
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tvRecordItem2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -87,7 +87,7 @@
                 android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tvRecordValue2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -105,14 +105,14 @@
             android:background="@drawable/underline">
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tvRecordItem3"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tvRecordValue3"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -129,15 +129,15 @@
         android:layout_margin="30dp">
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/bRemindAgain"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="確定"
+            android:text="再提醒"
             android:textSize="36sp" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/bFillRecord"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"

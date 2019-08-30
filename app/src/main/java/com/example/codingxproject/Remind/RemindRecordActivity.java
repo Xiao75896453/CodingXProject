@@ -11,6 +11,6 @@ public class RemindRecordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_remind__record);
+        setContentView(R.layout.activity_remind_record);
     }
 }

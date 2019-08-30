@@ -15,6 +15,7 @@ import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
 import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
 import com.example.codingxproject.LoginRegister.LoginActivity;
+import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.Remind.RemindDrugGetActivity;
 import com.example.codingxproject.Remind.RemindRecordActivity;
 import com.example.codingxproject.Remind.RemindTakeMedActivity;
@@ -40,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Button bRemindTakeMed = (Button) findViewById(R.id.bToRemindTakeMed);
         Button bSetTime = (Button) findViewById(R.id.bToSetTime);
         Button bDetailDrugList = (Button) findViewById(R.id.bToDetailDrugList);
-        final Button bDateReview = (Button) findViewById(R.id.bDataReview);
-
+        Button bDateReview = (Button) findViewById(R.id.bDataReview);
+        Button bHomePage=(Button)findViewById(R.id.bHomePage);
 
         Button.OnClickListener listener = new OnClickListener() {
             @Override
@@ -71,11 +72,14 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, DataReview.class);
                 } else if (view.getId() == R.id.bSetDrugTime) {
                     intent = new Intent(MainActivity.this, NotificationSetting.class);
+                }else if(view.getId()==R.id.bHomePage){
+                    intent = new Intent(MainActivity.this, HomePageActivity.class);
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 MainActivity.this.startActivity(intent);
             }
         };
+        bHomePage.setOnClickListener(listener);
         bSetDrugTime.setOnClickListener(listener);
         bLoginAndRegister.setOnClickListener(listener);
         bRecordBloodPressureDBP.setOnClickListener(listener);

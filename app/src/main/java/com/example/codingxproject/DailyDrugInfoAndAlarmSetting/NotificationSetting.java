@@ -33,6 +33,5 @@ public class NotificationSetting extends AppCompatActivity {
         lvAlarmList.setAdapter(itemAdapter);
 
 
-
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/iconViewPeriodDrug"
+        android:enabled="true"
+        android:icon="@drawable/ic_view_period_drug"
+        android:title="檢視藥品"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/iconAddBodyRecord"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_body_data"
+        android:title="新增身體數據"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/iconSetAlarm"
+        android:enabled="true"
+        android:icon="@drawable/ic_alarm"
+        android:title="設定鬧鐘"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -16,15 +16,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/timePicker1"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"></TimePicker>
+            android:layout_gravity="center"
+            ></TimePicker>
 
-        <NumberPicker
-            android:id="@+id/numberPicker1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
+        <!--<NumberPicker-->
+            <!--android:id="@+id/numberPicker1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp" />-->
 
     </LinearLayout>
 

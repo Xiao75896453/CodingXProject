@@ -12,22 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:weightSum="7"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvTime"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:gravity="center"
             android:text="現在時間:"
             android:textSize="36sp" />
 
         <Button
-            android:id="@+id/tvChangeTime"
+            android:id="@+id/bChangeTime"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:text="更改"
             android:textSize="32sp" />
     </LinearLayout>

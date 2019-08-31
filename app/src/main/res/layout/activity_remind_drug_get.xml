@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Remind.RemindDrugGetActivity"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingHorizontal="8dp"
+    android:weightSum="4">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/ivRemindDrugGetIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvRemindDrugGetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="領藥"
+            android:textSize="36sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:paddingTop="15dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_weight="2"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvGetDrugDate"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:autoText="false"
+            android:freezesText="false"
+            android:gravity="center"
+            android:text="7月31日"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/tvGetDrugParmacy"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="藥局LOGO/名字"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_margin="30dp">
+
+        <Button
+            android:id="@+id/bRemindAgain"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="再提醒" />
+
+        <Button
+            android:id="@+id/bDrugGetConfirm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="確定" />
+
+    </LinearLayout>
+
+</LinearLayout>

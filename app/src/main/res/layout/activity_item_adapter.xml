@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="6">
+
+    <TextView
+        android:id="@+id/tvPeriodTitle"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:text="period"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvPeriodTime"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:text="time"
+        android:textSize="30sp" />
+
+    <Switch
+        android:id="@+id/sbTimeSwitch"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr"
+
+        android:textOff="@string/off_switch"
+        android:textOn="@string/on_switch"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

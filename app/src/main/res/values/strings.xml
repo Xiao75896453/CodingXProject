@@ -20,4 +20,63 @@
         <item>8</item>
         <item>9</item>
     </string-array>
+
+
+    <string name="HbA1c">血糖</string>
+    <string name="SBP">收縮壓</string>
+    <string name="DBP">舒張壓</string>
+    <string name="add_data">新增數據</string>
+    <string-array name="choose_period">
+        <item>一天</item>
+        <item>一週</item>
+        <item>一月</item>
+        <item>6個月</item>
+    </string-array>
+
+    <string name="drug_descriptions">nalevna.fnvjnvan:　fvjanlfnanbkaeof\n sne;rjgnsrtjbrbsn;rb\n nsldfbnsbfv: labrhvalebvrlhv\n</string>
+
+    <string name="date">2019年8月22日</string>
+    <string name="off_switch">OFF</string>
+    <string name="on_switch">ON</string>
+
+    <string-array name="items">
+        <item>睡醒</item>
+        <item>早餐</item>
+        <item>午餐</item>
+        <item>晚餐</item>
+        <item>睡前</item>
+    </string-array>
+
+    <string-array name="alarms">
+        <item>提醒</item>
+        <item>提醒</item>
+        <item>提醒</item>
+        <item>提醒</item>
+        <item>提醒</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>08:00</item>
+        <item>10:00</item>
+        <item>12:00</item>
+        <item>18:00</item>
+        <item>22:00</item>
+    </string-array>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

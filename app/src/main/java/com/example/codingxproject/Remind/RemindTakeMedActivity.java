@@ -1,10 +1,12 @@
-package com.example.codingxproject;
+package com.example.codingxproject.Remind;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class RemindTakeMed extends AppCompatActivity {
+import com.example.codingxproject.R;
+
+public class RemindTakeMedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

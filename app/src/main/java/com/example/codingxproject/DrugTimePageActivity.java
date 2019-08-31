@@ -13,35 +13,22 @@ import android.widget.TableLayout;
 
 public class DrugTimePageActivity extends AppCompatActivity {
 
-    private ScrollView mMorningSV;
-    private ScrollView mBreakfastSV;
-    private ScrollView mLunchSV;
-    private ScrollView mDinnerSV;
-    private ScrollView mNightSV;
-    private Button btmMorning;
-    private Button btmBreakfast;
-    private Button btmLunch;
-    private Button btmDinner;
-    private Button btmNight;
-    private ConstraintLayout coverText;
+    private ScrollView mMorningSV= findViewById(R.id.MorningScrollView);;
+    private ScrollView mBreakfastSV= findViewById(R.id.BreakfastScrollView);
+    private ScrollView mLunchSV= findViewById(R.id.LunchScrollview);
+    private ScrollView mDinnerSV= findViewById(R.id.DinnerScrollView);
+    private ScrollView mNightSV= findViewById(R.id.NightScrollVIEW);
+    private Button btmMorning= findViewById(R.id.morning_btm);
+    private Button btmBreakfast= findViewById(R.id.breakfast_btm);
+    private Button btmLunch= findViewById(R.id.lunch_btm);
+    private Button btmDinner= findViewById(R.id.dinner_btm);
+    private Button btmNight= findViewById(R.id.night_btm);
+    private ConstraintLayout coverText = findViewById(R.id.cover);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_time_page);
-        mMorningSV = findViewById(R.id.MorningScrollView);
-        mBreakfastSV = findViewById(R.id.BreakfastScrollView);
-        mLunchSV = findViewById(R.id.LunchScrollview);
-        mDinnerSV = findViewById(R.id.DinnerScrollView);
-        mNightSV = findViewById(R.id.NightScrollVIEW);
-
-        btmMorning = findViewById(R.id.morning_btm);
-        btmBreakfast = findViewById(R.id.breakfast_btm);
-        btmLunch = findViewById(R.id.lunch_btm);
-        btmDinner = findViewById(R.id.dinner_btm);
-        btmNight = findViewById(R.id.night_btm);
-
-        coverText = findViewById(R.id.cover);
 
         btmMorning.setBackgroundColor(Color.GREEN);
         btmBreakfast.setBackgroundColor(Color.GREEN);

@@ -40,13 +40,6 @@
         android:weightSum="3"
         android:orientation="vertical">
 
-        <NumberPicker
-            android:id="@+id/numberpicker_bloodsugar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:scrollbarSize="36dp" />
-
         <TextView
             android:id="@+id/tvTitle_bloodsugar"
             android:layout_width="match_parent"
@@ -56,15 +49,24 @@
             android:text="血糖(mg/dL)"
             android:textSize="36sp" />
 
-        <LinearLayout
+        <NumberPicker
+            android:id="@+id/numberpicker_bloodsugar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbarSize="36dp" />
+
+
+
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:weightSum="2"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/cbAC_bloodsugar"
+            <RadioButton
+                android:id="@+id/rbAC_bloodsugar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -72,15 +74,33 @@
                 android:text="餐前"
                 android:textSize="36sp" />
 
-            <CheckBox
-                android:id="@+id/cbPC_bloodsugar"
+            <RadioButton
+                android:id="@+id/rbPC_bloodsugar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="餐後"
                 android:textSize="36sp" />
-        </LinearLayout>
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/cbAC_bloodsugar"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:text="餐前"-->
+                <!--android:textSize="36sp" />-->
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/cbPC_bloodsugar"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:text="餐後"-->
+                <!--android:textSize="36sp" />-->
+        </RadioGroup>
 
     </LinearLayout>
     <Button

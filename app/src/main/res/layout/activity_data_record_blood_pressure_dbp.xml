@@ -40,13 +40,6 @@
         android:weightSum="2"
         android:orientation="vertical">
 
-        <NumberPicker
-            android:id="@+id/numberpicker_DBP"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:scrollbarSize="36dp" />
-
         <TextView
             android:id="@+id/tvTitle_DBP"
             android:layout_width="match_parent"
@@ -55,6 +48,15 @@
             android:gravity="center"
             android:text="舒張壓 (mmHg)"
             android:textSize="36sp" />
+
+
+        <NumberPicker
+            android:id="@+id/numberpicker_DBP"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbarSize="36dp" />
+
     </LinearLayout>
 
     <Button

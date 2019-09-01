@@ -2,10 +2,12 @@ package com.example.codingxproject.DataRecord;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -21,13 +23,16 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_record_blood_pressure_dbp);
-
+        final TextView tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
+        final NumberPicker mNumberPicker = (NumberPicker)findViewById(R.id.numberpicker_DBP);
+        final Button bConfirmDBP=(Button)findViewById(R.id.bConfirm_DBP);
+        final TextView tvDBP=(TextView)findViewById(R.id.tvTitle_DBP);
         String currentHour, currentMin;
         currentHour = setTimeForm(currentCalendar.get(Calendar.HOUR_OF_DAY));
         currentMin = setTimeForm(currentCalendar.get(Calendar.MINUTE));
         String currentTime = currentHour + ":" + currentMin;
 
-        final TextView tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
+
         tvCurrentTime.setText(currentTime);
 
         Button resetTime = (Button) findViewById(R.id.bChangeTime);
@@ -42,6 +47,34 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
                         tvCurrentTime.setText(hour+":"+min);
                     }
                 }, currentCalendar.get(Calendar.HOUR_OF_DAY), currentCalendar.get(Calendar.MINUTE),true).show();
+            }
+        });
+        mNumberPicker.setMaxValue(100);
+        mNumberPicker.setMinValue(40);
+        mNumberPicker.setValue(80);
+        mNumberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int oldVal, int newVal) {
+                mNumberPicker.setValue(newVal);
+                tvDBP.setText("舒張壓值："+Integer.toString(mNumberPicker.getValue())+"mm-Hg");
+            }
+        });
+
+        bConfirmDBP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mNumberPicker.getValue()>90){
+                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
+                    build.setMessage("舒張壓太高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                }else if(mNumberPicker.getValue()<60){
+                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
+                    build.setMessage("舒張壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                }
+
+                //紀錄資訊，傳出資訊
+//                final int outputVal= mNumberPicker.getValue();
+//                Intent intent_SBP = getIntent();
+//                startActivityForResult(intent_SBP,REQUEST_CODE);
             }
         });
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,24 +66,33 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
             }
         });
 
+        final DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent=new Intent(DataRecord_BloodSugar.this, HomePageActivity.class);
+                startActivity(intent);
+            }
+        };
+
         bConfirmBloodSugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbAC_bloodsugar.isChecked()&&rbAC_bloodsugar.isChecked()==false){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
-                    build.setMessage("請選擇餐前或餐後。").setPositiveButton("我知道了",null).create().show();
+                    build.setMessage("請選擇餐前或餐後。").setPositiveButton("我知道了",dialogListener).create().show();
                 }else if(rbAC_bloodsugar.isChecked()&&mNumberPicker.getValue()>126){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
-                    build.setMessage("血糖過高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                    build.setMessage("血糖過高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
                 }else if(rbPC_bloodsugar.isChecked()&&mNumberPicker.getValue()>180){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
-                    build.setMessage("血糖過高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                    build.setMessage("血糖過高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<70){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
-                    build.setMessage("血糖太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                    build.setMessage("血糖太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
+                }else{
+                    Intent intent=new Intent(DataRecord_BloodSugar.this, HomePageActivity.class);
+                    startActivity(intent);
                 }
-                Intent intent=new Intent(DataRecord_BloodSugar.this, HomePageActivity.class);
-                startActivity(intent);
                 //紀錄資訊，傳出資訊
 //                final int outputVal= mNumberPicker.getValue();
 //                Intent intent_SBP = getIntent();

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -64,18 +65,29 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
             }
         });//numberpicker_SBP_OnValueChange
 //        tvSBP.setText("收縮壓值："+Integer.toString(mNumberPicker.getValue())+"mm-Hg");
+
+        final DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent=new Intent(DataRecord_BloodPressure_SBP.this,DataRecord_BloodPressure_DBP.class);
+                startActivity(intent);
+            }
+        };
+
         bConfirmSBP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mNumberPicker.getValue()>140){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
-                    build.setMessage("收縮壓太高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                    build.setMessage("收縮壓太高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<100){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
-                    build.setMessage("收縮壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
+                    build.setMessage("收縮壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
+                }else{
+                    Intent intent=new Intent(DataRecord_BloodPressure_SBP.this,DataRecord_BloodPressure_DBP.class);
+                    startActivity(intent);
                 }
-                Intent intent=new Intent(DataRecord_BloodPressure_SBP.this,DataRecord_BloodPressure_DBP.class);
-                startActivity(intent);
+
                 //紀錄資訊，傳出資訊
 //                final int outputVal= mNumberPicker.getValue();
 //                Intent intent_SBP = getIntent();

@@ -74,7 +74,8 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
                     build.setMessage("收縮壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
                 }
-
+                Intent intent=new Intent(DataRecord_BloodPressure_SBP.this,DataRecord_BloodPressure_DBP.class);
+                startActivity(intent);
                 //紀錄資訊，傳出資訊
 //                final int outputVal= mNumberPicker.getValue();
 //                Intent intent_SBP = getIntent();

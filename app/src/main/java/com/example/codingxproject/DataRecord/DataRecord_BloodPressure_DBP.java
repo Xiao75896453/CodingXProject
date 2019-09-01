@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -70,7 +71,8 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
                     build.setMessage("舒張壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",null).create().show();
                 }
-
+                Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,DataRecord_BloodSugar.class);
+                startActivity(intent);
                 //紀錄資訊，傳出資訊
 //                final int outputVal= mNumberPicker.getValue();
 //                Intent intent_SBP = getIntent();

@@ -15,11 +15,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataReview;
 import com.example.codingxproject.R;
 
 
-public class AddDataFragment extends Fragment {
+public class AddOrViewDataFragment extends Fragment {
     public Button bAddRecord,bViewRecord;
     @Nullable
     @Override
@@ -38,7 +39,7 @@ public class AddDataFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(view.getId()==R.id.bAddRecord){
-                    intent=new Intent(getActivity(), DataRecord_BloodPressure_DBP.class);
+                    intent=new Intent(getActivity(), DataRecord_BloodPressure_SBP.class);
                 }else if(view.getId()==R.id.bViewRecord){
                     intent=new Intent(getActivity(), DataReview.class);
                 }

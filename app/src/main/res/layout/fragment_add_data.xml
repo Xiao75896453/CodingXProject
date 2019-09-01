@@ -4,24 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainFunctionsWithBottomBar.AddDataFragment">
+    android:weightSum="2"
+    tools:context=".MainFunctionsWithBottomBar.AddOrViewDataFragment">
 
    <Button
-       android:id="@+id/bDBP"
+       android:id="@+id/bAddRecord"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="DBP"/>
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:text="新增身體數據"/>
    <Button
-       android:id="@+id/bSBP"
+       android:id="@+id/bViewRecord"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="SBP"/>
-   <Button
-       android:id="@+id/bBloodSugar"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Blood Sugar"/>
-
-
-
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:text="檢視歷史數據"/>
+   <!--<Button-->
+       <!--android:id="@+id/bBloodSugar"-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="wrap_content"-->
+       <!--android:text="Blood Sugar"/>-->
 </LinearLayout>

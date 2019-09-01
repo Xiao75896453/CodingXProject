@@ -10,8 +10,8 @@
     <item
         android:id="@+id/iconAddBodyRecord"
         android:enabled="true"
-        android:icon="@drawable/ic_add_body_data"
-        android:title="新增身體數據"
+        android:icon="@drawable/ic_body_record"
+        android:title="身體數據"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/iconSetAlarm"

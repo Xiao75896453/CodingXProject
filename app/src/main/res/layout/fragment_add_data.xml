@@ -6,13 +6,25 @@
     android:orientation="vertical"
     android:weightSum="2"
     tools:context=".MainFunctionsWithBottomBar.AddOrViewDataFragment">
-
-   <Button
-       android:id="@+id/bAddRecord"
+   <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="0dp"
        android:layout_weight="1"
-       android:text="新增身體數據"/>
+       android:orientation="horizontal">
+      <Button
+          android:id="@+id/bAddRecord_bloodSugar"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="新增血糖數據"/>
+      <Button
+          android:id="@+id/bAddRecord_bloodPressure"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="新增血壓數據"/>
+   </LinearLayout>
+
    <Button
        android:id="@+id/bViewRecord"
        android:layout_width="match_parent"

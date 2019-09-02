@@ -79,7 +79,7 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
             public void onClick(View view) {
                 if(mNumberPicker.getValue()>140){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
-                    build.setMessage("收縮壓太高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
+                    build.setMessage("收縮壓太高，請注意藥物服用!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<100){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
                     build.setMessage("收縮壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();

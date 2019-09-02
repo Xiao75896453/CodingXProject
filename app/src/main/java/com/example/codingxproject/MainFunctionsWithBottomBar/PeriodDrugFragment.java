@@ -1,6 +1,7 @@
 package com.example.codingxproject.MainFunctionsWithBottomBar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,13 +19,15 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.codingxproject.DetailDrugMessage.DetailDrugInfoActivity;
+import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
 import com.example.codingxproject.R;
 
 
 public class PeriodDrugFragment extends Fragment {
 
     private ScrollView mMorningSV, mBreakfastSV, mLunchSV, mDinnerSV, mNightSV;
-    private Button btmMorning, btmBreakfast, btmLunch, btmDinner, btmNight;
+    private Button btmMorning, btmBreakfast, btmLunch, btmDinner, btmNight,bTotalDrug;
     private ConstraintLayout coverText;
 
     @Nullable
@@ -47,6 +50,7 @@ public class PeriodDrugFragment extends Fragment {
         btmLunch = (Button) getView().findViewById(R.id.lunch_btm);
         btmDinner = (Button) getView().findViewById(R.id.dinner_btm);
         btmNight = (Button) getView().findViewById(R.id.night_btm);
+        bTotalDrug=(Button) getView().findViewById(R.id.bTotalDrug);
         coverText = (ConstraintLayout) getView().findViewById(R.id.cover);
 
         btmMorning.setBackgroundColor(Color.GREEN);
@@ -120,6 +124,8 @@ public class PeriodDrugFragment extends Fragment {
                     btmLunch.setBackgroundColor(Color.GREEN);
                     btmDinner.setBackgroundColor(Color.GREEN);
                     btmNight.setBackgroundColor(Color.WHITE);
+                }else if(view.getId()==R.id.bTotalDrug){
+                    startActivity(new Intent(getActivity(), DrugsInfoActivity.class));
                 }
             }
         };
@@ -128,6 +134,7 @@ public class PeriodDrugFragment extends Fragment {
         btmLunch.setOnClickListener(listener);
         btmDinner.setOnClickListener(listener);
         btmNight.setOnClickListener(listener);
+        bTotalDrug.setOnClickListener(listener);
     }
 
     @Override

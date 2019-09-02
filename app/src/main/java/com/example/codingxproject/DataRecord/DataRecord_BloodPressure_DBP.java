@@ -66,7 +66,7 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
         final DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,DataRecord_BloodSugar.class);
+                Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,HomePageActivity.class);
                 startActivity(intent);
             }
         };
@@ -81,7 +81,7 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
                     build.setMessage("舒張壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else{
-                    Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,DataRecord_BloodSugar.class);
+                    Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,HomePageActivity.class);
                     startActivity(intent);
                 }
 

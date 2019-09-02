@@ -16,12 +16,13 @@ import android.widget.Button;
 
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
+import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
 import com.example.codingxproject.DataReview;
 import com.example.codingxproject.R;
 
 
 public class AddOrViewDataFragment extends Fragment {
-    public Button bAddRecord,bViewRecord;
+    public Button bRecordBloodSugar,bRecordBloodPressure,bViewRecord;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,13 +33,16 @@ public class AddOrViewDataFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        bAddRecord=(Button)getActivity().findViewById(R.id.bAddRecord);
+        bRecordBloodSugar=(Button)getActivity().findViewById(R.id.bAddRecord_bloodSugar);
+        bRecordBloodPressure=(Button)getActivity().findViewById(R.id.bAddRecord_bloodPressure);
         bViewRecord=(Button)getActivity().findViewById(R.id.bViewRecord);
         View.OnClickListener listener=new View.OnClickListener() {
             Intent intent;
             @Override
             public void onClick(View view) {
-                if(view.getId()==R.id.bAddRecord){
+                if(view.getId()==R.id.bAddRecord_bloodSugar){
+                    intent=new Intent(getActivity(), DataRecord_BloodSugar.class);
+                }else if(view.getId()==R.id.bAddRecord_bloodPressure){
                     intent=new Intent(getActivity(), DataRecord_BloodPressure_SBP.class);
                 }else if(view.getId()==R.id.bViewRecord){
                     intent=new Intent(getActivity(), DataReview.class);
@@ -46,7 +50,8 @@ public class AddOrViewDataFragment extends Fragment {
                 startActivity(intent);
             }
         };
-        bAddRecord.setOnClickListener(listener);
+        bRecordBloodSugar.setOnClickListener(listener);
+        bRecordBloodPressure.setOnClickListener(listener);
         bViewRecord.setOnClickListener(listener);
     }
 }

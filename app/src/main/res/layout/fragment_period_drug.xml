@@ -91,6 +91,19 @@
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
+                <Button
+                    android:id="@+id/bTotalDrug"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/cardview_light_background"
+                    android:text="所有藥物"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/title"
+                    app:layout_constraintTop_toTopOf="@id/title" />
+
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

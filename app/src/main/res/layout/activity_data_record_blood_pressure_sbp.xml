@@ -5,14 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="7"
     tools:context=".DataRecord.DataRecord_BloodPressure_SBP">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:weightSum="7"
+        android:layout_weight="1.2"
         android:orientation="horizontal">
 
         <TextView
@@ -35,34 +33,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="4"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvTitle_SBP"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
             android:gravity="center"
             android:text="收縮壓 (mmHg)"
             android:textSize="36sp" />
-        <NumberPicker
+
+        <com.example.codingxproject.CustomNumberPicker
             android:id="@+id/numberpicker_SBP"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.1"
             android:scrollbarSize="36dp" />
+
+        <Button
+            android:id="@+id/bConfirm_SBP"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:text="下一項"
+            android:textSize="36sp" />
 
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/bConfirm_SBP"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:text="下一項"
-        android:textSize="36sp" />
 
 </LinearLayout>

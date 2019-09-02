@@ -10,10 +10,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:weightSum="7"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:orientation="horizontal"
+        android:weightSum="7">
 
         <TextView
             android:id="@+id/tvCurrentTime"
@@ -27,7 +27,7 @@
         <Button
             android:id="@+id/bChangeTime"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="3"
             android:text="更改"
             android:textSize="32sp" />
@@ -35,34 +35,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:weightSum="3"
+        android:layout_height="wrap_content"
+        android:layout_weight="4.4"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvTitle_bloodsugar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:gravity="center"
             android:text="血糖(mg/dL)"
             android:textSize="36sp" />
 
-        <NumberPicker
+        <com.example.codingxproject.CustomNumberPicker
             android:id="@+id/numberpicker_bloodsugar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
             android:scrollbarSize="36dp" />
-
-
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
+            android:layout_weight="2.5"
             android:orientation="horizontal">
 
             <RadioButton
@@ -84,31 +80,33 @@
                 android:textSize="36sp" />
 
             <!--<CheckBox-->
-                <!--android:id="@+id/cbAC_bloodsugar"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_weight="1"-->
-                <!--android:gravity="center_horizontal|center_vertical"-->
-                <!--android:text="餐前"-->
-                <!--android:textSize="36sp" />-->
+            <!--android:id="@+id/cbAC_bloodsugar"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center_horizontal|center_vertical"-->
+            <!--android:text="餐前"-->
+            <!--android:textSize="36sp" />-->
 
             <!--<CheckBox-->
-                <!--android:id="@+id/cbPC_bloodsugar"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_weight="1"-->
-                <!--android:gravity="center_horizontal|center_vertical"-->
-                <!--android:text="餐後"-->
-                <!--android:textSize="36sp" />-->
+            <!--android:id="@+id/cbPC_bloodsugar"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center_horizontal|center_vertical"-->
+            <!--android:text="餐後"-->
+            <!--android:textSize="36sp" />-->
         </RadioGroup>
 
+        <Button
+            android:id="@+id/bConfirm_bloodsugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="確認"
+            android:textSize="36sp" />
+
+
     </LinearLayout>
-    <Button
-        android:id="@+id/bConfirm_bloodsugar"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="確認"
-        android:textSize="36sp" />
 
 </LinearLayout>

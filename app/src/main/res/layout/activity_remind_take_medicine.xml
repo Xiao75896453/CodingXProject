@@ -35,23 +35,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:layout_weight="4"
-        android:weightSum="2"
-        android:layout_margin="5dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="2">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
             android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:weightSum="8"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="8">
+
                 <ImageView
                     android:id="@+id/ivDrugImage1"
                     android:layout_width="match_parent"
@@ -68,12 +71,14 @@
                     android:text="普拿疼"
                     android:textSize="18sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:weightSum="8"
                 android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:weightSum="8">
+
                 <ImageView
                     android:id="@+id/ivDrugImage2"
                     android:layout_width="match_parent"
@@ -92,25 +97,29 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
             android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:weightSum="8"
-                android:layout_height="match_parent">
+                android:weightSum="8">
+
                 <ImageView
                     android:id="@+id/ivDrugImage3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="6"
                     app:srcCompat="@mipmap/ic_launcher" />
+
                 <TextView
                     android:id="@+id/tvDrugName3"
                     android:layout_width="match_parent"
@@ -120,12 +129,13 @@
                     android:text="普拿疼"
                     android:textSize="18sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:weightSum="8"
-                android:layout_height="match_parent">
+                android:weightSum="8">
 
                 <ImageView
                     android:id="@+id/ivDrugImage4"

@@ -38,33 +38,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_weight="3"
         android:orientation="vertical"
         android:weightSum="3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
             android:layout_weight="1"
-            android:weightSum="2"
-            android:background="@drawable/underline">
+            android:background="@drawable/underline"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <TextView
                 android:id="@+id/tvRecordItem1"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="血糖"
                 android:textSize="36sp" />
 
             <TextView
                 android:id="@+id/tvRecordValue1"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="1次"
                 android:textSize="36sp" />
 
@@ -73,10 +73,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
             android:layout_weight="1"
-            android:weightSum="2"
-            android:background="@drawable/underline">
+            android:background="@drawable/underline"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <TextView
                 android:id="@+id/tvRecordItem2"
@@ -89,8 +89,8 @@
             <TextView
                 android:id="@+id/tvRecordValue2"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="2次"
                 android:textSize="36sp" />
 
@@ -99,23 +99,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
             android:layout_weight="1"
-            android:weightSum="2"
-            android:background="@drawable/underline">
+            android:background="@drawable/underline"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <TextView
                 android:id="@+id/tvRecordItem3"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/tvRecordValue3"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="TextView" />
         </LinearLayout>
 
@@ -123,25 +123,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:weightSum="2"
-        android:layout_margin="30dp">
-
-        <Button
-            android:id="@+id/bRemindAgain"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="再提醒"
-            android:textSize="36sp" />
+        android:weightSum="2">
 
         <Button
             android:id="@+id/bFillRecord"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="填寫"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/bRemindAgain"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="再提醒"
             android:textSize="36sp" />
 
     </LinearLayout>

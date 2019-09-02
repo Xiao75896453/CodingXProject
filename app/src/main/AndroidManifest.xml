@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainFunctionsWithBottomBar.HomePageActivity"></activity>
+        <activity android:name=".DataRecord.DataRecord_Heartbeat"></activity>
+        <activity android:name=".MainFunctionsWithBottomBar.HomePageActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.codingxproject.CustomNumberPicker;
 import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
 
@@ -29,7 +30,7 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
         setContentView(R.layout.activity_data_record_blood_sugar);
         final TextView tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
         Button resetTime = (Button) findViewById(R.id.bChangeTime);
-        final NumberPicker mNumberPicker = (NumberPicker)findViewById(R.id.numberpicker_bloodsugar);
+        final CustomNumberPicker mNumberPicker = (CustomNumberPicker)findViewById(R.id.numberpicker_bloodsugar);
         final Button bConfirmBloodSugar=(Button)findViewById(R.id.bConfirm_bloodsugar);
         final TextView tvBloodSugar=(TextView)findViewById(R.id.tvTitle_bloodsugar);
         final RadioButton rbAC_bloodsugar=(RadioButton) findViewById(R.id.rbAC_bloodsugar);

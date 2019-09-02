@@ -13,6 +13,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.codingxproject.CustomNumberPicker;
 import com.example.codingxproject.R;
 
 import java.util.Calendar;
@@ -28,7 +29,7 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
         setContentView(R.layout.activity_data_record_blood_pressure_sbp);
         String currentHour, currentMin;
         final TextView tvCurrentTime = (TextView) findViewById(R.id.tvTime);
-        final NumberPicker mNumberPicker = (NumberPicker)findViewById(R.id.numberpicker_SBP);
+        final CustomNumberPicker mNumberPicker = (CustomNumberPicker) findViewById(R.id.numberpicker_SBP);
         final Button bConfirmSBP=(Button)findViewById(R.id.bConfirm_SBP);
         final TextView tvSBP=(TextView)findViewById(R.id.tvTitle_SBP);
         currentHour = setTimeForm(currentCalendar.get(Calendar.HOUR_OF_DAY));

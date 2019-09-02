@@ -178,48 +178,71 @@ public class DataReview extends AppCompatActivity {
         return reference_min;
     }
 
-    public List<PointValue> set_yAxisValues(List<PointValue> yAxisValues, int[] yAxisData) {
-        for (int i = 0; i < yAxisData.length; i++) {
-            yAxisValues.add(new PointValue(i, yAxisData[i]));
-        }
-
-        return yAxisValues;
-    }
-
     public void set_chart_HbA1c(int position)  //position為spinner的period_list的指標
     {
-        int[] yAxisData = null;
-        String[] axisData = null;
+        int[] yAxisData_HbA1c = null;  //HbA1c折線
+        int[] yAxisData_HbA1c_reference_max = set_yAxis_reference_max(position, 110);  //HbA1c參考值上限
+        int[] yAxisData_HbA1c_reference_min = set_yAxis_reference_min(position, 70);  //HbA1c參考值下限
+        int[] yAxisData_HbA1c_warning = null;  //HbA1c危險值
+        String[] xAxisData = null;  //座標軸顯示值
         int yAxisData_max = 0;
         int yAxisData_min = 0;
 
         if (position == 0) {
             String[] axisData_day = {"morning", "noon", "evening", "night"};
-            axisData = axisData_day;
+            xAxisData = axisData_day;
 
-            int[] yAxisData_HbA1c_day = {83, 85, 84, 83};
-            yAxisData = yAxisData_HbA1c_day;
+            int[] yAxisData_HbA1c_day = {83, 120, 84, 50};
+            yAxisData_HbA1c = yAxisData_HbA1c_day;
+
+            //HbA1c warning
+            int[] yAxisData_HbA1c_warning_day = new int[4];
+            for(int i=0;i<4;i++)
+                if(yAxisData_HbA1c_day[i]>110||yAxisData_HbA1c_day[i]<70)
+                    yAxisData_HbA1c_warning_day[i] = yAxisData_HbA1c_day[i];
+                else
+                    yAxisData_HbA1c_warning_day[i] = -1000;
+            yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_day;
         }
 
         if (position == 1) {
             String[] axisData_week = {"Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"};
-            axisData = axisData_week;
+            xAxisData = axisData_week;
 
             int[] yAxisData_HbA1c_week = {80, 81, 82, 83, 84, 85, 85};
-            yAxisData = yAxisData_HbA1c_week;
+            yAxisData_HbA1c = yAxisData_HbA1c_week;
+
+            //HbA1c warning
+            int[] yAxisData_HbA1c_warning_week = new int[7];
+            for(int i=0;i<7;i++)
+                if(yAxisData_HbA1c_week[i]>110||yAxisData_HbA1c_week[i]<70)
+                    yAxisData_HbA1c_warning_week[i] = yAxisData_HbA1c_week[i];
+                else
+                    yAxisData_HbA1c_warning_week[i] = -1000;
+            yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_week;
         }
 
         if (position == 2) {
             String[] axisData_month = new String[31];
             for (int i = 0; i < 31; i++)
                 axisData_month[i] = Integer.toString(i + 1);
-            axisData = axisData_month;
+            xAxisData = axisData_month;
 
             int[] yAxisData_HbA1c_month = {83, 85, 84, 83, 83, 86, 85, 82, 83, 83, 82, 82, 85, 83, 81, 82, 82, 81, 80, 82, 82, 85, 81, 82, 85, 84, 83, 83, 80, 84, 85};
-            yAxisData = yAxisData_HbA1c_month;
+            yAxisData_HbA1c = yAxisData_HbA1c_month;
+
+            //HbA1c warning
+            int[] yAxisData_HbA1c_warning_month = new int[31];
+            for(int i=0;i<31;i++)
+                if(yAxisData_HbA1c_month[i]>110||yAxisData_HbA1c_month[i]<70)
+                    yAxisData_HbA1c_warning_month[i] = yAxisData_HbA1c_month[i];
+                else
+                    yAxisData_HbA1c_warning_month[i] = -1000;
+            yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_month;
         }
 
         if (position == 3) {
+            //調整為當月起的前6月
             String[] axisData_6months = new String[6];
             int month_pos = current_month - 5;
             for (int i = 0; i < 6; i++) {
@@ -230,62 +253,154 @@ public class DataReview extends AppCompatActivity {
                 axisData_6months[i] = month[month_pos];
                 month_pos++;
             }
-            axisData = axisData_6months;
+            xAxisData = axisData_6months;
 
             int[] yAxisData_HbA1c_6months = {83, 85, 84, 83, 83, 86};
-            yAxisData = yAxisData_HbA1c_6months;
-        }
+            yAxisData_HbA1c = yAxisData_HbA1c_6months;
 
-        //排版
-        for (int i = 0; i < axisData.length; i++)
-            if (yAxisData[i] >= yAxisData_max)
-                yAxisData_max = yAxisData[i];
-        for (int i = 0; i < axisData.length; i++)
-            if (i == 0)
-                yAxisData_min = yAxisData[i];
-            else if (yAxisData[i] <= yAxisData_min)
-                yAxisData_min = yAxisData[i];
+            //HbA1c warning
+            int[] yAxisData_HbA1c_warning_6months= new int[6];
+            for(int i=0;i<6;i++)
+                if(yAxisData_HbA1c_6months[i]>110||yAxisData_HbA1c_6months[i]<70)
+                    yAxisData_HbA1c_warning_6months[i] = yAxisData_HbA1c_6months[i];
+                else
+                    yAxisData_HbA1c_warning_6months[i] = -1000;
+            yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_6months;
+        }
 
         lineChartView = findViewById(R.id.chart);
-        List yAxisValues = new ArrayList();
-        List axisValues = new ArrayList();
 
-
-        Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));
-        line.setCubic(true);  //平滑曲線
-
-        for (int i = 0; i < axisData.length; i++) {
-            axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
+        //將陣列中的String儲存在X軸顯示
+        List<AxisValue> axisValues = new ArrayList<AxisValue>();
+        for (int i = 0; i < xAxisData.length; i++) {
+            axisValues.add(i, new AxisValue(i).setLabel(xAxisData[i]));
         }
 
-        for (int i = 0; i < yAxisData.length; i++) {
-            yAxisValues.add(new PointValue(i, yAxisData[i]));
+        //將陣列裡的y值儲存在yAxisValues
+        List<PointValue> yAxisValues_HbA1c = new ArrayList<PointValue>();
+        for (int i = 0; i < yAxisData_HbA1c.length; i++) {
+            yAxisValues_HbA1c.add(new PointValue(i, yAxisData_HbA1c[i]));
+        }
+        List<PointValue> yAxisValues_HbA1c_reference_max = new ArrayList<PointValue>();
+        for (int i = 0; i < yAxisData_HbA1c_reference_max.length; i++) {
+            yAxisValues_HbA1c_reference_max.add(new PointValue(i, yAxisData_HbA1c_reference_max[i]));
+        }
+        List<PointValue> yAxisValues_HbA1c_reference_min = new ArrayList<PointValue>();
+        for (int i = 0; i < yAxisData_HbA1c_reference_min.length; i++) {
+            yAxisValues_HbA1c_reference_min.add(new PointValue(i, yAxisData_HbA1c_reference_min[i]));
+        }
+        List<PointValue> yAxisValues_HbA1c_warning = new ArrayList<PointValue>();
+        for (int i = 0; i < xAxisData.length; i++) {
+            yAxisValues_HbA1c_warning.add(new PointValue(i, yAxisData_HbA1c_warning[i]));
         }
 
-        List lines = new ArrayList();
-        lines.add(line);
+        //多條線集合
+        List<Line> lines = new ArrayList<Line>();
+
+        //宣告新線並作客製化
+
+        //HbA1c折線
+        Line line_HbA1c = new Line(yAxisValues_HbA1c).setColor(Color.parseColor("#0000FF"));
+        line_HbA1c.setCubic(true);  //平滑曲線
+        line_HbA1c.setHasLabelsOnlyForSelected(true);
+
+        //HbA1c參考值上限
+        Line HbA1c_reference_max_line = new Line(yAxisValues_HbA1c_reference_max).setColor(Color.parseColor("#B7B7B7"));
+        HbA1c_reference_max_line.setFilled(false);
+        HbA1c_reference_max_line.setHasPoints(false);
+
+        //HbA1c參考值下限
+        Line HbA1c_reference_min_line = new Line(yAxisValues_HbA1c_reference_min).setColor(Color.parseColor("#B7B7B7"));
+        HbA1c_reference_min_line.setFilled(false);
+        HbA1c_reference_min_line.setHasPoints(false);
+
+        //HbA1c危險值
+        Line line_HbA1c_warning = new Line(yAxisValues_HbA1c_warning).setColor(Color.parseColor("#FF0000"));
+        line_HbA1c_warning.setHasPoints(true);
+        line_HbA1c_warning.setHasLabels(true);
+        line_HbA1c_warning.setHasLines(false);
+        line_HbA1c_warning.setFilled(false);
+        line_HbA1c_warning.setHasPoints(true);
+
+        //將線加入lines(線集合)
+        lines.add(line_HbA1c);
+        lines.add(HbA1c_reference_max_line);
+        lines.add(HbA1c_reference_min_line);
+        lines.add(line_HbA1c_warning);
 
         LineChartData data = new LineChartData();
         data.setLines(lines);
 
-        Axis axis = new Axis();
-        axis.setValues(axisValues);
-        axis.setTextSize(16);
-        axis.setTextColor(Color.parseColor("#03A9F4"));
-        data.setAxisXBottom(axis);
+        lineChartView.setLineChartData(data);
 
+        //X座標軸
+        Axis xAxis = new Axis();
+        xAxis.setValues(axisValues);
+        xAxis.setTextSize(16);
+        xAxis.setTextColor(Color.parseColor("#03A9F4"));
+        data.setAxisXBottom(xAxis);
+
+        //Y座標軸
         Axis yAxis = new Axis();
-        yAxis.setName("mmol/L");
+        yAxis.setName("mm-Hg");
         yAxis.setTextColor(Color.parseColor("#03A9F4"));
         yAxis.setTextSize(16);
         data.setAxisYLeft(yAxis);
 
-        lineChartView.setLineChartData(data);
+
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        viewport.top = 2 * yAxisData_max - yAxisData_min;  //排版
-        viewport.bottom = 3 * yAxisData_min - 2 * yAxisData_max;
+
+        //排版
+        for(int i=0;i<yAxisData_HbA1c.length;i++) {
+            if (i == 0) {
+                yAxisData_max = yAxisData_HbA1c[i];
+                yAxisData_min = yAxisData_HbA1c[i];
+            }
+            if(yAxisData_HbA1c[i]>=yAxisData_max)
+                yAxisData_max = yAxisData_HbA1c[i];
+            if(yAxisData_HbA1c[i]<=yAxisData_min)
+                yAxisData_min = yAxisData_HbA1c[i];
+        }
+        if(yAxisData_max>=150)
+            viewport.top = yAxisData_max+50;
+        else
+            viewport.top = 150;  //default
+        if(yAxisData_min<=0)
+            viewport.bottom = yAxisData_min-50;
+        else
+            viewport.bottom = 0;  //default
+        Log.e("yAxisData_max",Integer.toString(yAxisData_max)+"");
+        Log.e("yAxisData_min",Integer.toString(yAxisData_min)+"");
+
+        //排版
+        if(position == 0)
+            viewport.left=(float)(-0.5);
+        if(position == 1)
+            viewport.left=-1;
+        if(position == 2)
+            viewport.left=-5;
+        if(position == 3)
+            viewport.left=-1;
+
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
+
+
+        lineChartView.setOnValueTouchListener(new LineChartOnValueSelectListener() {
+
+            @Override
+            public void onValueDeselected() {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onValueSelected(int arg0, int arg1, PointValue arg2) {
+                // TODO Auto-generated method stub
+                Log.d("click point", arg2.getY() + "");
+                //line.setHasLabels(true);
+            }
+        });
     }
 
     public void set_chart_BP(int position)  //position為spinner的period_list的指標
@@ -296,6 +411,8 @@ public class DataReview extends AppCompatActivity {
         int[] yAxisData_SBP_reference_min = set_yAxis_reference_min(position, 100);  //SBP參考值下限
         int[] yAxisData_DBP_reference_max = set_yAxis_reference_max(position, 85);  //DBP參考值上限
         int[] yAxisData_DBP_reference_min = set_yAxis_reference_min(position, 66);  //DBP參考值下限
+        int[] yAxisData_SBP_warning = null;  //SBP危險值
+        int[] yAxisData_DBP_warning = null;  //DBP危險值
         String[] xAxisData = null;  //座標軸顯示值
 
         //排版
@@ -307,11 +424,29 @@ public class DataReview extends AppCompatActivity {
             String[] xAxisData_day = {"morning", "noon", "evening", "night"};
             xAxisData = xAxisData_day;
 
-            int[] yAxisData_SBP_day = {110, 112, 111, 118};
+            int[] yAxisData_SBP_day = {110, 170, 111, 150};
             yAxisData_SBP = yAxisData_SBP_day;
 
-            int[] yAxisData_DBP_day = {83, 85, 84, 83};
+            int[] yAxisData_DBP_day = {83, 91, 84, 97};
             yAxisData_DBP = yAxisData_DBP_day;
+
+            //SBP warning
+            int[] yAxisData_SBP_warning_day = new int[4];
+            for(int i=0;i<4;i++)
+                if(yAxisData_SBP_day[i]>129||yAxisData_SBP_day[i]<100)
+                    yAxisData_SBP_warning_day[i] = yAxisData_SBP_day[i];
+                else
+                    yAxisData_SBP_warning_day[i] = -1000;
+            yAxisData_SBP_warning = yAxisData_SBP_warning_day;
+
+            //DBP warning
+            int[] yAxisData_DBP_warning_day = new int[4];
+            for(int i=0;i<4;i++)
+                if(yAxisData_DBP_day[i]>85||yAxisData_DBP_day[i]<66)
+                    yAxisData_DBP_warning_day[i] = yAxisData_DBP_day[i];
+                else
+                    yAxisData_DBP_warning_day[i] = -1000;
+            yAxisData_DBP_warning = yAxisData_DBP_warning_day;
         }
 
         //一週內資料
@@ -324,6 +459,24 @@ public class DataReview extends AppCompatActivity {
 
             int[] yAxisData_DBP_week = {80, 81, 82, 83, 84, -9, 85};
             yAxisData_DBP = yAxisData_DBP_week;
+
+            //SBP warning
+            int[] yAxisData_warning_week = new int[7];
+            for(int i=0;i<7;i++)
+                if(yAxisData_SBP_week[i]>129||yAxisData_SBP_week[i]<100)
+                    yAxisData_warning_week[i] = yAxisData_SBP_week[i];
+                else
+                    yAxisData_warning_week[i] = -1000;
+            yAxisData_SBP_warning = yAxisData_warning_week;
+
+            //DBP warning
+            int[] yAxisData_DBP_warning_week = new int[7];
+            for(int i=0;i<7;i++)
+                if(yAxisData_DBP_week[i]>85||yAxisData_DBP_week[i]<66)
+                    yAxisData_DBP_warning_week[i] = yAxisData_DBP_week[i];
+                else
+                    yAxisData_DBP_warning_week[i] = -1000;
+            yAxisData_DBP_warning = yAxisData_DBP_warning_week;
         }
 
         //一月內資料
@@ -338,6 +491,24 @@ public class DataReview extends AppCompatActivity {
 
             int[] yAxisData_DBP_month = {83, 85, 84, 83, 83, 86, 85, 82, 83, 83, 82, 82, 85, 83, 81, 82, 82, 81, 80, 82, 82, 85, 81, 82, 85, 84, 83, 83, 80, 84, 85};
             yAxisData_DBP = yAxisData_DBP_month;
+
+            //SBP warning
+            int[] yAxisData_warning_month = new int[31];
+            for(int i=0;i<31;i++)
+                if(yAxisData_SBP_month[i]>129||yAxisData_SBP_month[i]<100)
+                    yAxisData_warning_month[i] = yAxisData_SBP_month[i];
+                else
+                    yAxisData_warning_month[i] = -1000;
+            yAxisData_SBP_warning = yAxisData_warning_month;
+
+            //DBP warning
+            int[] yAxisData_DBP_warning_month = new int[31];
+            for(int i=0;i<31;i++)
+                if(yAxisData_DBP_month[i]>85||yAxisData_DBP_month[i]<66)
+                    yAxisData_DBP_warning_month[i] = yAxisData_DBP_month[i];
+                else
+                    yAxisData_DBP_warning_month[i] = -1000;
+            yAxisData_DBP_warning = yAxisData_DBP_warning_month;
         }
 
         //6個月內資料
@@ -359,6 +530,24 @@ public class DataReview extends AppCompatActivity {
 
             int[] yAxisData_DBP_6months = {83, 85, 84, 83, 83, 86};
             yAxisData_DBP = yAxisData_DBP_6months;
+
+            //SBP warning
+            int[] yAxisData_warning_6months = new int[6];
+            for(int i=0;i<6;i++)
+                if(yAxisData_SBP_6months[i]>129||yAxisData_SBP_6months[i]<100)
+                    yAxisData_warning_6months[i] = yAxisData_SBP_6months[i];
+                else
+                    yAxisData_warning_6months[i] = -1000;
+            yAxisData_SBP_warning = yAxisData_warning_6months;
+
+            //DBP warning
+            int[] yAxisData_DBP_warning_6months = new int[6];
+            for(int i=0;i<6;i++)
+                if(yAxisData_DBP_6months[i]>85||yAxisData_DBP_6months[i]<66)
+                    yAxisData_DBP_warning_6months[i] = yAxisData_DBP_6months[i];
+                else
+                    yAxisData_DBP_warning_6months[i] = -1000;
+            yAxisData_DBP_warning = yAxisData_DBP_warning_6months;
         }
 
         lineChartView = findViewById(R.id.chart);
@@ -394,6 +583,14 @@ public class DataReview extends AppCompatActivity {
         for (int i = 0; i < yAxisData_DBP_reference_min.length; i++) {
             yAxisValues_DBP_reference_min.add(new PointValue(i, yAxisData_DBP_reference_min[i]));
         }
+        List<PointValue> yAxisValues_SBP_warning = new ArrayList<PointValue>();
+        for (int i = 0; i < xAxisData.length; i++) {
+            yAxisValues_SBP_warning.add(new PointValue(i, yAxisData_SBP_warning[i]));
+        }
+        List<PointValue> yAxisValues_DBP_warning = new ArrayList<PointValue>();
+        for (int i = 0; i < xAxisData.length; i++) {
+            yAxisValues_DBP_warning.add(new PointValue(i, yAxisData_DBP_warning[i]));
+        }
 
         //多條線集合
         List<Line> lines = new ArrayList<Line>();
@@ -403,12 +600,12 @@ public class DataReview extends AppCompatActivity {
         //SBP折線
         Line line_SBP = new Line(yAxisValues_SBP).setColor(Color.parseColor("#9C27B0"));
         line_SBP.setCubic(true);  //平滑曲線
-        line_SBP.setHasLabels(true);
+        line_SBP.setHasLabelsOnlyForSelected(true);
 
         //DBP折線
         Line line_DBP = new Line(yAxisValues_DBP).setColor(Color.parseColor("#32CC32"));
         line_DBP.setCubic(true);  //平滑曲線
-        line_DBP.setHasLabels(true);
+        line_DBP.setHasLabelsOnlyForSelected(true);
 
         //SBP參考值上限
         Line SBP_reference_max_line = new Line(yAxisValues_SBP_reference_max).setColor(Color.parseColor("#B7B7B7"));
@@ -430,6 +627,22 @@ public class DataReview extends AppCompatActivity {
         DBP_reference_min_line.setFilled(false);
         DBP_reference_min_line.setHasPoints(false);
 
+        //SBP危險值
+        Line line_SBP_warning = new Line(yAxisValues_SBP_warning).setColor(Color.parseColor("#FF0000"));
+        line_SBP_warning.setHasPoints(true);
+        line_SBP_warning.setHasLabels(true);
+        line_SBP_warning.setHasLines(false);
+        line_SBP_warning.setFilled(false);
+        line_SBP_warning.setHasPoints(true);
+
+        //DBP危險值
+        Line line_DBP_warning = new Line(yAxisValues_DBP_warning).setColor(Color.parseColor("#FF0000"));
+        line_DBP_warning.setHasPoints(true);
+        line_DBP_warning.setHasLabels(true);
+        line_DBP_warning.setHasLines(false);
+        line_DBP_warning.setFilled(false);
+        line_DBP_warning.setHasPoints(true);
+
         //將線加入lines(線集合)
         lines.add(line_SBP);
         lines.add(line_DBP);
@@ -437,6 +650,8 @@ public class DataReview extends AppCompatActivity {
         lines.add(SBP_reference_min_line);
         lines.add(DBP_reference_max_line);
         lines.add(DBP_reference_min_line);
+        lines.add(line_SBP_warning);
+        lines.add(line_DBP_warning);
 
         LineChartData data = new LineChartData();
         data.setLines(lines);
@@ -487,6 +702,16 @@ public class DataReview extends AppCompatActivity {
             viewport.bottom = 0;  //default
         Log.e("yAxisData_max",Integer.toString(yAxisData_max)+"");
         Log.e("yAxisData_min",Integer.toString(yAxisData_min)+"");
+
+        //排版
+        if(position == 0)
+            viewport.left=(float)(-0.5);
+        if(position == 1)
+            viewport.left=-1;
+        if(position == 2)
+            viewport.left=-5;
+        if(position == 3)
+            viewport.left=-1;
 
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);

@@ -33,7 +33,10 @@
     </string-array>
 
     <string name="drug_descriptions">nalevna.fnvjnvan:　fvjanlfnanbkaeof\n sne;rjgnsrtjbrbsn;rb\n nsldfbnsbfv: labrhvalebvrlhv\n</string>
-
+    <string name="drug_Name">abc123</string>
+    <string name="date">2019年8月22日</string>
+    <string name="off_switch">OFF</string>
+    <string name="on_switch">ON</string>
 
     <string name="title_activity_home_page">HomePageActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

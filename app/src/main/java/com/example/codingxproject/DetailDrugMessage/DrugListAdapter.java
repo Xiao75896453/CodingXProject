@@ -30,6 +30,7 @@ class DrugListAdapter extends RecyclerView.Adapter<DrugListAdapter.ViewHolder> {
     @Override
     public DrugListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.activity_drug_card, parent, false);
+
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }

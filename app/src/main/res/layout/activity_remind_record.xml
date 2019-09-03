@@ -128,19 +128,19 @@
         android:weightSum="2">
 
         <Button
-            android:id="@+id/bFillRecord"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="填寫"
-            android:textSize="36sp" />
-
-        <Button
             android:id="@+id/bRemindAgain"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="再提醒"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/bFillRecord"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="填寫"
             android:textSize="36sp" />
 
     </LinearLayout>

@@ -72,19 +72,19 @@
         android:weightSum="2">
 
         <Button
-            android:id="@+id/bDrugGetConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="確定"
-            android:textSize="36sp" />
-
-        <Button
             android:id="@+id/bRemindAgain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="再提醒"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/bDrugGetConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="確定"
             android:textSize="36sp" />
 
     </LinearLayout>

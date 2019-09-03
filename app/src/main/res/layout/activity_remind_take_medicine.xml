@@ -32,130 +32,139 @@
             android:textSize="36sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:layout_weight="4"-->
+        <!--android:orientation="vertical"-->
+        <!--android:weightSum="2">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:orientation="vertical"-->
+                <!--android:weightSum="8">-->
+
+                <!--<ImageButton-->
+                    <!--android:id="@+id/ivDrugImage1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="6"-->
+                    <!--app:srcCompat="@mipmap/ic_launcher" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvDrugName1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="普拿疼"-->
+                    <!--android:textSize="18sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:orientation="vertical"-->
+                <!--android:weightSum="8">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/ivDrugImage2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="6"-->
+                    <!--android:tint="@color/transparent"-->
+                    <!--android:tintMode="src_over"-->
+                    <!--app:srcCompat="@drawable/ojigi_man"-->
+                    <!--app:tintMode="src_over" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvDrugName2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="普拿疼"-->
+                    <!--android:textSize="18sp" />-->
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:orientation="vertical"-->
+                <!--android:weightSum="8">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/ivDrugImage3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="6"-->
+                    <!--app:srcCompat="@mipmap/ic_launcher" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvDrugName3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="普拿疼"-->
+                    <!--android:textSize="18sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:orientation="vertical"-->
+                <!--android:weightSum="8">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/ivDrugImage4"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="6"-->
+                    <!--app:srcCompat="@mipmap/ic_launcher" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvDrugName4"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="普拿疼"-->
+                    <!--android:textSize="18sp" />-->
+
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/takeMedRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:layout_weight="4"
-        android:orientation="vertical"
-        android:weightSum="2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="8">
-
-                <ImageView
-                    android:id="@+id/ivDrugImage1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"
-                    app:srcCompat="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:id="@+id/tvDrugName1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="普拿疼"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="8">
-
-                <ImageView
-                    android:id="@+id/ivDrugImage2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"
-                    app:srcCompat="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:id="@+id/tvDrugName2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="普拿疼"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="8">
-
-                <ImageView
-                    android:id="@+id/ivDrugImage3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"
-                    app:srcCompat="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:id="@+id/tvDrugName3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="普拿疼"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="8">
-
-                <ImageView
-                    android:id="@+id/ivDrugImage4"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6"
-                    app:srcCompat="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:id="@+id/tvDrugName4"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="普拿疼"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+        android:layout_weight="4"></androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -165,19 +174,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/bHbA1c"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="確定"
-            android:textSize="36sp" />
-
-        <Button
             android:id="@+id/bSBP"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:text="再提醒"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/bHbA1c"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="確定"
             android:textSize="36sp" />
 
     </LinearLayout>

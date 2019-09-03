@@ -34,7 +34,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
 
                 <Button
                     android:id="@+id/morning_btm"
@@ -91,13 +92,26 @@
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
+                <TextView
+                    android:id="@+id/space"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/sleep"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
+                    android:background="@color/white"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@id/title"
+                    app:layout_constraintTop_toTopOf="@id/title" />
+
                 <Button
                     android:id="@+id/bTotalDrug"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/cardview_light_background"
+                    android:background="@drawable/my_button"
+                    android:textColor="@color/Gray"
                     android:text="所有藥物"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold"

@@ -3,31 +3,22 @@ package com.example.codingxproject.MainFunctionsWithBottomBar;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
-import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.ItemAdapter;
-import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.NotificationSetting;
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.R;
 import com.example.codingxproject.SetTimeActivity;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -100,7 +91,6 @@ public class SetAlarmFragment extends Fragment {
             mainViewholder.time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    openSetTime();
                     new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMin) {
@@ -114,10 +104,6 @@ public class SetAlarmFragment extends Fragment {
             mainViewholder.period.setText(getItem(position));
 
             return convertView;
-        }
-        public void openSetTime(){
-            Intent intent = new Intent(getActivity(), SetTimeActivity.class);
-            startActivity(intent);
         }
     }
     public class ViewHolder{

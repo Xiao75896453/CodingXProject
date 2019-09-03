@@ -53,77 +53,39 @@ public class PeriodDrugFragment extends Fragment {
         bTotalDrug=(Button) getView().findViewById(R.id.bTotalDrug);
         coverText = (ConstraintLayout) getView().findViewById(R.id.cover);
 
-        btmMorning.setBackgroundColor(Color.GREEN);
-        btmBreakfast.setBackgroundColor(Color.GREEN);
-        btmLunch.setBackgroundColor(Color.GREEN);
-        btmDinner.setBackgroundColor(Color.GREEN);
-        btmNight.setBackgroundColor(Color.GREEN);
+        setButtonToGreen();
 
         View.OnClickListener listener=new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 if(view.getId()==R.id.morning_btm){
-//                    Toast.makeText(getActivity(),"morningBtmClicked",Toast.LENGTH_LONG).show();
-                    coverText.setVisibility(View.GONE);
+//                  Toast.makeText(getActivity(),"morningBtmClicked",Toast.LENGTH_LONG).show();
+                    setVisibilityGone();
+                    setButtonToGreen();
                     mMorningSV.setVisibility(View.VISIBLE);
-                    mBreakfastSV.setVisibility(View.GONE);
-                    mLunchSV.setVisibility(View.GONE);
-                    mDinnerSV.setVisibility(View.GONE);
-                    mNightSV.setVisibility(View.GONE);
-                    btmMorning.setBackgroundColor(Color.WHITE);
-                    btmBreakfast.setBackgroundColor(Color.GREEN);
-                    btmLunch.setBackgroundColor(Color.GREEN);
-                    btmDinner.setBackgroundColor(Color.GREEN);
-                    btmNight.setBackgroundColor(Color.GREEN);
+                    setButtonClickedUI(btmMorning);
+
                 }else if(view.getId()==R.id.breakfast_btm){
 //                    Toast.makeText(getActivity(),"breakfastBtmClicked",Toast.LENGTH_LONG).show();
-                    coverText.setVisibility(View.GONE);
-                    mMorningSV.setVisibility(View.GONE);
+                    setVisibilityGone();
+                    setButtonToGreen();
                     mBreakfastSV.setVisibility(View.VISIBLE);
-                    mLunchSV.setVisibility(View.GONE);
-                    mDinnerSV.setVisibility(View.GONE);
-                    mNightSV.setVisibility(View.GONE);
-                    btmMorning.setBackgroundColor(Color.GREEN);
-                    btmBreakfast.setBackgroundColor(Color.WHITE);
-                    btmLunch.setBackgroundColor(Color.GREEN);
-                    btmDinner.setBackgroundColor(Color.GREEN);
-                    btmNight.setBackgroundColor(Color.GREEN);
+                    setButtonClickedUI(btmBreakfast);
                 }else if(view.getId()==R.id.lunch_btm){
-                    coverText.setVisibility(View.GONE);
-                    mMorningSV.setVisibility(View.GONE);
-                    mBreakfastSV.setVisibility(View.GONE);
+                    setVisibilityGone();
+                    setButtonToGreen();
                     mLunchSV.setVisibility(View.VISIBLE);
-                    mDinnerSV.setVisibility(View.GONE);
-                    mNightSV.setVisibility(View.GONE);
-                    btmMorning.setBackgroundColor(Color.GREEN);
-                    btmBreakfast.setBackgroundColor(Color.GREEN);
-                    btmLunch.setBackgroundColor(Color.WHITE);
-                    btmDinner.setBackgroundColor(Color.GREEN);
-                    btmNight.setBackgroundColor(Color.GREEN);
+                    setButtonClickedUI(btmLunch);
                 }else if(view.getId()==R.id.dinner_btm){
-                    coverText.setVisibility(View.GONE);
-                    mMorningSV.setVisibility(View.GONE);
-                    mBreakfastSV.setVisibility(View.GONE);
-                    mLunchSV.setVisibility(View.GONE);
+                    setVisibilityGone();
+                    setButtonToGreen();
                     mDinnerSV.setVisibility(View.VISIBLE);
-                    mNightSV.setVisibility(View.GONE);
-                    btmMorning.setBackgroundColor(Color.GREEN);
-                    btmBreakfast.setBackgroundColor(Color.GREEN);
-                    btmLunch.setBackgroundColor(Color.GREEN);
-                    btmDinner.setBackgroundColor(Color.WHITE);
-                    btmNight.setBackgroundColor(Color.GREEN);
+                    setButtonClickedUI(btmDinner);
                 }else if(view.getId()==R.id.night_btm){
-                    coverText.setVisibility(View.GONE);
-                    mMorningSV.setVisibility(View.GONE);
-                    mBreakfastSV.setVisibility(View.GONE);
-                    mLunchSV.setVisibility(View.GONE);
-                    mDinnerSV.setVisibility(View.GONE);
+                    setVisibilityGone();
+                    setButtonToGreen();
                     mNightSV.setVisibility(View.VISIBLE);
-                    btmMorning.setBackgroundColor(Color.GREEN);
-                    btmBreakfast.setBackgroundColor(Color.GREEN);
-                    btmLunch.setBackgroundColor(Color.GREEN);
-                    btmDinner.setBackgroundColor(Color.GREEN);
-                    btmNight.setBackgroundColor(Color.WHITE);
+                    setButtonClickedUI(btmNight);
                 }else if(view.getId()==R.id.bTotalDrug){
                     startActivity(new Intent(getActivity(), DrugsInfoActivity.class));
                 }
@@ -137,9 +99,31 @@ public class PeriodDrugFragment extends Fragment {
         bTotalDrug.setOnClickListener(listener);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+    public void setVisibilityGone(){
+        coverText.setVisibility(View.GONE);
+        mMorningSV.setVisibility(View.GONE);
+        mBreakfastSV.setVisibility(View.GONE);
+        mLunchSV.setVisibility(View.GONE);
+        mDinnerSV.setVisibility(View.GONE);
+        mNightSV.setVisibility(View.GONE);
+    }
+
+    public void setButtonToGreen(){
+        setButton(btmMorning);
+        setButton(btmBreakfast);
+        setButton(btmLunch);
+        setButton(btmDinner);
+        setButton(btmNight);
+    }
+    public void setButton(Button b){
+//        b.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        b.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
+//        b.setTextColor(getResources().getColor(R.color.white));
+        b.setTextColor(getResources().getColor(R.color.Gray));
+    }
+    public void setButtonClickedUI(Button b){
+        b.setBackgroundColor(getResources().getColor(R.color.transparent));
+        b.setTextColor(getResources().getColor(R.color.Gray));
     }
 }
 

@@ -174,7 +174,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/bSBP"
+            android:id="@+id/bRemindAgain"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -182,7 +182,7 @@
             android:textSize="36sp" />
 
         <Button
-            android:id="@+id/bHbA1c"
+            android:id="@+id/bTakeMedConfirm"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"

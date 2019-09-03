@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
 
 import org.json.JSONException;
@@ -54,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
                             if(success){
                                 String name=jsonResponse.getString("name");
 
-                                Intent intent=new Intent(LoginActivity.this, UserAreaActivity.class);
+//                                Intent intent=new Intent(LoginActivity.this, UserAreaActivity.class);
+                                Intent intent=new Intent(LoginActivity.this, HomePageActivity.class);
                                 intent.putExtra("name",name);
                                 intent.putExtra("username",userName);
 

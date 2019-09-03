@@ -62,6 +62,8 @@ public class RegisterActivity extends AppCompatActivity {
                 queue.add(registerRequest);
                 //Debug
 
+//                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
+//                RegisterActivity.this.startActivity(intent);
                 Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
                 RegisterActivity.this.startActivity(intent);
 

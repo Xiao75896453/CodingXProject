@@ -4,5 +4,25 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="transparentGray">#99DCDCDC</color>
+    <color name="lightGrayText">#808080</color>
+    <color name="Gray">#666666</color>
     <color name="transparent">#00000000</color>
+    <color name="itemBack">#F4F0BB</color>
+    <color name="darkText">#004E64</color>
+    <color name="greenItemBack">#87C38F</color>
+    <color name="mainBack">#E9F1F7</color>
+    <color name="lightPrimary">#75B9BE</color>
+    <color name="white">#FFFFFF</color>
 </resources>
+    <!---->
+<!--<resources>-->
+<!--<color name="colorPrimary">#31493C</color>-->
+<!--<color name="colorPrimaryDark">#30343F</color>-->
+<!--<color name="lightTextColor">#E8F1F2</color>-->
+<!--<color name="lightBackgroundColor">#B3EFB2</color>-->
+<!--<color name="lightYello">#DDD78D</color>-->
+<!--<color name="colorAccent">#D81B60</color>-->
+<!--<color name="transparentGray">#99DCDCDC</color>-->
+<!--<color name="transparent">#00000000</color>-->
+<!--</resources>-->
+

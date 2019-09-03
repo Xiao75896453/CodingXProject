@@ -380,10 +380,8 @@ public class AddOrViewDataFragment extends Fragment {
         if (position == 1) {
             current = current_day;
 
-
             String[] xAxisData_week = {"Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"};
             xAxisData = xAxisData_week;
-
 
             //HbA1c_week
             yAxisData_HbA1c = yAxisData_HbA1c_week;
@@ -396,7 +394,6 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_HbA1c_warning_week[i] = infinity;
             yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_week;
 
-
             //SBP_week
             yAxisData_SBP = yAxisData_SBP_week;
             //SBP warning
@@ -408,7 +405,6 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_warning_week[i] = infinity;
             yAxisData_SBP_warning = yAxisData_warning_week;
 
-
             //DBP_week
             yAxisData_DBP = yAxisData_DBP_week;
             //DBP warning
@@ -419,7 +415,6 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_DBP_warning_week[i] = infinity;
             yAxisData_DBP_warning = yAxisData_DBP_warning_week;
-
 
             //pulse_week
             yAxisData_pulse = yAxisData_pulse_week;
@@ -436,12 +431,10 @@ public class AddOrViewDataFragment extends Fragment {
         if (position == 2) {
             current = current_date;
 
-
             String[] xAxisData_month = new String[30];
             for (int i = 0; i < 30; i++)
                 xAxisData_month[i] = Integer.toString(i + 1);
             xAxisData = xAxisData_month;
-
 
             //HbA1c_month
             yAxisData_HbA1c = yAxisData_HbA1c_month;
@@ -454,7 +447,6 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_HbA1c_warning_month[i] = infinity;
             yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_month;
 
-
             //SBP_month
             yAxisData_SBP = yAxisData_SBP_month;
             //SBP warning
@@ -466,7 +458,6 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_warning_month[i] = infinity;
             yAxisData_SBP_warning = yAxisData_warning_month;
 
-
             //DBP_month
             yAxisData_DBP = yAxisData_DBP_month;
             //DBP warning
@@ -477,7 +468,6 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_DBP_warning_month[i] = infinity;
             yAxisData_DBP_warning = yAxisData_DBP_warning_month;
-
 
             //pulse_month
             yAxisData_pulse = yAxisData_pulse_month;
@@ -494,7 +484,6 @@ public class AddOrViewDataFragment extends Fragment {
         if (position == 3) {
             current = 6;
 
-
             //調整為當月起的前6月
             String[] xAxisData_6months = new String[6];
             int month_pos = current_month - 5;
@@ -508,7 +497,6 @@ public class AddOrViewDataFragment extends Fragment {
             }
             xAxisData = xAxisData_6months;
 
-
             //HbA1c_6months
             yAxisData_HbA1c = yAxisData_HbA1c_6months;
             //HbA1c warning
@@ -519,7 +507,6 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_HbA1c_warning_6months[i] = infinity;
             yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_6months;
-
 
             //SBP_6months
             yAxisData_SBP = yAxisData_SBP_6months;
@@ -532,7 +519,6 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_warning_6months[i] = infinity;
             yAxisData_SBP_warning = yAxisData_warning_6months;
 
-
             //DBP_6months
             yAxisData_DBP = yAxisData_DBP_6months;
             //DBP warning
@@ -543,7 +529,6 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_DBP_warning_6months[i] = infinity;
             yAxisData_DBP_warning = yAxisData_DBP_warning_6months;
-
 
             //pulse_6months
             yAxisData_pulse = yAxisData_pulse_6months;
@@ -779,7 +764,6 @@ public class AddOrViewDataFragment extends Fragment {
         yAxis.setTextColor(Color.parseColor("#03A9F4"));
         yAxis.setTextSize(16);
         data.setAxisYLeft(yAxis);
-
 
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
 

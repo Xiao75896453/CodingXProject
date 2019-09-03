@@ -1,5 +1,6 @@
 package com.example.codingxproject.MainFunctionsWithBottomBar;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -19,18 +20,22 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.ItemAdapter;
 import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.NotificationSetting;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.R;
 import com.example.codingxproject.SetTimeActivity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class SetAlarmFragment extends Fragment {
 
     private ArrayList<String> data = new ArrayList<String>();
+    final static Calendar timeCalendar = Calendar.getInstance();
 
     @Nullable
     @Override
@@ -79,7 +84,7 @@ public class SetAlarmFragment extends Fragment {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent){
-            ViewHolder mainViewholder= null;
+//            ViewHolder mainViewholder= null;
 
             if(convertView==null){
                 LayoutInflater inflater =  LayoutInflater.from(getContext());
@@ -91,11 +96,19 @@ public class SetAlarmFragment extends Fragment {
 
                 convertView.setTag(viewHolder);
             }
-            mainViewholder = (ViewHolder) convertView.getTag();
+            final ViewHolder mainViewholder = (ViewHolder) convertView.getTag();
             mainViewholder.time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    openSetTime();
+//                    openSetTime();
+                    new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMin) {
+                            String hour = setTimeForm(selectedHour);
+                            String min = setTimeForm(selectedMin);
+                            mainViewholder.time.setText(hour+":"+min);
+                        }
+                    }, timeCalendar.get(Calendar.HOUR_OF_DAY), timeCalendar.get(Calendar.MINUTE),true).show();
                 }
             });
             mainViewholder.period.setText(getItem(position));
@@ -111,5 +124,12 @@ public class SetAlarmFragment extends Fragment {
         TextView period;
         Button time;
         Switch open;
+    }
+    public static String setTimeForm(int currentTime) {
+        if (Integer.toString(currentTime).length() == 1) {
+            return "0" + Integer.toString(currentTime);
+        } else {
+            return Integer.toString(currentTime);
+        }
     }
 }

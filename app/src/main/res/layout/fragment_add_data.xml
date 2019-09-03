@@ -1,39 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--android:weightSum="2"-->
+    <!--tools:context=".MainFunctionsWithBottomBar.AddOrViewDataFragment">-->
+   <!--<LinearLayout-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="0dp"-->
+       <!--android:layout_weight="1"-->
+       <!--android:orientation="horizontal">-->
+      <!--<Button-->
+          <!--android:id="@+id/bAddRecord_bloodSugar"-->
+          <!--android:layout_width="0dp"-->
+          <!--android:layout_height="match_parent"-->
+          <!--android:layout_weight="1"-->
+          <!--android:text="新增血糖數據"/>-->
+      <!--<Button-->
+          <!--android:id="@+id/bAddRecord_bloodPressure"-->
+          <!--android:layout_width="0dp"-->
+          <!--android:layout_height="match_parent"-->
+          <!--android:layout_weight="1"-->
+          <!--android:text="新增血壓數據"/>-->
+   <!--</LinearLayout>-->
+
+   <!--<Button-->
+       <!--android:id="@+id/bViewRecord"-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="0dp"-->
+       <!--android:layout_weight="1"-->
+       <!--android:text="檢視歷史數據"/>-->
+   <!--&lt;!&ndash;<Button&ndash;&gt;-->
+       <!--&lt;!&ndash;android:id="@+id/bBloodSugar"&ndash;&gt;-->
+       <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+       <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+       <!--&lt;!&ndash;android:text="Blood Sugar"/>&ndash;&gt;-->
+<!--</LinearLayout>-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="2"
-    tools:context=".MainFunctionsWithBottomBar.AddOrViewDataFragment">
+    android:padding="10dp"
+    tools:context=".DataReview">
+
    <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:gravity="center"
        android:layout_weight="1"
-       android:orientation="horizontal">
+       android:orientation="horizontal"
+       android:text="@string/BP"
+       >
+
       <Button
-          android:id="@+id/bAddRecord_bloodSugar"
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1"
-          android:text="新增血糖數據"/>
+          android:id="@+id/HbA1c"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/HbA1c" />
+
       <Button
-          android:id="@+id/bAddRecord_bloodPressure"
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
+          android:id="@+id/BP"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:layout_weight="1"
-          android:text="新增血壓數據"/>
+          android:text="@string/BP" />
+
+      <Button
+          android:id="@+id/pulse"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/pulse" />
    </LinearLayout>
 
-   <Button
-       android:id="@+id/bViewRecord"
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_weight="4"
+       android:weightSum="4.5"
        android:layout_width="match_parent"
+       android:layout_height="0dp">
+
+      <Spinner
+          android:id="@+id/spinner"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:paddingLeft="45dp"
+          android:layout_weight="0.2"
+          android:layout_width="wrap_content"
+          android:layout_height="0dp" />
+
+      <lecho.lib.hellocharts.view.LineChartView
+          android:id="@+id/chart"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="4.3" />
+   </LinearLayout>
+
+
+   <Button
+       android:id="@+id/add_data"
+       android:layout_gravity="center"
+       android:layout_width="wrap_content"
        android:layout_height="0dp"
        android:layout_weight="1"
-       android:text="檢視歷史數據"/>
-   <!--<Button-->
-       <!--android:id="@+id/bBloodSugar"-->
-       <!--android:layout_width="match_parent"-->
-       <!--android:layout_height="wrap_content"-->
-       <!--android:text="Blood Sugar"/>-->
+       android:text="@string/add_data"
+       android:textSize="24sp" />
+
+
 </LinearLayout>

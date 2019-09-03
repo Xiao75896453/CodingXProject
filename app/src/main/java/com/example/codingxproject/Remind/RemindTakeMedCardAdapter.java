@@ -1,10 +1,13 @@
 package com.example.codingxproject.Remind;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,8 +60,25 @@ class RemindTakeMedCardAdapter extends RecyclerView.Adapter<RemindTakeMedCardAda
 
             @Override
             public boolean onLongClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(context);
+                LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View dialogView=inflater.inflate(R.layout.large_drug_pic,null);
 
 
+                builder.setView(dialogView);
+                AlertDialog alert = builder.create();
+
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(alert.getWindow().getAttributes());
+                lp.width = 300;
+                lp.height = 300;
+                lp.x=0;
+                lp.y=0;
+                alert.getWindow().setAttributes(lp);
+//                dialogView.setScaleX(300);
+//                dialogView.setScaleY(300);
+                dialogView.findViewById(R.id.largeDrugPic).setBackgroundResource(takeMedCard.getDrugImg());
+                alert.show();
                 return false;
             }
         });

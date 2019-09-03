@@ -2,6 +2,7 @@ package com.example.codingxproject.DailyDrugInfoAndAlarmSetting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.codingxproject.R;
+import com.example.codingxproject.SetTimeActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class NotificationSetting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_notification_setting);
 
         ListView lv = (ListView) findViewById(R.id.lvAlarmList);
         generateListContent();
@@ -33,12 +36,16 @@ public class NotificationSetting extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(NotificationSetting.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+                openSetTime();
             }
         });
     }
+    public void openSetTime(){
+        Intent intent = new Intent(this, SetTimeActivity.class);
+        startActivity(intent);
+    }
 
-    private void generateListContent(){
+    private void generateListContent() {
         data.add("睡醒");
         data.add("早餐");
         data.add("午餐");
@@ -47,7 +54,8 @@ public class NotificationSetting extends AppCompatActivity {
     }
 
 
-    private class MyListAdapter extends ArrayAdapter<String>{
+
+    public class MyListAdapter extends ArrayAdapter<String>{
 
         private int layout;
         private List<String> mObjects;
@@ -59,7 +67,7 @@ public class NotificationSetting extends AppCompatActivity {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent){
-            ViewHolder mainViewholder = null;
+            ViewHolder mainViewholder= null;
 
             if(convertView==null){
                 LayoutInflater inflater =  LayoutInflater.from(getContext());
@@ -75,12 +83,16 @@ public class NotificationSetting extends AppCompatActivity {
             mainViewholder.time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), "Button was clicked for list item " + position, Toast.LENGTH_SHORT).show();
+                    openSetTime();
                 }
             });
             mainViewholder.period.setText(getItem(position));
 
             return convertView;
+        }
+        public void openSetTime(){
+            Intent intent = new Intent(NotificationSetting.this, SetTimeActivity.class);
+            startActivity(intent);
         }
     }
     public class ViewHolder{

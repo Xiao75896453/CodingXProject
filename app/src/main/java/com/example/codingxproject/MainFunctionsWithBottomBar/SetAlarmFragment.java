@@ -34,6 +34,6 @@ public class SetAlarmFragment extends Fragment {
         lvAlarmList = (ListView) getView().findViewById(R.id.lvAlarmList);
 
         ItemAdapter itemAdapter = new ItemAdapter();
-        lvAlarmList.setAdapter((ListAdapter) itemAdapter);
+
     }
 }

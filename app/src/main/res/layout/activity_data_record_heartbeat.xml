@@ -30,6 +30,8 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:text="更改"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
             android:textSize="32sp" />
     </LinearLayout>
 
@@ -62,6 +64,8 @@
             android:layout_height="0dp"
             android:layout_weight="0.4"
             android:text="確認"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
             android:textSize="36sp" />
 
 

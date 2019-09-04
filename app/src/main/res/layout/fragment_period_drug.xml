@@ -44,7 +44,6 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/getup"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
@@ -55,7 +54,6 @@
                     android:layout_marginTop="0dp"
                     android:text="@string/breakfast"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
@@ -77,7 +75,6 @@
                     android:layout_marginTop="0dp"
                     android:text="@string/dinner"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
@@ -88,7 +85,6 @@
                     android:layout_marginTop="0dp"
                     android:text="@string/sleep"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
@@ -99,7 +95,6 @@
                     android:layout_marginTop="0dp"
                     android:text="@string/sleep"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
                     android:background="@color/white"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="@id/title"
@@ -111,10 +106,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/my_button"
-                    android:textColor="@color/Gray"
+                    android:textColor="@color/white"
                     android:text="所有藥物"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 

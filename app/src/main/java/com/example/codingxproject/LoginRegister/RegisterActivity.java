@@ -41,8 +41,8 @@ public class RegisterActivity extends AppCompatActivity {
                             //以下不會執行，DEBUG
                             boolean success=jsonResponse.getBoolean("success");
                             if(success){
-//                                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
-//                                RegisterActivity.this.startActivity(intent);
+                                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
+                                RegisterActivity.this.startActivity(intent);
 
                             }else{
                                 AlertDialog.Builder builder=new AlertDialog.Builder(RegisterActivity.this);
@@ -64,8 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 //                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
 //                RegisterActivity.this.startActivity(intent);
-                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
-                RegisterActivity.this.startActivity(intent);
+//
 
             }
         });

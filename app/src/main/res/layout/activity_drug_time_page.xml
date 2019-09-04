@@ -44,7 +44,7 @@
                     android:onClick="showMorning"
                     android:text="@string/getup"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
+
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 
@@ -56,7 +56,7 @@
                     android:onClick="showBreakfast"
                     android:text="@string/breakfast"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textStyle="bold"
+
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toTopOf="@id/title" />
 

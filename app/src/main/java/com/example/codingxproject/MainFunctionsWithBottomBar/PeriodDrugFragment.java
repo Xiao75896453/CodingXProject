@@ -59,14 +59,12 @@ public class PeriodDrugFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(view.getId()==R.id.morning_btm){
-//                  Toast.makeText(getActivity(),"morningBtmClicked",Toast.LENGTH_LONG).show();
                     setVisibilityGone();
                     setButtonToGreen();
                     mMorningSV.setVisibility(View.VISIBLE);
                     setButtonClickedUI(btmMorning);
 
                 }else if(view.getId()==R.id.breakfast_btm){
-//                    Toast.makeText(getActivity(),"breakfastBtmClicked",Toast.LENGTH_LONG).show();
                     setVisibilityGone();
                     setButtonToGreen();
                     mBreakfastSV.setVisibility(View.VISIBLE);
@@ -119,11 +117,11 @@ public class PeriodDrugFragment extends Fragment {
 //        b.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         b.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
 //        b.setTextColor(getResources().getColor(R.color.white));
-        b.setTextColor(getResources().getColor(R.color.Gray));
+        b.setTextColor(getResources().getColor(R.color.white));
     }
     public void setButtonClickedUI(Button b){
         b.setBackgroundColor(getResources().getColor(R.color.transparent));
-        b.setTextColor(getResources().getColor(R.color.Gray));
+        b.setTextColor(getResources().getColor(R.color.white));
     }
 }
 

@@ -106,16 +106,14 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
                 }else{
                     Intent intent = new Intent();
                     //把返回數據存入Intent
-                    intent.putExtra("result", mNumberPicker.getValue());
+                    intent.putExtra("result", mNumberPicker.getValue()-1);
                     //設置返回數據
                     DataRecord_BloodSugar.this.setResult(RESULT_OK, intent);
                     //關閉Activity
                     DataRecord_BloodSugar.this.finish();
                 }
-
             }
         });
-
     }
 
     public static String setTimeForm(int currentTime) {

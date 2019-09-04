@@ -1,5 +1,7 @@
 package com.example.codingxproject.MainFunctionsWithBottomBar;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,20 +15,29 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.example.codingxproject.AlarmReceiver;
+import com.example.codingxproject.MainActivity;
 import com.example.codingxproject.R;
 import com.example.codingxproject.SetTimeActivity;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import static android.content.Context.ALARM_SERVICE;
+
 public class SetAlarmFragment extends Fragment {
 
     private ArrayList<String> data = new ArrayList<String>();
     final static Calendar timeCalendar = Calendar.getInstance();
+    Calendar myCalendar = Calendar.getInstance();
+    Calendar calSet = (Calendar) myCalendar.clone();
 
     @Nullable
     @Override
@@ -94,15 +105,41 @@ public class SetAlarmFragment extends Fragment {
                     new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMin) {
+
                             String hour = setTimeForm(selectedHour);
-                            String min = setTimeForm(selectedMin);
-                            mainViewholder.time.setText(hour+":"+min);
+                            String minute = setTimeForm(selectedMin);
+                            mainViewholder.time.setText(hour+":"+minute);
+                            calSet.set(Calendar.HOUR_OF_DAY, selectedHour);
+                            calSet.set(Calendar.MINUTE, selectedMin);
+
+                            if(calSet.compareTo(myCalendar) <= 0) {
+                                //Today Set time passed, count to tomorrow
+                                calSet.add(Calendar.DATE, 1);
+                            }
+
                         }
                     }, timeCalendar.get(Calendar.HOUR_OF_DAY), timeCalendar.get(Calendar.MINUTE),true).show();
+
                 }
+
             });
             mainViewholder.period.setText(getItem(position));
 
+            mainViewholder.open.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (mainViewholder.open.isChecked()) {
+                        Intent intent = new Intent(SetAlarmFragment.this.getActivity(), AlarmReceiver.class);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 0, intent, 0);
+                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
+
+                        //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + hour1 + minute1, pendingIntent);
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(), pendingIntent);
+                        //Toast.makeText(this, "Alarm set in " + second + " mili seconds", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), " Alarm set ", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
             return convertView;
         }
     }

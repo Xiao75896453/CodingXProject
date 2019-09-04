@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.codingxproject.CustomNumberPicker;
+import com.example.codingxproject.DataReview;
 import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
 
@@ -90,14 +92,16 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
                 }else if(mNumberPicker.getValue()<70){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
                     build.setMessage("血糖太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
-                }else{
-                    Intent intent=new Intent(DataRecord_BloodSugar.this, HomePageActivity.class);
-                    startActivity(intent);
                 }
-                //紀錄資訊，傳出資訊
-//                final int outputVal= mNumberPicker.getValue();
-//                Intent intent_SBP = getIntent();
-//                startActivityForResult(intent_SBP,REQUEST_CODE);
+
+                //數據是使用Intent返回
+                Intent intent = new Intent();
+                //把返回數據存入Intent
+                intent.putExtra("result", mNumberPicker.getValue());
+                //設置返回數據
+                DataRecord_BloodSugar.this.setResult(RESULT_OK, intent);
+                //關閉Activity
+                DataRecord_BloodSugar.this.finish();
             }
         });
 

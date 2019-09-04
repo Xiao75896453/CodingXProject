@@ -2,6 +2,7 @@ package com.example.codingxproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.view.LineChartView;
 
-public class DataReview extends AppCompatActivity {
+public class DataReview extends Activity {
 
     private int infinity = -1000;
     private boolean is_choose_HbA1c = true;
@@ -41,7 +42,8 @@ public class DataReview extends AppCompatActivity {
     private int current_month = 9 - 1;
     private int current_day = 5 - 1;
     private int current_date = 19 - 1;
-    private int current_day_interval = 0;  //0~3
+    private int current_day_interval_HbA1c = 2;  //0~3
+    private int current_day_interval_BP_pulse = 2;  //0~3
     private int current_chart_position = 0;  //0:HbA1c ; 1:BP
     private int current_period_position = 0;  //0:day ; 1:week ; 2:month ; 3:6months
 
@@ -57,14 +59,14 @@ public class DataReview extends AppCompatActivity {
     private int pulse_reference_min = 60;
 
 
-    //HbA1c_day
-    private int[] yAxisData_HbA1c_day = {83, 120, 100, 70};
-    //SBP_day
-    private int[] yAxisData_SBP_day = {110, 170, 111, 150};
-    //DBP_day
-    private int[] yAxisData_DBP_day = {83, 91, 84, 97};
-    //pulse_day
-    private int[] yAxisData_pulse_day = {83, 91, 84, 97};
+    //HbA1c_day_interval
+    private int[] yAxisData_HbA1c_day_interval = {83, 120, 100, 70};
+    //SBP_day_interval
+    private int[] yAxisData_SBP_day_interval = {110, 170, 111, 150};
+    //DBP_day_interval
+    private int[] yAxisData_DBP_day_interval = {83, 91, 84, 97};
+    //pulse_day_interval
+    private int[] yAxisData_pulse_day_interval = {83, 91, 84, 97};
 
 
     //HbA1c_week
@@ -131,7 +133,9 @@ public class DataReview extends AppCompatActivity {
                     set_chart(current_chart_position, current_period_position);
                     button.setText("新增血糖數據");
 
-                } else if (view.getId() == R.id.BP) {
+                }
+
+                else if (view.getId() == R.id.BP) {
                     findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#F5F5F5"));
                     findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#A9A9A9"));
                     findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#F5F5F5"));
@@ -140,8 +144,10 @@ public class DataReview extends AppCompatActivity {
                     is_choose_pulse = false;
                     current_chart_position = 1;
                     set_chart(current_chart_position, current_period_position);
-                    button.setText("新增血壓數據");
-                } else if (view.getId() == R.id.pulse) {
+                    button.setText("新增血壓、脈搏數據");
+                }
+
+                else if (view.getId() == R.id.pulse) {
                     findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#F5F5F5"));
                     findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#F5F5F5"));
                     findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#A9A9A9"));
@@ -150,17 +156,16 @@ public class DataReview extends AppCompatActivity {
                     is_choose_pulse = true;
                     current_chart_position = 2;
                     set_chart(current_chart_position, current_period_position);
-                    button.setText("新增脈搏數據");
-                } else if (view.getId() == R.id.add_data) {
-                    if (is_choose_HbA1c == true)
-                        intent = new Intent(DataReview.this, DataRecord_BloodSugar.class);
-                    else if (is_choose_BP == true)
-                        intent = new Intent(DataReview.this, DataRecord_BloodPressure_SBP.class);
-                    else if (is_choose_pulse == true)
-                        intent = new Intent(DataReview.this, DataRecord_BloodPressure_SBP.class);
+                    button.setText("新增血壓、脈搏數據");
+                }
 
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    DataReview.this.startActivity(intent);
+                else if (view.getId() == R.id.add_data) {
+                    if (is_choose_HbA1c == true)
+                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodSugar.class), 0);
+                    else if (is_choose_BP == true)
+                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodPressure_SBP.class), 1);
+                    else if (is_choose_pulse == true)
+                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodPressure_SBP.class), 1);
                 }
             }
         };
@@ -168,8 +173,20 @@ public class DataReview extends AppCompatActivity {
         findViewById(R.id.BP).setOnClickListener(listener);
         findViewById(R.id.pulse).setOnClickListener(listener);
         findViewById(R.id.add_data).setOnClickListener(listener);
+
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 0)  //HbA1c輸入數據
+        {
+            int result = data.getExtras().getInt("result");  //得到新Activity關閉後返回的數據
+            yAxisData_HbA1c_day_interval[current_day_interval_HbA1c] = result;
+            current_day_interval_HbA1c++;
+            set_chart(0,0);
+        }
+    }
 
     public Spinner set_spinner(Spinner sp) {
         Spinner spinner = sp;
@@ -278,59 +295,64 @@ public class DataReview extends AppCompatActivity {
         int yAxisData_min = 0;
 
         if (position == 0) {
-            current = current_day_interval;
+
+            String[] xAxisData_day_interval = {"morning", "noon", "evening", "night"};
+            xAxisData = xAxisData_day_interval;
 
 
-            String[] xAxisData_day = {"morning", "noon", "evening", "night"};
-            xAxisData = xAxisData_day;
+            if(chart_index == 0) {
+                current = current_day_interval_HbA1c;
+
+                //HbA1c_day_interval
+                yAxisData_HbA1c = yAxisData_HbA1c_day_interval;
+                //HbA1c warning
+                int[] yAxisData_HbA1c_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_HbA1c_day_interval[i] > HbA1c_reference_max || yAxisData_HbA1c_day_interval[i] < HbA1c_reference_min) && i < current)
+                        yAxisData_HbA1c_warning_day_interval[i] = yAxisData_HbA1c_day_interval[i];
+                    else
+                        yAxisData_HbA1c_warning_day_interval[i] = infinity;  //還沒紀錄的點
+                yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_day_interval;
+            }
+
+            else if(chart_index == 1) {
+                current = current_day_interval_BP_pulse;
+
+                //SBP_day_interval
+                yAxisData_SBP = yAxisData_SBP_day_interval;
+                //SBP warning
+                int[] yAxisData_SBP_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_SBP_day_interval[i] > SBP_reference_max || yAxisData_SBP_day_interval[i] < SBP_reference_min) && i < current)
+                        yAxisData_SBP_warning_day_interval[i] = yAxisData_SBP_day_interval[i];
+                    else
+                        yAxisData_SBP_warning_day_interval[i] = infinity;
+                yAxisData_SBP_warning = yAxisData_SBP_warning_day_interval;
 
 
-            //HbA1c_day
-            yAxisData_HbA1c = yAxisData_HbA1c_day;
-            //HbA1c warning
-            int[] yAxisData_HbA1c_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_HbA1c_day[i] > HbA1c_reference_max || yAxisData_HbA1c_day[i] <HbA1c_reference_min) && i < current)
-                    yAxisData_HbA1c_warning_day[i] = yAxisData_HbA1c_day[i];
-                else
-                    yAxisData_HbA1c_warning_day[i] = infinity;  //還沒紀錄的點
-            yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_day;
+                //DBP_day_interval
+                yAxisData_DBP = yAxisData_DBP_day_interval;
+                //DBP warning
+                int[] yAxisData_DBP_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_DBP_day_interval[i] > DBP_reference_max || yAxisData_DBP_day_interval[i] < DBP_reference_min) && i < current)
+                        yAxisData_DBP_warning_day_interval[i] = yAxisData_DBP_day_interval[i];
+                    else
+                        yAxisData_DBP_warning_day_interval[i] = infinity;
+                yAxisData_DBP_warning = yAxisData_DBP_warning_day_interval;
 
 
-            //SBP_day
-            yAxisData_SBP = yAxisData_SBP_day;
-            //SBP warning
-            int[] yAxisData_SBP_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_SBP_day[i] > SBP_reference_max || yAxisData_SBP_day[i] < SBP_reference_min) && i < current)
-                    yAxisData_SBP_warning_day[i] = yAxisData_SBP_day[i];
-                else
-                    yAxisData_SBP_warning_day[i] = infinity;
-            yAxisData_SBP_warning = yAxisData_SBP_warning_day;
-
-
-            //DBP_day
-            yAxisData_DBP = yAxisData_DBP_day;
-            //DBP warning
-            int[] yAxisData_DBP_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_DBP_day[i] > DBP_reference_max || yAxisData_DBP_day[i] < DBP_reference_min) && i < current)
-                    yAxisData_DBP_warning_day[i] = yAxisData_DBP_day[i];
-                else
-                    yAxisData_DBP_warning_day[i] = infinity;
-            yAxisData_DBP_warning = yAxisData_DBP_warning_day;
-
-
-            //pulse_day
-            yAxisData_pulse = yAxisData_pulse_day;
-            //pulse warning
-            int[] yAxisData_pulse_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_pulse_day[i] > pulse_reference_max || yAxisData_pulse_day[i] < pulse_reference_min) && i < current)
-                    yAxisData_pulse_warning_day[i] = yAxisData_pulse_day[i];
-                else
-                    yAxisData_pulse_warning_day[i] = infinity;  //還沒紀錄的點
-            yAxisData_pulse_warning = yAxisData_pulse_warning_day;
+                //pulse_day_interval
+                yAxisData_pulse = yAxisData_pulse_day_interval;
+                //pulse warning
+                int[] yAxisData_pulse_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_pulse_day_interval[i] > pulse_reference_max || yAxisData_pulse_day_interval[i] < pulse_reference_min) && i < current)
+                        yAxisData_pulse_warning_day_interval[i] = yAxisData_pulse_day_interval[i];
+                    else
+                        yAxisData_pulse_warning_day_interval[i] = infinity;  //還沒紀錄的點
+                yAxisData_pulse_warning = yAxisData_pulse_warning_day_interval;
+            }
         }
 
         if (position == 1) {

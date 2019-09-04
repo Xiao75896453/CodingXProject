@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:weightSum="4.5"
     android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".DataRecord.DataRecord_BloodPressure_SBP">
 
     <LinearLayout
@@ -29,6 +30,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
             android:text="更改"
             android:textSize="32sp" />
     </LinearLayout>
@@ -62,6 +65,8 @@
             android:layout_height="0dp"
             android:layout_weight="0.4"
             android:text="下一項"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
             android:textSize="36sp" />
 
 

@@ -11,7 +11,9 @@
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:id="@+id/tvPeriodTitle"
-        android:textSize="30sp"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="period"/>
 
     <Button
@@ -21,7 +23,10 @@
         android:layout_weight="2"
         android:gravity="center"
         android:layout_gravity="center"
-        android:text="time" />
+        android:background="@drawable/my_button"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:text="Time" />
 
     <Switch
         android:id="@+id/sbTimeSwitch"
@@ -30,7 +35,8 @@
         android:layout_weight="2"
         android:layoutDirection="ltr"
         android:text="提醒"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textAlignment="textEnd"
+        android:textColor="@color/Gray"
+        android:textSize="25dp" />
 
 </LinearLayout>

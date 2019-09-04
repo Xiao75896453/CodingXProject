@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.widget.Toast;
 
+import com.example.codingxproject.Remind.RemindTakeMedActivity;
+
+import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
+
 public class AlarmReceiver extends BroadcastReceiver {
     public AlarmReceiver(){
 
@@ -14,9 +18,10 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent)
 
     {
-        Toast.makeText(context, "Alarm! Wake up! Wake up!", Toast.LENGTH_LONG).show( );
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.abc);
-        mediaPlayer.start();
+        Toast.makeText(context, "要記得吃藥喔!", Toast.LENGTH_LONG).show( );
+        Intent intents=new Intent(context, RemindTakeMedActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intents);
     }
 }
 

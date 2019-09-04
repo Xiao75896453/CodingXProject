@@ -16,26 +16,43 @@
         android:gravity="center"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:text="@string/BP"
-        >
+        android:text="@string/BP">
 
         <Button
             android:id="@+id/HbA1c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
+            android:textSize="30dp"
             android:text="@string/HbA1c" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/BP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:textSize="30dp"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
             android:text="@string/BP" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textColor="@color/white"/>
         <Button
             android:id="@+id/pulse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white"
             android:text="@string/pulse" />
     </LinearLayout>
 
@@ -69,8 +86,10 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@drawable/my_button"
+        android:textColor="@color/white"
         android:text="@string/add_data"
-        android:textSize="24sp" />
+        android:textSize="35dp" />
 
 
 </LinearLayout>

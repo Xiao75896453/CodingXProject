@@ -69,6 +69,13 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,DataRecord_Heartbeat.class);
                 startActivity(intent);
+//                Intent intent = new Intent();
+//                //把返回數據存入Intent
+//                intent.putExtra("result", mNumberPicker.getValue());
+//                //設置返回數據
+//                DataRecord_BloodPressure_DBP.this.setResult(RESULT_OK, intent);
+//                //關閉Activity
+//                DataRecord_BloodPressure_DBP.this.finish();
             }
         };
 
@@ -84,6 +91,14 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
                 }else{
                     Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,DataRecord_Heartbeat.class);
                     startActivity(intent);
+
+//                    Intent intent = new Intent();
+//                    //把返回數據存入Intent
+//                    intent.putExtra("result", mNumberPicker.getValue());
+//                    //設置返回數據
+//                    DataRecord_BloodPressure_DBP.this.setResult(RESULT_OK, intent);
+//                    //關閉Activity
+//                    DataRecord_BloodPressure_DBP.this.finish();
                 }
 
                 //紀錄資訊，傳出資訊

@@ -121,7 +121,7 @@ public class PeriodDrugFragment extends Fragment {
     }
     public void setButtonClickedUI(Button b){
         b.setBackgroundColor(getResources().getColor(R.color.transparent));
-        b.setTextColor(getResources().getColor(R.color.white));
+        b.setTextColor(getResources().getColor(R.color.Gray));
     }
 }
 

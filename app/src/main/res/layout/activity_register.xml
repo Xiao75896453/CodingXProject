@@ -45,5 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPassword"
         android:layout_centerHorizontal="true"
-        android:text="Register" />
+        android:text="Register"
+        android:background="@drawable/my_button"
+        android:textColor="@color/white"
+        android:textSize="25dp"/>
 </RelativeLayout>

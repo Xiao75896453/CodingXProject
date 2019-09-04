@@ -77,7 +77,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="再提醒"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/bDrugGetConfirm"
@@ -85,7 +87,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="確定"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:background="@drawable/my_button"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

@@ -50,7 +50,8 @@ public class AddOrViewDataFragment extends Fragment {
     private int current_month = 9 - 1;
     private int current_day = 5 - 1;
     private int current_date = 19 - 1;
-    private int current_day_interval = 0;  //0~3
+    private int current_day_interval_HbA1c = 2;  //0~3
+    private int current_day_interval_BP_pulse = 2;  //0~3
     private int current_chart_position = 0;  //0:HbA1c ; 1:BP
     private int current_period_position = 0;  //0:day ; 1:week ; 2:month ; 3:6months
 
@@ -66,14 +67,14 @@ public class AddOrViewDataFragment extends Fragment {
     private int pulse_reference_min = 60;
 
 
-    //HbA1c_day
-    private int[] yAxisData_HbA1c_day = {83, 120, 100, 70};
-    //SBP_day
-    private int[] yAxisData_SBP_day = {110, 170, 111, 150};
-    //DBP_day
-    private int[] yAxisData_DBP_day = {83, 91, 84, 97};
-    //pulse_day
-    private int[] yAxisData_pulse_day = {83, 91, 84, 97};
+    //HbA1c_day_interval
+    private int[] yAxisData_HbA1c_day_interval = {83, 120, 100, 70};
+    //SBP_day_interval
+    private int[] yAxisData_SBP_day_interval = {110, 170, 111, 150};
+    //DBP_day_interval
+    private int[] yAxisData_DBP_day_interval = {83, 91, 84, 97};
+    //pulse_day_interval
+    private int[] yAxisData_pulse_day_interval = {83, 91, 84, 97};
 
 
     //HbA1c_week
@@ -103,6 +104,8 @@ public class AddOrViewDataFragment extends Fragment {
     //pulse_6months
     private int[] yAxisData_pulse_6months = {66,67,65,65,64,65};
 
+    public Button bHbAlc,bBP,bPulse,bAddData;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -113,11 +116,16 @@ public class AddOrViewDataFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        bHbAlc=getView().findViewById(R.id.HbA1c);
+        bBP=getView().findViewById(R.id.BP);
+        bPulse=getView().findViewById(R.id.pulse);
+        bAddData=getView().findViewById(R.id.add_data);
         //set buttons color
-        getView().findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#A9A9A9"));
-        getView().findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#F5F5F5"));
-        getView().findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#F5F5F5"));
-        getView().findViewById(R.id.add_data).setBackgroundColor(Color.parseColor("#F5F5F5"));
+//        getView().findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#A9A9A9"));
+//        getView().findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#F5F5F5"));
+//        getView().findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#F5F5F5"));
+//        getView().findViewById(R.id.add_data).setBackgroundColor(Color.parseColor("#F5F5F5"));
+        setAllButtonColor();
 
         Spinner spinner = null;
         spinner = set_spinner(spinner);
@@ -134,9 +142,8 @@ public class AddOrViewDataFragment extends Fragment {
                 Button button = (Button) getView().findViewById(R.id.add_data);
 
                 if (view.getId() == R.id.HbA1c) {
-                    getView().findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#A9A9A9"));
-                    getView().findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#F5F5F5"));
-                    getView().findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#F5F5F5"));
+                    setAllButtonColor();
+                    setButtonClickedColor(bHbAlc);
                     is_choose_HbA1c = true;
                     is_choose_BP = false;
                     is_choose_pulse = false;
@@ -144,36 +151,37 @@ public class AddOrViewDataFragment extends Fragment {
                     set_chart(current_chart_position, current_period_position);
                     button.setText("新增血糖數據");
 
-                } else if (view.getId() == R.id.BP) {
-                    getView().findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#F5F5F5"));
-                    getView().findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#A9A9A9"));
-                    getView().findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#F5F5F5"));
+                }
+
+                else if (view.getId() == R.id.BP) {
+                    setAllButtonColor();
+                    setButtonClickedColor(bBP);
                     is_choose_HbA1c = false;
                     is_choose_BP = true;
                     is_choose_pulse = false;
                     current_chart_position = 1;
                     set_chart(current_chart_position, current_period_position);
-                    button.setText("新增血壓數據");
-                } else if (view.getId() == R.id.pulse) {
-                    getView().findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#F5F5F5"));
-                    getView().findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#F5F5F5"));
-                    getView().findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#A9A9A9"));
+                    button.setText("新增血壓、脈搏數據");
+                }
+
+                else if (view.getId() == R.id.pulse) {
+                    setAllButtonColor();
+                    setButtonClickedColor(bPulse);
                     is_choose_HbA1c = false;
                     is_choose_BP = false;
                     is_choose_pulse = true;
                     current_chart_position = 2;
                     set_chart(current_chart_position, current_period_position);
-                    button.setText("新增脈搏數據");
-                } else if (view.getId() == R.id.add_data) {
-                    if (is_choose_HbA1c == true)
-                        intent = new Intent(getActivity(), DataRecord_BloodSugar.class);
-                    else if (is_choose_BP == true)
-                        intent = new Intent(getActivity(), DataRecord_BloodPressure_SBP.class);
-                    else if (is_choose_pulse == true)
-                        intent = new Intent(getActivity(), DataRecord_BloodPressure_SBP.class);
+                    button.setText("新增血壓、脈搏數據");
+                }
 
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    getActivity().startActivity(intent);
+                else if (view.getId() == R.id.add_data) {
+                    if (is_choose_HbA1c == true)
+                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar.class), 0);
+                    else if (is_choose_BP == true)
+                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
+                    else if (is_choose_pulse == true)
+                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
                 }
             }
         };
@@ -182,6 +190,24 @@ public class AddOrViewDataFragment extends Fragment {
         getView().findViewById(R.id.pulse).setOnClickListener(listener);
         getView().findViewById(R.id.add_data).setOnClickListener(listener);
     }
+
+    public void setAllButtonColor(){
+        bHbAlc.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
+        bHbAlc.setTextColor(getResources().getColor(R.color.white));
+        bBP.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
+        bBP.setTextColor(getResources().getColor(R.color.white));
+        bPulse.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
+        bPulse.setTextColor(getResources().getColor(R.color.white));
+        bAddData.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
+        bAddData.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    public void setButtonClickedColor(Button b){
+//        b.setBackgroundDrawable(getResources().getDrawable(R.drawable.my_button));
+        b.setBackgroundColor(getResources().getColor(R.color.transparent));
+        b.setTextColor(getResources().getColor(R.color.colorPrimary));
+    }
+
 
     //    public Button bRecordBloodSugar,bRecordBloodPressure,bViewRecord;
 //    @Nullable
@@ -215,6 +241,17 @@ public class AddOrViewDataFragment extends Fragment {
 //        bRecordBloodPressure.setOnClickListener(listener);
 //        bViewRecord.setOnClickListener(listener);
 //    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 0)  //HbA1c輸入數據
+        {
+            int result = data.getExtras().getInt("result");  //得到新Activity關閉後返回的數據
+            yAxisData_HbA1c_day_interval[current_day_interval_HbA1c] = result;
+            current_day_interval_HbA1c++;
+            set_chart(0,0);
+        }
+    }
+
     public Spinner set_spinner(Spinner sp) {
         Spinner spinner = sp;
         spinner = (Spinner) getView().findViewById(R.id.spinner);
@@ -322,66 +359,76 @@ public class AddOrViewDataFragment extends Fragment {
         int yAxisData_min = 0;
 
         if (position == 0) {
-            current = current_day_interval;
+
+            String[] xAxisData_day_interval = {"morning", "noon", "evening", "night"};
+            xAxisData = xAxisData_day_interval;
 
 
-            String[] xAxisData_day = {"morning", "noon", "evening", "night"};
-            xAxisData = xAxisData_day;
+            if(chart_index == 0) {
+                current = current_day_interval_HbA1c;
+
+                //HbA1c_day_interval
+                yAxisData_HbA1c = yAxisData_HbA1c_day_interval;
+                //HbA1c warning
+                int[] yAxisData_HbA1c_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_HbA1c_day_interval[i] > HbA1c_reference_max || yAxisData_HbA1c_day_interval[i] < HbA1c_reference_min) && i < current)
+                        yAxisData_HbA1c_warning_day_interval[i] = yAxisData_HbA1c_day_interval[i];
+                    else
+                        yAxisData_HbA1c_warning_day_interval[i] = infinity;  //還沒紀錄的點
+                yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_day_interval;
+            }
+
+            else if(chart_index == 1) {
+                current = current_day_interval_BP_pulse;
+
+                //SBP_day_interval
+                yAxisData_SBP = yAxisData_SBP_day_interval;
+                //SBP warning
+                int[] yAxisData_SBP_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_SBP_day_interval[i] > SBP_reference_max || yAxisData_SBP_day_interval[i] < SBP_reference_min) && i < current)
+                        yAxisData_SBP_warning_day_interval[i] = yAxisData_SBP_day_interval[i];
+                    else
+                        yAxisData_SBP_warning_day_interval[i] = infinity;
+                yAxisData_SBP_warning = yAxisData_SBP_warning_day_interval;
 
 
-            //HbA1c_day
-            yAxisData_HbA1c = yAxisData_HbA1c_day;
-            //HbA1c warning
-            int[] yAxisData_HbA1c_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_HbA1c_day[i] > HbA1c_reference_max || yAxisData_HbA1c_day[i] <HbA1c_reference_min) && i < current)
-                    yAxisData_HbA1c_warning_day[i] = yAxisData_HbA1c_day[i];
-                else
-                    yAxisData_HbA1c_warning_day[i] = infinity;  //還沒紀錄的點
-            yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_day;
+                //DBP_day_interval
+                yAxisData_DBP = yAxisData_DBP_day_interval;
+                //DBP warning
+                int[] yAxisData_DBP_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_DBP_day_interval[i] > DBP_reference_max || yAxisData_DBP_day_interval[i] < DBP_reference_min) && i < current)
+                        yAxisData_DBP_warning_day_interval[i] = yAxisData_DBP_day_interval[i];
+                    else
+                        yAxisData_DBP_warning_day_interval[i] = infinity;
+                yAxisData_DBP_warning = yAxisData_DBP_warning_day_interval;
+            }
 
+            else if(chart_index == 2) {
+                current = current_day_interval_BP_pulse;
 
-            //SBP_day
-            yAxisData_SBP = yAxisData_SBP_day;
-            //SBP warning
-            int[] yAxisData_SBP_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_SBP_day[i] > SBP_reference_max || yAxisData_SBP_day[i] < SBP_reference_min) && i < current)
-                    yAxisData_SBP_warning_day[i] = yAxisData_SBP_day[i];
-                else
-                    yAxisData_SBP_warning_day[i] = infinity;
-            yAxisData_SBP_warning = yAxisData_SBP_warning_day;
-
-
-            //DBP_day
-            yAxisData_DBP = yAxisData_DBP_day;
-            //DBP warning
-            int[] yAxisData_DBP_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_DBP_day[i] > DBP_reference_max || yAxisData_DBP_day[i] < DBP_reference_min) && i < current)
-                    yAxisData_DBP_warning_day[i] = yAxisData_DBP_day[i];
-                else
-                    yAxisData_DBP_warning_day[i] = infinity;
-            yAxisData_DBP_warning = yAxisData_DBP_warning_day;
-
-
-            //pulse_day
-            yAxisData_pulse = yAxisData_pulse_day;
-            //pulse warning
-            int[] yAxisData_pulse_warning_day = new int[4];
-            for (int i = 0; i < 4; i++)
-                if ((yAxisData_pulse_day[i] > pulse_reference_max || yAxisData_pulse_day[i] < pulse_reference_min) && i < current)
-                    yAxisData_pulse_warning_day[i] = yAxisData_pulse_day[i];
-                else
-                    yAxisData_pulse_warning_day[i] = infinity;  //還沒紀錄的點
-            yAxisData_pulse_warning = yAxisData_pulse_warning_day;
+                //pulse_day_interval
+                yAxisData_pulse = yAxisData_pulse_day_interval;
+                //pulse warning
+                int[] yAxisData_pulse_warning_day_interval = new int[4];
+                for (int i = 0; i < 4; i++)
+                    if ((yAxisData_pulse_day_interval[i] > pulse_reference_max || yAxisData_pulse_day_interval[i] < pulse_reference_min) && i < current)
+                        yAxisData_pulse_warning_day_interval[i] = yAxisData_pulse_day_interval[i];
+                    else
+                        yAxisData_pulse_warning_day_interval[i] = infinity;  //還沒紀錄的點
+                yAxisData_pulse_warning = yAxisData_pulse_warning_day_interval;
+            }
         }
 
         if (position == 1) {
             current = current_day;
 
+
             String[] xAxisData_week = {"Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"};
             xAxisData = xAxisData_week;
+
 
             //HbA1c_week
             yAxisData_HbA1c = yAxisData_HbA1c_week;
@@ -394,6 +441,7 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_HbA1c_warning_week[i] = infinity;
             yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_week;
 
+
             //SBP_week
             yAxisData_SBP = yAxisData_SBP_week;
             //SBP warning
@@ -405,6 +453,7 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_warning_week[i] = infinity;
             yAxisData_SBP_warning = yAxisData_warning_week;
 
+
             //DBP_week
             yAxisData_DBP = yAxisData_DBP_week;
             //DBP warning
@@ -415,6 +464,7 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_DBP_warning_week[i] = infinity;
             yAxisData_DBP_warning = yAxisData_DBP_warning_week;
+
 
             //pulse_week
             yAxisData_pulse = yAxisData_pulse_week;
@@ -431,10 +481,12 @@ public class AddOrViewDataFragment extends Fragment {
         if (position == 2) {
             current = current_date;
 
+
             String[] xAxisData_month = new String[30];
             for (int i = 0; i < 30; i++)
                 xAxisData_month[i] = Integer.toString(i + 1);
             xAxisData = xAxisData_month;
+
 
             //HbA1c_month
             yAxisData_HbA1c = yAxisData_HbA1c_month;
@@ -447,6 +499,7 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_HbA1c_warning_month[i] = infinity;
             yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_month;
 
+
             //SBP_month
             yAxisData_SBP = yAxisData_SBP_month;
             //SBP warning
@@ -458,6 +511,7 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_warning_month[i] = infinity;
             yAxisData_SBP_warning = yAxisData_warning_month;
 
+
             //DBP_month
             yAxisData_DBP = yAxisData_DBP_month;
             //DBP warning
@@ -468,6 +522,7 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_DBP_warning_month[i] = infinity;
             yAxisData_DBP_warning = yAxisData_DBP_warning_month;
+
 
             //pulse_month
             yAxisData_pulse = yAxisData_pulse_month;
@@ -484,6 +539,7 @@ public class AddOrViewDataFragment extends Fragment {
         if (position == 3) {
             current = 6;
 
+
             //調整為當月起的前6月
             String[] xAxisData_6months = new String[6];
             int month_pos = current_month - 5;
@@ -497,6 +553,7 @@ public class AddOrViewDataFragment extends Fragment {
             }
             xAxisData = xAxisData_6months;
 
+
             //HbA1c_6months
             yAxisData_HbA1c = yAxisData_HbA1c_6months;
             //HbA1c warning
@@ -507,6 +564,7 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_HbA1c_warning_6months[i] = infinity;
             yAxisData_HbA1c_warning = yAxisData_HbA1c_warning_6months;
+
 
             //SBP_6months
             yAxisData_SBP = yAxisData_SBP_6months;
@@ -519,6 +577,7 @@ public class AddOrViewDataFragment extends Fragment {
                     yAxisData_warning_6months[i] = infinity;
             yAxisData_SBP_warning = yAxisData_warning_6months;
 
+
             //DBP_6months
             yAxisData_DBP = yAxisData_DBP_6months;
             //DBP warning
@@ -529,6 +588,7 @@ public class AddOrViewDataFragment extends Fragment {
                 else
                     yAxisData_DBP_warning_6months[i] = infinity;
             yAxisData_DBP_warning = yAxisData_DBP_warning_6months;
+
 
             //pulse_6months
             yAxisData_pulse = yAxisData_pulse_6months;
@@ -764,6 +824,7 @@ public class AddOrViewDataFragment extends Fragment {
         yAxis.setTextColor(Color.parseColor("#03A9F4"));
         yAxis.setTextSize(16);
         data.setAxisYLeft(yAxis);
+
 
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
 

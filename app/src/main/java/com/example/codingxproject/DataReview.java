@@ -340,7 +340,10 @@ public class DataReview extends Activity {
                     else
                         yAxisData_DBP_warning_day_interval[i] = infinity;
                 yAxisData_DBP_warning = yAxisData_DBP_warning_day_interval;
+            }
 
+            else if(chart_index == 2) {
+                current = current_day_interval_BP_pulse;
 
                 //pulse_day_interval
                 yAxisData_pulse = yAxisData_pulse_day_interval;

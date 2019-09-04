@@ -48,14 +48,13 @@ public class RemindTakeMedActivity extends AppCompatActivity {
 
 
     public void setTakeMedList(ArrayList<RemindTakeMedCard> takeMedList){
-        takeMedList.add(new RemindTakeMedCard(1,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(2,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(3,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(4,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(5,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(6,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(5,R.mipmap.ic_launcher,R.string.drug_Name,false));
-        takeMedList.add(new RemindTakeMedCard(6,R.mipmap.ic_launcher,R.string.drug_Name,false));
+        takeMedList.add(new RemindTakeMedCard(1,R.drawable.drug1_case,R.string.drug1_name,false));
+        takeMedList.add(new RemindTakeMedCard(2,R.drawable.drug2_case,R.string.drug2_name,false));
+        takeMedList.add(new RemindTakeMedCard(3,R.drawable.drug3_case,R.string.drug3_name,false));
+        takeMedList.add(new RemindTakeMedCard(4,R.drawable.drug4_case,R.string.drug4_name,false));
+        takeMedList.add(new RemindTakeMedCard(5,R.drawable.drug5_case,R.string.drug5_name,false));
+//        takeMedList.add(new RemindTakeMedCard(6,R.drawable.drug6_case,R.string.drug6_name,false));
+
     }
 
 }

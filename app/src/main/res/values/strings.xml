@@ -53,7 +53,47 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
+    
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="drug1_des"><b>中文名：</b>蘭德仕注射劑\n<b>英文商品名：</b>Lantus SoloStar\n<b>規格含量：</b>100U/mL , 3mL/pen\n<b>作用：</b>胰島素.血糖控制\n<b>副作用：</b>心搏過速. 低血糖(極度飢餓感、噁心、心悸、發抖及冒冷汗). 注射部位紅腫痛. 寒顫. 視覺障礙. 噁心\n<b>儲存條件：</b>2-8℃冷藏；開封後於25℃以下可放4週\n<b>用法：</b>皮下注射</string>
+    <string name="drug2_des"><b>中文名：</b>瑪爾胰錠\n<b>英文商品名：</b>Amaryl\n<b>規格含量：</b>2mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>心搏過速. 低血糖(極度飢餓感、噁心、心悸、發抖及冒冷汗). 冒冷汗. 倦怠. 發抖. 虛弱. 過敏. 體重增加. \n<b>儲存條件：</b>小於 30°C乾燥儲存\n<b>用法：</b>口服</string>
+    <string name="drug3_des"><b>中文名：</b>諾和隆錠 \n<b>英文商品名：</b>NovoNorm\n<b>規格含量：</b>1mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>血糖(極度飢餓感、噁心、心悸、發抖及冒冷汗). 流鼻水. 背痛. 消化不良. 喉嚨痛. 意識混亂. 腹痛. 腹瀉. 噁心. 頭痛. 關節痛. \n<b>儲存條件：</b>15-25°C儲存\n<b>用法：</b>口服</string>
+    <string name="drug4_des"><b>中文名：</b>庫魯化錠\n<b>英文商品名：</b>Glucophage\n<b>規格含量：</b>500mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>味覺異常. 胃腸不適. 食慾減退. 體重減輕.\n<b>儲存條件：</b>小於 25°C儲存\n<b>用法：</b>口服</string>
+    <string name="drug5_des"><b>中文名：</b>抵克醣\n<b>英文商品名：</b>Deglu\n<b>規格含量：</b>50mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>胃腸脹氣. 腹痛. 腹瀉.\n<b>儲存條件：</b>小於 26°C儲存\n<b>用法：</b>口服</string>
+    <string name="drug6_des"><b>中文名：</b>泌特穩錠\n<b>英文商品名：</b>Glitis\n<b>規格含量：</b>30mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>水腫. 肌肉疼痛. 倦怠. 頭痛. 體重增加\n<b>儲存條件：</b>室溫\n<b>用法：</b>口服</string>
+    <string name="drug7_des"><b>中文名：</b>糖漸平膜衣錠\n<b>英文商品名：</b>Trajenta\n<b>規格含量：</b>5mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>低血糖. 背痛. 鼻咽炎. 頭痛. 體重增加\n<b>儲存條件：</b>-\n<b>用法：</b>口服</string>
+    <string name="drug8_des"><b>中文名：</b>易週糖\n<b>英文商品名：</b> Trulicity\n<b>規格含量：</b>1.5mg/0.5mL/Pen\n<b>作用：</b>降血糖\n<b>副作用：</b>食慾減退. 腹痛. 腹瀉. 嘔吐. 噁心\n<b>儲存條件：</b>2-8℃避光冷藏；每支單次劑量注射筆可保存於室溫下(不超過30°C )，為期至多14日。\n<b>用法：</b>皮下注射</string>
+    <string name="drug9_des"><b>中文名：</b>恩排糖膜衣錠\n<b>英文商品名：</b>Jardiance\n<b>規格含量：</b>25mg/tab\n<b>作用：</b>降血糖\n<b>副作用：</b>低血壓. 腎功能異常. 感染\n<b>儲存條件：</b>30℃以下儲存\n<b>用法：</b>口服</string>
+
+    <string name="drug1_name">蘭德仕注射劑</string>
+    <string name="drug2_name">瑪爾胰錠</string>
+    <string name="drug3_name">諾和隆錠</string>
+    <string name="drug4_name">庫魯化錠</string>
+    <string name="drug5_name">抵克醣</string>
+    <string name="drug6_name">泌特穩錠</string>
+    <string name="drug7_name">糖漸平膜衣錠</string>
+    <string name="drug8_name">易週糖</string>
+    <string name="drug9_name">恩排糖膜衣錠</string>
+
+    <string name="drug1_site">http://140.116.253.135/NewHomePage/massrefer_handout%20forms.asp?D_id=583325%26SearchItem1=%BD%C3%B1%D0%B3%E6%B</string>
+    <string name="drug2_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=403827%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug3_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=783921%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug4_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=583129%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug5_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=020125%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug6_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=721723%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug7_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=542924%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug8_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=286951%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+    <string name="drug9_site">http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=301927%26SearchItem1=%B3B%A4%E8%B6%B0</string>
+
+    <string name="drug1_use"></string>
+    <string name="drug2_use"></string>
+    <string name="drug3_use"></string>
+    <string name="drug4_use"></string>
+    <string name="drug5_use"></string>
+    <string name="drug6_use"></string>
+    <string name="drug7_use"></string>
+    <string name="drug8_use"></string>
+    <string name="drug9_use"></string>
+
 </resources>

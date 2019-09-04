@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android"> &lt;!&ndash; 連框顏色值 &ndash;&gt;-->
-    <!--<item>-->
-        <!--<shape>-->
-            <!--<solid android:color="#dddddd" />-->
-        <!--</shape>-->
-    <!--</item> &lt;!&ndash; 主體背景顏色值 &ndash;&gt;-->
-    <!--<item android:bottom="1dp"> &lt;!&ndash;設置只有底部有邊框&ndash;&gt;-->
-        <!--<shape>-->
-            <!--<solid android:color="#ffffff" />-->
-        <!--</shape>-->
-    <!--</item>-->
-<!--</layer-list>-->
-
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 <!--這裡是Linearlayout佈局的背景顏色-->
     <!--<solid android:color="@color/cardview_shadow_end_color" />-->

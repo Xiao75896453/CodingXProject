@@ -100,6 +100,26 @@
                     android:text="所有藥物"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+                <TextView
+                    android:id="@+id/space2"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/sleep"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:background="@color/white"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/bToMenu"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/my_button"
+                    android:textColor="@color/white"
+                    android:text="畫面選單"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

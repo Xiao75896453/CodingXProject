@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         Button bRecordBloodPressureDBP = (Button) findViewById(R.id.bRecordBloodPressureDBP);
         Button bRecordBloodPressureSBP = (Button) findViewById(R.id.bRecordBloodPressureSBP);
         Button bRecordBloodSugar = (Button) findViewById(R.id.bRecordBloodSugar);
-        Button bDrugTimePage = (Button) findViewById(R.id.bToDrugTimePage);
+//        Button bDrugTimePage = (Button) findViewById(R.id.bToDrugTimePage);
         Button bRemindDrugTaking = (Button) findViewById(R.id.bToRemindDrugGet);
         Button bRemindRecord = (Button) findViewById(R.id.bToRemindRecord);
         Button bRemindTakeMed = (Button) findViewById(R.id.bToRemindTakeMed);
-        Button bSetTime = (Button) findViewById(R.id.bToSetTime);
+//        Button bSetTime = (Button) findViewById(R.id.bToSetTime);
         Button bDetailDrugList = (Button) findViewById(R.id.bToDetailDrugList);
         Button bDateReview = (Button) findViewById(R.id.bDataReview);
         Button bHomePage=(Button)findViewById(R.id.bHomePage);
@@ -53,16 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, DataRecord_BloodPressure_SBP.class);
                 } else if (view.getId() == R.id.bRecordBloodSugar) {
                     intent = new Intent(MainActivity.this, DataRecord_BloodSugar.class);
-                } else if (view.getId() == R.id.bToDrugTimePage) {
-                    intent = new Intent(MainActivity.this, DrugTimePageActivity.class);
                 } else if (view.getId() == R.id.bToRemindDrugGet) {
                     intent = new Intent(MainActivity.this, RemindDrugGetActivity.class);
                 } else if (view.getId() == R.id.bToRemindRecord) {
                     intent = new Intent(MainActivity.this, RemindRecordActivity.class);
                 } else if (view.getId() == R.id.bToRemindTakeMed) {
                     intent = new Intent(MainActivity.this, RemindTakeMedActivity.class);
-                } else if (view.getId() == R.id.bToSetTime) {
-                    intent = new Intent(MainActivity.this, SetTimeActivity.class);
                 } else if (view.getId() == R.id.bToDetailDrugList) {
                     intent = new Intent(MainActivity.this, DrugsInfoActivity.class);
                 } else if (view.getId() == R.id.bLoginRegister) {
@@ -84,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
         bRecordBloodPressureDBP.setOnClickListener(listener);
         bRecordBloodPressureSBP.setOnClickListener(listener);
         bRecordBloodSugar.setOnClickListener(listener);
-        bDrugTimePage.setOnClickListener(listener);
+//        bDrugTimePage.setOnClickListener(listener);
         bRemindDrugTaking.setOnClickListener(listener);
         bRemindRecord.setOnClickListener(listener);
         bRemindTakeMed.setOnClickListener(listener);
-        bSetTime.setOnClickListener(listener);
+//        bSetTime.setOnClickListener(listener);
         bDetailDrugList.setOnClickListener(listener);
         bDateReview.setOnClickListener(listener);
     }

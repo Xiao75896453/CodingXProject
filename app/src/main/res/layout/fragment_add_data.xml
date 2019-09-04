@@ -25,7 +25,7 @@
           android:layout_height="wrap_content"
           android:background="@drawable/my_button"
           android:textColor="@color/white"
-          android:textSize="30dp"
+          android:textSize="25dp"
           android:text="@string/HbA1c" />
       <TextView
           android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
           android:id="@+id/BP"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:textSize="30dp"
+          android:textSize="25dp"
           android:background="@drawable/my_button"
           android:textColor="@color/white"
           android:text="@string/BP" />
@@ -51,7 +51,7 @@
           android:id="@+id/pulse"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:textSize="30dp"
+          android:textSize="25dp"
           android:background="@drawable/my_button"
           android:textColor="@color/white"
           android:text="@string/pulse" />

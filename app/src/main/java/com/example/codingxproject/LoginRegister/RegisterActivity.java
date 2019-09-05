@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                             //以下不會執行，DEBUG
                             boolean success=jsonResponse.getBoolean("success");
                             if(success){
-//                                Log.d("test","i'm here.");
+
                                 Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
                                 RegisterActivity.this.startActivity(intent);
 

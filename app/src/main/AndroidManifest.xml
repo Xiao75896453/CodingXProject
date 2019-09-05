@@ -14,15 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Splash"></activity>
-        <activity android:name=".DataRecord.DataRecord_Heartbeat" />
-        <activity android:name=".MainFunctionsWithBottomBar.HomePageActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Splash"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity android:name=".DataRecord.DataRecord_Heartbeat" />
+        <activity android:name=".MainFunctionsWithBottomBar.HomePageActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".DailyDrugInfoAndAlarmSetting.NotificationSetting" />
         <activity android:name=".DataRecord.DataRecord_BloodPressure_DBP" />

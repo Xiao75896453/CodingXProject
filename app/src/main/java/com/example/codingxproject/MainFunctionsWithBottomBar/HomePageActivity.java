@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -20,6 +21,14 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         BottomNavigationView btmNavView=(BottomNavigationView)findViewById(R.id.navbBottomMenu);
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String userName = intent.getStringExtra("username");
+
+        String message = name + "welcome to your area";
+
+
 
         init();
         btmNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,6 +48,7 @@ public class HomePageActivity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     private void init() { //initialize screen
@@ -49,6 +59,9 @@ public class HomePageActivity extends AppCompatActivity {
         beginTransaction.add(R.id.frameMainFunctions,mPeriodDrugFragment).add(R.id.frameMainFunctions,mDataFragment).add(R.id.frameMainFunctions,mSetAlarmFragment);
         beginTransaction.hide(mSetAlarmFragment).hide(mDataFragment).hide(mPeriodDrugFragment);
         beginTransaction.addToBackStack(null);
+//        beginTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//        beginTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+//        beginTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
         beginTransaction.commit();
         showNav(R.id.iconViewPeriodDrug);
     }

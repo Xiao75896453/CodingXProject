@@ -142,7 +142,6 @@ public class SetAlarmFragment extends Fragment {
                     }
                     else{
                         Intent intent = new Intent(SetAlarmFragment.this.getActivity(), AlarmReceiver.class);
-                        intent.setFlags(FLAG_RECEIVER_FOREGROUND);
                         PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 0, intent, 0);
                         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
                         alarmManager.cancel(pendingIntent);

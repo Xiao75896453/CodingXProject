@@ -53,14 +53,13 @@ public class AddOrViewDataFragment extends Fragment {
     private boolean is_choose_BP = false;
     private boolean is_choose_pulse = false;
 
-    private String[] week = {"Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"};
+    private String[] week = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
     private String[] month = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
     private int current = 0;
     private int current_month = 9 - 1;
     private int current_day = 5 - 1;
     private int current_date = 19 - 1;
-    private int current_day_interval_HbA1c = 2;  //0~3
-    private int current_day_interval_BP_pulse = 2;  //0~3
+    private int[] current_day_interval = new int[4];  //0~3陣列元素為各項目 ; 其儲存值為0~3(早上，中午，傍晚，晚上)  //128行初始化
     private int current_chart_position = 0;  //0:HbA1c ; 1:BP
     private int current_period_position = 0;  //0:day ; 1:week ; 2:month ; 3:6months
 
@@ -126,14 +125,19 @@ public class AddOrViewDataFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Date date = new Date();
+        for(int i=0;i<4;i++)
+            current_day_interval[i] = 2;
+
+            Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd");
         current_date = Integer.parseInt(formatter.format(date))-1;
+Log.e("current_date",Integer.toString(current_date));
 
         SimpleDateFormat formatterday = new SimpleDateFormat("EEE");
         for(int i=0;i<7;i++)
             if(formatterday.format(date).equals(week[i]))
                 current_day = i;
+Log.e("current_day",formatterday.format(date));
 
         bHbAlc=getView().findViewById(R.id.HbA1c);
         bBP=getView().findViewById(R.id.BP);
@@ -154,7 +158,6 @@ public class AddOrViewDataFragment extends Fragment {
         Button.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
                 Button button = (Button) getView().findViewById(R.id.add_data);
 
                 if (view.getId() == R.id.HbA1c) {
@@ -192,9 +195,9 @@ public class AddOrViewDataFragment extends Fragment {
                 }
 
                 else if (view.getId() == R.id.add_data) {
-                    if (is_choose_HbA1c == true && current_day_interval_HbA1c <= 3)
+                    if (is_choose_HbA1c == true && current_day_interval[0] <= 3)
                         startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar.class), 0);
-                    else if ((is_choose_BP == true || is_choose_pulse == true) && current_day_interval_BP_pulse <= 3) {
+                    else if ((is_choose_BP == true || is_choose_pulse == true) && current_day_interval[1] <= 3) {
                         startActivityForResult(new Intent(getActivity(), DataRecord_Heartbeat.class), 3);
                         startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_DBP.class), 2);
                         startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
@@ -225,38 +228,86 @@ public class AddOrViewDataFragment extends Fragment {
         b.setTextColor(getResources().getColor(R.color.colorPrimary));
     }
 
+    public void add_data(int requestCode, int result, int[] yAxisData)
+    {
+        yAxisData[current_day_interval[requestCode]] = result;
+        current_day_interval[requestCode]++;
+    }
+
+    public void average_data()
+    {
+        int[] yAxisData;
+        if (current_day_interval[0] > 3 && current_day_interval[1] > 3 && current_day_interval[2] > 3 && current_day_interval[3] > 3)
+        {
+            yAxisData = yAxisData_HbA1c_day_interval;
+            yAxisData_HbA1c_week[current_day] = (yAxisData[0] + yAxisData[1] + yAxisData[2] + yAxisData[3]) / 4;
+            yAxisData_HbA1c_month[current_date] = yAxisData_HbA1c_week[current_day];
+
+            yAxisData = yAxisData_SBP_day_interval;
+            yAxisData_SBP_week[current_day] = (yAxisData[0] + yAxisData[1] + yAxisData[2] + yAxisData[3]) / 4;
+            yAxisData_SBP_month[current_date] = yAxisData_SBP_week[current_day];
+
+            yAxisData = yAxisData_DBP_day_interval;
+            yAxisData_DBP_week[current_day] = (yAxisData[0] + yAxisData[1] + yAxisData[2] + yAxisData[3]) / 4;
+            yAxisData_DBP_month[current_date] = yAxisData_DBP_week[current_day];
+
+            yAxisData = yAxisData_pulse_day_interval;
+            yAxisData_pulse_week[current_day] = (yAxisData[0] + yAxisData[1] + yAxisData[2] + yAxisData[3]) / 4;
+            yAxisData_pulse_month[current_date] = yAxisData_pulse_week[current_day];
+
+            current_day++;
+            current_date++;
+        }
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 0) {
             //HbA1c輸入數據
-            int result = data.getExtras().getInt("HbA1c_result");  //得到新Activity關閉後返回的數據
-            yAxisData_HbA1c_day_interval[current_day_interval_HbA1c] = result;
-            current_day_interval_HbA1c++;
-            set_chart(0, 0);
-            if (current_day_interval_HbA1c > 3) {
-                yAxisData_HbA1c_week[current_day] = (yAxisData_HbA1c_day_interval[0] + yAxisData_HbA1c_day_interval[1] + yAxisData_HbA1c_day_interval[2] + yAxisData_HbA1c_day_interval[3]) / 4;
-                current_day++;
-                yAxisData_HbA1c_month[current_date] = yAxisData_HbA1c_week[current_day];
-                current_date++;
-            }
+            int HbA1c_result = data.getExtras().getInt("HbA1c_result");  //得到新Activity關閉後返回的數據
+
+            //加數據進圖表
+            add_data(requestCode,HbA1c_result,yAxisData_HbA1c_day_interval);
+
+            //一天結束時
+            average_data();
         }
         else if(requestCode == 1)
         {
             //SBP輸入數據
             SBP_result = data.getExtras().getInt("SBP_result");  //得到新Activity關閉後返回的數據
+
+            //加數據進圖表
+            add_data(requestCode,SBP_result,yAxisData_SBP_day_interval);
+
+            //一天結束時
+            average_data();
         }
 
         else if(requestCode == 2)
         {
             //DBP輸入數據
             DBP_result = data.getExtras().getInt("DBP_result");  //得到新Activity關閉後返回的數據
+
+            //加數據進圖表
+            add_data(requestCode,DBP_result,yAxisData_DBP_day_interval);
+
+            //一天結束時
+            average_data();
         }
 
         else if(requestCode == 3)
         {
             //pulse輸入數據
             pulse_result = data.getExtras().getInt("pulse_result");  //得到新Activity關閉後返回的數據
+
+            //加數據進圖表
+            add_data(requestCode,pulse_result,yAxisData_pulse_day_interval);
+
+            //一天結束時
+            average_data();
         }
+
+        set_chart(current_chart_position,current_period_position);
 
         Log.e("SBP",Integer.toString(SBP_result));
         Log.e("DBP",Integer.toString(DBP_result));
@@ -275,7 +326,7 @@ public class AddOrViewDataFragment extends Fragment {
     }
 
     private void spinner_listener(Spinner spinner) {
-        final String[] spinner_list = {"一天", "一週", "一月", "6個月"};
+        final String[] spinner_list = {"按 天 檢視", "按 週 檢視", "按 月 檢視", "按 半年 檢視"};
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -377,7 +428,7 @@ public class AddOrViewDataFragment extends Fragment {
 
 
             if(chart_index == 0) {
-                current = current_day_interval_HbA1c;
+                current = current_day_interval[0];
 
                 //HbA1c_day_interval
                 yAxisData_HbA1c = yAxisData_HbA1c_day_interval;
@@ -392,7 +443,7 @@ public class AddOrViewDataFragment extends Fragment {
             }
 
             else if(chart_index == 1) {
-                current = current_day_interval_BP_pulse;
+                current = current_day_interval[1];
 
                 //SBP_day_interval
                 yAxisData_SBP = yAxisData_SBP_day_interval;
@@ -419,7 +470,7 @@ public class AddOrViewDataFragment extends Fragment {
             }
 
             else if(chart_index == 2) {
-                current = current_day_interval_BP_pulse;
+                current = current_day_interval[3];
 
                 //pulse_day_interval
                 yAxisData_pulse = yAxisData_pulse_day_interval;
@@ -436,7 +487,6 @@ public class AddOrViewDataFragment extends Fragment {
 
         if (position == 1) {
             current = current_day;
-Log.e("currentday",Integer.toString(current));
             xAxisData = week;
 
             //HbA1c_week

@@ -27,10 +27,10 @@
     <string name="pulse">脈搏</string>
     <string name="add_data">新增血糖數據</string>
     <string-array name="choose_period">
-        <item>一天</item>
-        <item>一週</item>
-        <item>一月</item>
-        <item>6個月</item>
+        <item>按 一天 檢視</item>
+        <item>按 一週 檢視</item>
+        <item>按 一月 檢視</item>
+        <item>按 半年 檢視</item>
     </string-array>
 
     <string name="drug_descriptions">nalevna.fnvjnvan:　fvjanlfnanbkaeof\n sne;rjgnsrtjbrbsn;rb\n nsldfbnsbfv: labrhvalebvrlhv\n</string>

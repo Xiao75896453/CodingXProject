@@ -90,9 +90,9 @@ public class AddOrViewDataFragment extends Fragment {
     //HbA1c_week
     private int[] yAxisData_HbA1c_week = {80, 81, 82, 83, 84, 85, 85};
     //SBP_week
-    private int[] yAxisData_SBP_week = {109, 102, 110, 111, 210, 115, 114};
+    private int[] yAxisData_SBP_week = {109, 102, 110, 111, 109, 115, 114};
     //DBP_week
-    private int[] yAxisData_DBP_week = {80, 81, 82, 83, 84, -9, 85};
+    private int[] yAxisData_DBP_week = {80, 81, 82, 83, 84, 84, 85};
     //pulse_week
     private int[] yAxisData_pulse_week = {65,65,66,65,64,67,70};
 
@@ -208,13 +208,22 @@ Log.e("current_day",formatterday.format(date));
                     button.setText("新增血壓、脈搏數據");
                 }
 
-                else if (view.getId() == R.id.add_data) {
-                    if (is_choose_HbA1c == true && current_day_interval[0] <= 3)
-                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar.class), 0);
-                    else if ((is_choose_BP == true || is_choose_pulse == true) && current_day_interval[1] <= 3) {
-                        startActivityForResult(new Intent(getActivity(), DataRecord_Heartbeat.class), 3);
-                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_DBP.class), 2);
-                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
+                if (view.getId() == R.id.add_data) {
+                    if (is_choose_HbA1c == true) {
+                        if(current_day_interval[0] <= 3)
+                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar.class), 0);
+                        else
+                            Toast.makeText(getActivity(), "今日血糖數據已新增完畢", Toast.LENGTH_LONG).show();
+                    }
+
+                    if (is_choose_BP == true || is_choose_pulse == true) {
+                        if(current_day_interval[1] <= 3) {
+                            startActivityForResult(new Intent(getActivity(), DataRecord_Heartbeat.class), 3);
+                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_DBP.class), 2);
+                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
+                        }
+                        else
+                            Toast.makeText(getActivity(), "今日血壓、脈搏數據已新增完畢", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -926,7 +935,7 @@ Log.e("current_day",formatterday.format(date));
         }
 
         else if (chart_index == 1) {
-            for (int i = 0; i < yAxisData_SBP.length; i++) {
+            for (int i = 0; i < current; i++) {
                 if (i == 0) {
                     yAxisData_max = yAxisData_SBP[i];
                     yAxisData_min = yAxisData_SBP[i];
@@ -965,14 +974,14 @@ Log.e("current_day",formatterday.format(date));
                 if (yAxisData_pulse[i] <= yAxisData_min)
                     yAxisData_min = yAxisData_pulse[i];
             }
-            if (yAxisData_max >= 150)
+            if (yAxisData_max >= 100)
                 viewport.top = yAxisData_max + 50;
             else
-                viewport.top = 150;  //default
+                viewport.top = 100;  //default
             if (yAxisData_min <= 0)
                 viewport.bottom = yAxisData_min - 50;
             else
-                viewport.bottom = -10;  //default
+                viewport.bottom = 0;  //default
             Log.e("yAxisData_max", Integer.toString(yAxisData_max) + "");
             Log.e("yAxisData_min", Integer.toString(yAxisData_min) + "");
         }

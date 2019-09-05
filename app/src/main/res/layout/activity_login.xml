@@ -49,4 +49,15 @@
         android:text="Register Here"
         android:layout_below="@id/bLogin" />
 
+    <Button
+        android:id="@+id/bToMenu"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/my_button"
+        android:textColor="@color/white"
+        android:text="畫面選單"
+        android:visibility="visible"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
 </RelativeLayout>

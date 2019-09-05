@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CodingXProject</string>
+    <string name="app_name">享藥健康</string>
     <string name="title_activity_data_record">DataRecord</string>
     <string name="drug_time_title">\ 藥品資訊</string>
     <string name="getup">睡醒</string>

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.codingxproject.MainActivity;
 import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
 
@@ -30,6 +31,14 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword=(EditText) findViewById(R.id.etPassword);
         final Button bLogin=(Button) findViewById(R.id.bLogin);
         final TextView registerLink=(TextView)findViewById(R.id.tvRegisterHere);
+        final Button bToMenu=(Button)findViewById(R.id.bToMenu);
+
+        bToMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            }
+        });
 
         registerLink.setOnClickListener(new View.OnClickListener(){
             @Override

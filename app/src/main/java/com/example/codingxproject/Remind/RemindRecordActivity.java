@@ -35,6 +35,7 @@ public class RemindRecordActivity extends AppCompatActivity {
 
                 }else if(view.getId()==R.id.bFillRecord){
                     Intent intent=new Intent(RemindRecordActivity.this, HomePageActivity.class);
+                    intent.putExtra("chooseFragment","2");
                     startActivity(intent);
 
                 }

@@ -5,7 +5,6 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="1dp"
     tools:context=".MainFunctionsWithBottomBar.PeriodDrugFragment">
 
     <LinearLayout
@@ -17,9 +16,6 @@
             android:id="@+id/title2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
             android:text="@string/drug_time_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="30sp"

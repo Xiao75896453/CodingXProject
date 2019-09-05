@@ -2,10 +2,14 @@ package com.example.codingxproject.LoginRegister;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
+import com.example.codingxproject.Splash;
 
 public class UserAreaActivity extends AppCompatActivity {
 
@@ -15,16 +19,29 @@ public class UserAreaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_area);
 
         final TextView welcomeMsg = (TextView) findViewById(R.id.tvWelcomeMsg);
-        final TextView etUserName = (TextView) findViewById(R.id.etUserName);
 //        final EditText etAge=(EditText) findViewById(R.id.etAge);
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-        String userName = intent.getStringExtra("username");
-
-        String message = name + "welcome to your area";
+//        String userName = intent.getStringExtra("username");
+        String message = name + "\nWelcome!!";
         welcomeMsg.setText(message); //Debug
-        etUserName.setText(userName);
+        Animation myanim = AnimationUtils.loadAnimation(UserAreaActivity.this, R.anim.fade_in);
+        welcomeMsg.startAnimation(myanim);
+        final Intent aftersplash = new Intent(UserAreaActivity.this, HomePageActivity.class);
+        Thread timer = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    startActivity(aftersplash);
+                    finish();
+                }
+            }
+        };
+        timer.start();
 
     }
 }

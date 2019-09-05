@@ -35,6 +35,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import static android.content.Context.ALARM_SERVICE;
+import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
 
 public class SetAlarmFragment extends Fragment {
 
@@ -134,13 +135,22 @@ public class SetAlarmFragment extends Fragment {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if (mainViewholder.open.isChecked()) {
                         Intent intent = new Intent(SetAlarmFragment.this.getActivity(), AlarmReceiver.class);
+                        intent.setFlags(FLAG_RECEIVER_FOREGROUND);
                         PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 0, intent, 0);
                         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
 
                         //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + hour1 + minute1, pendingIntent);
                         alarmManager.set(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(), pendingIntent);
                         //Toast.makeText(this, "Alarm set in " + second + " mili seconds", Toast.LENGTH_LONG).show();
-                        Toast.makeText(getActivity().getApplicationContext(), " Alarm set ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), " 提醒開啟", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Intent intent = new Intent(SetAlarmFragment.this.getActivity(), AlarmReceiver.class);
+                        intent.setFlags(FLAG_RECEIVER_FOREGROUND);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 0, intent, 0);
+                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
+                        alarmManager.cancel(pendingIntent);
+                        Toast.makeText(getActivity().getApplicationContext(), " 提醒關閉 ", Toast.LENGTH_LONG).show();
                     }
                 }
             });

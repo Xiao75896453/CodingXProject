@@ -8,7 +8,9 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest {
 
-    private static final String LOGIN_REQUEST_URL="https://bethhaha.000webhostapp.com/Login.php";//files.000webhost.com:21/Register.php
+//    https://bethhaha.000webhostapp.com/Login.php
+    //http://10.0.2.2:80/loginRegister/Login.php
+    private static final String LOGIN_REQUEST_URL="http://192.168.210.7:80/loginRegister/Login.php";//files.000webhost.com:21/Register.php
     private Map<String,String> params;
 
     public LoginRequest(String username, String password, Response.Listener<String>listener){

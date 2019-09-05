@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.codingxproject.DetailDrugMessage.DetailDrugInfoActivity;
 import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
+import com.example.codingxproject.MainActivity;
 import com.example.codingxproject.R;
 
 
@@ -52,6 +53,15 @@ public class PeriodDrugFragment extends Fragment {
         btmNight = (Button) getView().findViewById(R.id.night_btm);
         bTotalDrug=(Button) getView().findViewById(R.id.bTotalDrug);
         coverText = (ConstraintLayout) getView().findViewById(R.id.cover);
+
+        Button bToMenu=(Button)getView().findViewById(R.id.bToMenu);
+        bToMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         setButtonToGreen();
 

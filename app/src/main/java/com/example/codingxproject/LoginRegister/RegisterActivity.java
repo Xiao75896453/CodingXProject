@@ -2,9 +2,12 @@ package com.example.codingxproject.LoginRegister;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,10 +40,13 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+//
                             JSONObject jsonResponse=new JSONObject(response);
+//                            Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_LONG).show();
                             //以下不會執行，DEBUG
                             boolean success=jsonResponse.getBoolean("success");
                             if(success){
+//                                Log.d("test","i'm here.");
                                 Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
                                 RegisterActivity.this.startActivity(intent);
 
@@ -60,10 +66,9 @@ public class RegisterActivity extends AppCompatActivity {
                 RegisterRequest registerRequest=new RegisterRequest(name, username, password, responseListener);
                 RequestQueue queue= Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
-                //Debug
 
-//                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
-//                RegisterActivity.this.startActivity(intent);
+                Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
+                RegisterActivity.this.startActivity(intent);
 //
 
             }

@@ -20,7 +20,7 @@
             android:id="@+id/ivRemindDrugGetIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/logo_pic" />
 
         <TextView
             android:id="@+id/tvRemindDrugGetTitle"
@@ -38,7 +38,7 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_margin="20dp"
-        android:layout_weight="2"
+        android:layout_weight="2.5"
         android:weightSum="2">
 
         <TextView
@@ -67,14 +67,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:orientation="horizontal"
         android:weightSum="2">
 
         <Button
             android:id="@+id/bRemindAgain"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="再提醒"
             android:textSize="36sp"
@@ -83,8 +83,8 @@
 
         <Button
             android:id="@+id/bDrugGetConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="確定"
             android:textSize="36sp"

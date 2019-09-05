@@ -15,13 +15,18 @@
 
 
 
-        <ImageView
+        <Button
             android:id="@+id/appLogo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_gravity="center"
             android:layout_marginTop="0dp"
-            android:src="@drawable/drug8_case" />
+            android:clickable="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:background="@drawable/my_button"
+            android:text="享藥\n健康"/>
 
         <TextView
             android:id="@+id/appDescription"

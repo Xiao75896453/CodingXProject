@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 
 public class Splash extends AppCompatActivity {
 
-    private ImageView logo;
+    private Button logo;
     private TextView appDescription;
     private LinearLayout appEnter;
     @Override
@@ -33,7 +34,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    sleep(4500);
+                    sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

@@ -9,7 +9,7 @@
         android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="設定提醒"
+        android:text=" 設定提醒"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="30sp"
         android:textStyle="bold"

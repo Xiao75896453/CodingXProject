@@ -14,31 +14,69 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Splash"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".DataRecord.DataRecord_Heartbeat" />
-        <activity android:name=".MainFunctionsWithBottomBar.HomePageActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".DailyDrugInfoAndAlarmSetting.NotificationSetting" />
-        <activity android:name=".DataRecord.DataRecord_BloodPressure_DBP" />
-        <activity android:name=".DataRecord.DataRecord_BloodPressure_SBP" />
-        <activity android:name=".DataRecord.DataRecord_BloodSugar" />
-        <activity android:name=".DataReview" />
-        <activity android:name=".DetailDrugMessage.DetailDrugInfoActivity" />
-        <activity android:name=".DetailDrugMessage.DrugsInfoActivity" />
-        <activity android:name=".DrugTimePageActivity" />
-        <activity android:name=".LoginRegister.LoginActivity" />
-        <activity android:name=".LoginRegister.RegisterActivity" />
-        <activity android:name=".Remind.RemindDrugGetActivity" />
-        <activity android:name=".Remind.RemindRecordActivity" />
-        <activity android:name=".Remind.RemindTakeMedActivity" />
-        <activity android:name=".SetTimeActivity" />
-        <activity android:name=".LoginRegister.UserAreaActivity" />
+        <activity
+            android:name=".DataRecord.DataRecord_Heartbeat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainFunctionsWithBottomBar.HomePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DailyDrugInfoAndAlarmSetting.NotificationSetting"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DataRecord.DataRecord_BloodPressure_DBP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DataRecord.DataRecord_BloodPressure_SBP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DataRecord.DataRecord_BloodSugar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DataReview"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DetailDrugMessage.DetailDrugInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DetailDrugMessage.DrugsInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DrugTimePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginRegister.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginRegister.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Remind.RemindDrugGetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Remind.RemindRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Remind.RemindTakeMedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SetTimeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginRegister.UserAreaActivity"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".AlarmReceiver"

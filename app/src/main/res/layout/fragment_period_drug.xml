@@ -116,6 +116,7 @@
                     android:background="@drawable/my_button"
                     android:textColor="@color/white"
                     android:text="畫面選單"
+                    android:visibility="invisible"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </LinearLayout>

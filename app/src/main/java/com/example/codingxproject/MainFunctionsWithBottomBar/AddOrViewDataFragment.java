@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -114,16 +116,22 @@ public class AddOrViewDataFragment extends Fragment {
 
     public Button bHbAlc,bBP,bPulse,bAddData;
 
+    private LinearLayout cover,chart;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_add_data,container,false);
         return view;
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        cover=getView().findViewById(R.id.cover);
+        chart=getView().findViewById(R.id.chart_layout);
 
         for(int i=0;i<4;i++)
             current_day_interval[i] = 2;
@@ -145,7 +153,7 @@ Log.e("current_day",formatterday.format(date));
         bAddData=getView().findViewById(R.id.add_data);
 
         setAllButtonColor();
-        setButtonClickedColor(bHbAlc);
+        //setButtonClickedColor(bHbAlc);
 
         Spinner spinner = null;
         spinner = set_spinner(spinner);
@@ -161,6 +169,8 @@ Log.e("current_day",formatterday.format(date));
                 Button button = (Button) getView().findViewById(R.id.add_data);
 
                 if (view.getId() == R.id.HbA1c) {
+                    cover.setVisibility(View.GONE);
+                    chart.setVisibility(View.VISIBLE);
                     setAllButtonColor();
                     setButtonClickedColor(bHbAlc);
                     is_choose_HbA1c = true;
@@ -173,6 +183,8 @@ Log.e("current_day",formatterday.format(date));
                 }
 
                 else if (view.getId() == R.id.BP) {
+                    cover.setVisibility(View.GONE);
+                    chart.setVisibility(View.VISIBLE);
                     setAllButtonColor();
                     setButtonClickedColor(bBP);
                     is_choose_HbA1c = false;
@@ -184,6 +196,8 @@ Log.e("current_day",formatterday.format(date));
                 }
 
                 else if (view.getId() == R.id.pulse) {
+                    cover.setVisibility(View.GONE);
+                    chart.setVisibility(View.VISIBLE);
                     setAllButtonColor();
                     setButtonClickedColor(bPulse);
                     is_choose_HbA1c = false;

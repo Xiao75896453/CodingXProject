@@ -26,6 +26,9 @@ public class DetailDrugInfoActivity extends AppCompatActivity {
         webDrugDetail.getSettings().setUseWideViewPort(true);
         webDrugDetail.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
         webDrugDetail.getSettings().setLoadWithOverviewMode(true);
+        webDrugDetail.getSettings().setJavaScriptEnabled(true);
+        webDrugDetail.getSettings().setSupportZoom(true);
+        webDrugDetail.getSettings().setBuiltInZoomControls(true);
 
         webDrugDetail.loadUrl(destinSite);
     }

@@ -125,7 +125,7 @@
                 android:id="@+id/cover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView13"
@@ -159,7 +159,7 @@
                 android:id="@+id/MorningScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:visibility="gone">
+                tools:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -174,8 +174,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug1_case" />
 
@@ -190,14 +190,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug1_name" />
+                                android:text="@string/drug1_name"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 劑" />
+                                android:text="1次 1 劑"
+                                android:textSize="24dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -208,8 +210,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug2_case" />
 
@@ -224,14 +226,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug2_name" />
+                                android:text="@string/drug2_name"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -242,8 +246,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug3_case" />
 
@@ -258,14 +262,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug3_name" />
+                                android:text="@string/drug3_name"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -276,8 +282,8 @@
 
                         <ImageView
                             android:id="@+id/imageView2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug4_case" />
 
@@ -292,14 +298,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/drug4_name" />
+                                android:text="@string/drug4_name"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 3 顆" />
+                                android:text="1次 3 顆"
+                                android:textSize="24dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -310,8 +318,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug5_case" />
 
@@ -326,14 +334,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug5_name" />
+                                android:text="@string/drug5_name"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24dp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -358,8 +368,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug5_case" />
 
@@ -374,14 +384,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug5_name" />
+                                android:text="@string/drug5_name"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -392,8 +404,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug6_case" />
 
@@ -408,14 +420,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug6_name" />
+                                android:text="@string/drug6_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -426,8 +440,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug7_case" />
 
@@ -442,14 +456,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug7_name" />
+                                android:text="@string/drug7_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -460,8 +476,8 @@
 
                         <ImageView
                             android:id="@+id/imageView2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug8_case" />
 
@@ -476,14 +492,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/drug8_name" />
+                                android:text="@string/drug8_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 3 顆" />
+                                android:text="1次 3 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -494,8 +512,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug9_case" />
 
@@ -510,14 +528,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug9_name" />
+                                android:text="@string/drug9_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -544,8 +564,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug1_case" />
 
@@ -560,14 +580,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug1_name" />
+                                android:text="@string/drug1_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 劑" />
+                                android:text="1次 1 劑"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -578,8 +600,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug2_case" />
 
@@ -594,14 +616,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug2_name" />
+                                android:text="@string/drug2_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -612,8 +636,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug3_case" />
 
@@ -628,14 +652,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug3_name" />
+                                android:text="@string/drug3_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -646,8 +672,8 @@
 
                         <ImageView
                             android:id="@+id/imageView2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug4_case" />
 
@@ -662,14 +688,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/drug4_name" />
+                                android:text="@string/drug4_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 3 顆" />
+                                android:text="1次 3 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -680,8 +708,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug5_case" />
 
@@ -696,14 +724,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug5_name" />
+                                android:text="@string/drug5_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -728,8 +758,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug5_case" />
 
@@ -744,14 +774,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug5_name" />
+                                android:text="@string/drug5_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -762,8 +794,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug6_case" />
 
@@ -778,14 +810,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug6_name" />
+                                android:text="@string/drug6_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -796,8 +830,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug7_case" />
 
@@ -812,14 +846,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug7_name" />
+                                android:text="@string/drug7_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -830,8 +866,8 @@
 
                         <ImageView
                             android:id="@+id/imageView2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug8_case" />
 
@@ -846,14 +882,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/drug8_name" />
+                                android:text="@string/drug8_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 3 顆" />
+                                android:text="1次 3 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -864,8 +902,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug9_case" />
 
@@ -880,14 +918,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug9_name" />
+                                android:text="@string/drug9_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -914,8 +954,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug1_case" />
 
@@ -930,14 +970,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug1_name" />
+                                android:text="@string/drug1_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 劑" />
+                                android:text="1次 1 劑"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -948,8 +990,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug2_case" />
 
@@ -964,14 +1006,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug2_name" />
+                                android:text="@string/drug2_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -982,8 +1026,8 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug3_case" />
 
@@ -998,14 +1042,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug3_name" />
+                                android:text="@string/drug3_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 1 顆" />
+                                android:text="1次 1 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1016,7 +1062,7 @@
 
                         <ImageView
                             android:id="@+id/imageView2"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug4_case" />
@@ -1032,14 +1078,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/drug4_name" />
+                                android:text="@string/drug4_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 3 顆" />
+                                android:text="1次 3 顆"
+                                android:textSize="24sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1050,7 +1098,7 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_margin="20dp"
                             app:srcCompat="@drawable/drug5_case" />
@@ -1066,14 +1114,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center|center_horizontal|center_vertical"
-                                android:text="@string/drug5_name" />
+                                android:text="@string/drug5_name"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="1次 2 顆" />
+                                android:text="1次 2 顆"
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </LinearLayout>

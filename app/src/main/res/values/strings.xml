@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CodingXProject</string>
     <string name="title_activity_data_record">DataRecord</string>
-    <string name="drug_time_title">定期使用藥物資訊</string>
+    <string name="drug_time_title">藥品資訊</string>
     <string name="getup">睡醒</string>
     <string name="breakfast">早餐</string>
     <string name="lunch">午餐</string>

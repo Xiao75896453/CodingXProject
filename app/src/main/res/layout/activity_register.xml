@@ -46,6 +46,7 @@
         android:layout_below="@+id/etPassword"
         android:layout_centerHorizontal="true"
         android:text="Register"
+        android:paddingHorizontal="5dp"
         android:background="@drawable/my_button"
         android:textColor="@color/white"
         android:textSize="25dp"/>

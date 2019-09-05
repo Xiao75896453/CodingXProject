@@ -65,8 +65,7 @@ public class DataRecord_Heartbeat extends AppCompatActivity {
         final DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent=new Intent(DataRecord_Heartbeat.this, HomePageActivity.class);
-                startActivity(intent);
+                finish_activity(mNumberPicker);
             }
         };
 

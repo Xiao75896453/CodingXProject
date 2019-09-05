@@ -22,14 +22,6 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         BottomNavigationView btmNavView=(BottomNavigationView)findViewById(R.id.navbBottomMenu);
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String userName = intent.getStringExtra("username");
-
-        String message = name + "welcome to your area";
-
-
-
         init();
         btmNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -83,7 +83,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="黑糖"
+                android:text="血壓"
                 android:textSize="36sp" />
 
             <TextView
@@ -109,14 +109,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="備註" />
 
             <TextView
                 android:id="@+id/tvRecordValue3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="備註" />
         </LinearLayout>
 
     </LinearLayout>

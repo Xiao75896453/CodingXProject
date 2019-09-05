@@ -31,6 +31,7 @@ public class RemindDrugGetActivity extends AppCompatActivity {
 
                 }else if(view.getId()==R.id.bDrugGetConfirm){
 
+
                 }
                 Intent intent=new Intent(RemindDrugGetActivity.this, HomePageActivity.class);
                 startActivity(intent);

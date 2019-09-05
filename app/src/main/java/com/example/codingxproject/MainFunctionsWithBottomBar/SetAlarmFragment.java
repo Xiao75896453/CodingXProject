@@ -9,8 +9,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +23,10 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.codingxproject.AlarmReceiver;
-import com.example.codingxproject.MainActivity;
+
 import com.example.codingxproject.R;
 import com.example.codingxproject.SetTimeActivity;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;

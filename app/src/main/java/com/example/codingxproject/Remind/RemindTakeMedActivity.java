@@ -30,12 +30,16 @@ public class RemindTakeMedActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(view.getId()==R.id.bRemindAgain){
+                    Intent intent=new Intent(RemindTakeMedActivity.this, RemindRecordActivity.class);
+                    startActivity(intent);
 
                 }else if(view.getId()==R.id.bTakeMedConfirm){
+                    Intent intent=new Intent(RemindTakeMedActivity.this, RemindRecordActivity.class);
+                    startActivity(intent);
 
                 }
-                Intent intent=new Intent(RemindTakeMedActivity.this, HomePageActivity.class);
-                startActivity(intent);
+                //Intent intent=new Intent(RemindTakeMedActivity.this, HomePageActivity.class);
+                //startActivity(intent);
             }
         };
         bRemingAgain.setOnClickListener(listener);

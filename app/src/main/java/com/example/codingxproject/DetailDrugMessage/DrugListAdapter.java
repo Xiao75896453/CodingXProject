@@ -47,7 +47,7 @@ class DrugListAdapter extends RecyclerView.Adapter<DrugListAdapter.ViewHolder> {
 //                Toast toast = Toast.makeText(context, "213", Toast.LENGTH_SHORT);
 //                toast.show();
                 Intent toDetail = new Intent(context, DetailDrugInfoActivity.class);
-                toDetail.putExtra("destinSite", R.string.drug1_site);//drugCard.getDetailInfo()
+                toDetail.putExtra("destinSite", drugCard.getDetailInfo());//drugCard.getDetailInfo()
                 context.startActivity(toDetail);
             }
         });

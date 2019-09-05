@@ -73,15 +73,14 @@ public class DataRecord_Heartbeat extends AppCompatActivity {
         bConfirmHeartbeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mNumberPicker.getValue()>100){
+                if(mNumberPicker.getValue()>80){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_Heartbeat.this);
                     build.setMessage("心跳太快，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
-                }else if(mNumberPicker.getValue()<40){
+                }else if(mNumberPicker.getValue()<60){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_Heartbeat.this);
                     build.setMessage("心跳數過低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else{
-                    Intent intent=new Intent(DataRecord_Heartbeat.this,HomePageActivity.class);
-                    startActivity(intent);
+                    finish_activity(mNumberPicker);
                 }
 
                 //紀錄資訊，傳出資訊
@@ -91,6 +90,17 @@ public class DataRecord_Heartbeat extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void finish_activity(NumberPicker mNumberPicker)
+    {
+        Intent intent = new Intent();
+        //把返回數據存入Intent
+        intent.putExtra("pulse_result", mNumberPicker.getValue());
+        //設置返回數據
+        DataRecord_Heartbeat.this.setResult(RESULT_OK, intent);
+        //關閉Activity
+        DataRecord_Heartbeat.this.finish();
     }
 
     public static String setTimeForm(int currentTime) {

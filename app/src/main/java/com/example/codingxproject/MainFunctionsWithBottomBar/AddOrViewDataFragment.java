@@ -23,10 +23,13 @@ import android.widget.Toast;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
+import com.example.codingxproject.DataRecord.DataRecord_Heartbeat;
 import com.example.codingxproject.DataReview;
 import com.example.codingxproject.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import lecho.lib.hellocharts.listener.LineChartOnValueSelectListener;
@@ -40,12 +43,18 @@ import lecho.lib.hellocharts.view.LineChartView;
 
 
 public class AddOrViewDataFragment extends Fragment {
+
+    private int SBP_result = 0;
+    private int DBP_result = 0;
+    private int pulse_result = 0;
+
     private int infinity = -1000;
     private boolean is_choose_HbA1c = true;
     private boolean is_choose_BP = false;
     private boolean is_choose_pulse = false;
 
-    String[] month = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
+    private String[] week = {"Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"};
+    private String[] month = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
     private int current = 0;
     private int current_month = 9 - 1;
     private int current_day = 5 - 1;
@@ -116,16 +125,23 @@ public class AddOrViewDataFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd");
+        current_date = Integer.parseInt(formatter.format(date))-1;
+
+        SimpleDateFormat formatterday = new SimpleDateFormat("EEE");
+        for(int i=0;i<7;i++)
+            if(formatterday.format(date).equals(week[i]))
+                current_day = i;
+
         bHbAlc=getView().findViewById(R.id.HbA1c);
         bBP=getView().findViewById(R.id.BP);
         bPulse=getView().findViewById(R.id.pulse);
         bAddData=getView().findViewById(R.id.add_data);
-        //set buttons color
-//        getView().findViewById(R.id.HbA1c).setBackgroundColor(Color.parseColor("#A9A9A9"));
-//        getView().findViewById(R.id.BP).setBackgroundColor(Color.parseColor("#F5F5F5"));
-//        getView().findViewById(R.id.pulse).setBackgroundColor(Color.parseColor("#F5F5F5"));
-//        getView().findViewById(R.id.add_data).setBackgroundColor(Color.parseColor("#F5F5F5"));
+
         setAllButtonColor();
+        setButtonClickedColor(bHbAlc);
 
         Spinner spinner = null;
         spinner = set_spinner(spinner);
@@ -176,12 +192,13 @@ public class AddOrViewDataFragment extends Fragment {
                 }
 
                 else if (view.getId() == R.id.add_data) {
-                    if (is_choose_HbA1c == true)
+                    if (is_choose_HbA1c == true && current_day_interval_HbA1c <= 3)
                         startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar.class), 0);
-                    else if (is_choose_BP == true)
+                    else if ((is_choose_BP == true || is_choose_pulse == true) && current_day_interval_BP_pulse <= 3) {
+                        startActivityForResult(new Intent(getActivity(), DataRecord_Heartbeat.class), 3);
+                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_DBP.class), 2);
                         startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
-                    else if (is_choose_pulse == true)
-                        startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
+                    }
                 }
             }
         };
@@ -208,48 +225,43 @@ public class AddOrViewDataFragment extends Fragment {
         b.setTextColor(getResources().getColor(R.color.colorPrimary));
     }
 
-
-    //    public Button bRecordBloodSugar,bRecordBloodPressure,bViewRecord;
-//    @Nullable
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        View view=inflater.inflate(R.layout.fragment_add_data,container,false);
-//        return view;
-//    }
-//
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        bRecordBloodSugar=(Button)getActivity().findViewById(R.id.bAddRecord_bloodSugar);
-//        bRecordBloodPressure=(Button)getActivity().findViewById(R.id.bAddRecord_bloodPressure);
-//        bViewRecord=(Button)getActivity().findViewById(R.id.bViewRecord);
-//        View.OnClickListener listener=new View.OnClickListener() {
-//            Intent intent;
-//            @Override
-//            public void onClick(View view) {
-//                if(view.getId()==R.id.bAddRecord_bloodSugar){
-//                    intent=new Intent(getActivity(), DataRecord_BloodSugar.class);
-//                }else if(view.getId()==R.id.bAddRecord_bloodPressure){
-//                    intent=new Intent(getActivity(), DataRecord_BloodPressure_SBP.class);
-//                }else if(view.getId()==R.id.bViewRecord){
-//                    intent=new Intent(getActivity(), DataReview.class);
-//                }
-//                startActivity(intent);
-//            }
-//        };
-//        bRecordBloodSugar.setOnClickListener(listener);
-//        bRecordBloodPressure.setOnClickListener(listener);
-//        bViewRecord.setOnClickListener(listener);
-//    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == 0)  //HbA1c輸入數據
-        {
-            int result = data.getExtras().getInt("result");  //得到新Activity關閉後返回的數據
+        if(requestCode == 0) {
+            //HbA1c輸入數據
+            int result = data.getExtras().getInt("HbA1c_result");  //得到新Activity關閉後返回的數據
             yAxisData_HbA1c_day_interval[current_day_interval_HbA1c] = result;
             current_day_interval_HbA1c++;
-            set_chart(0,0);
+            set_chart(0, 0);
+            if (current_day_interval_HbA1c > 3) {
+                yAxisData_HbA1c_week[current_day] = (yAxisData_HbA1c_day_interval[0] + yAxisData_HbA1c_day_interval[1] + yAxisData_HbA1c_day_interval[2] + yAxisData_HbA1c_day_interval[3]) / 4;
+                current_day++;
+                yAxisData_HbA1c_month[current_date] = yAxisData_HbA1c_week[current_day];
+                current_date++;
+            }
         }
+        else if(requestCode == 1)
+        {
+            //SBP輸入數據
+            SBP_result = data.getExtras().getInt("SBP_result");  //得到新Activity關閉後返回的數據
+        }
+
+        else if(requestCode == 2)
+        {
+            //DBP輸入數據
+            DBP_result = data.getExtras().getInt("DBP_result");  //得到新Activity關閉後返回的數據
+        }
+
+        else if(requestCode == 3)
+        {
+            //pulse輸入數據
+            pulse_result = data.getExtras().getInt("pulse_result");  //得到新Activity關閉後返回的數據
+        }
+
+        Log.e("SBP",Integer.toString(SBP_result));
+        Log.e("DBP",Integer.toString(DBP_result));
+        Log.e("pulse",Integer.toString(pulse_result));
+
     }
 
     public Spinner set_spinner(Spinner sp) {
@@ -267,7 +279,7 @@ public class AddOrViewDataFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "click " + spinner_list[position], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "click " + spinner_list[position], Toast.LENGTH_SHORT).show();
                 if (position == 0)  //指標:一天
                 {
                     current_period_position = 0;
@@ -424,11 +436,8 @@ public class AddOrViewDataFragment extends Fragment {
 
         if (position == 1) {
             current = current_day;
-
-
-            String[] xAxisData_week = {"Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"};
-            xAxisData = xAxisData_week;
-
+Log.e("currentday",Integer.toString(current));
+            xAxisData = week;
 
             //HbA1c_week
             yAxisData_HbA1c = yAxisData_HbA1c_week;

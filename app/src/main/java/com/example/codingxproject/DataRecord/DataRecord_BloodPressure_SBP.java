@@ -19,10 +19,16 @@ import com.example.codingxproject.R;
 import java.util.Calendar;
 
 public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
+
     public static final String EXTRA_REPLY = "com.example.datarecord.extra.REPLY";
     //public static final int nowValue = "com.example.datarecord.extra.REPLY";
     private  static final int REQUEST_CODE =1 ;
     final static Calendar currentCalendar = Calendar.getInstance();
+
+    private int DBP_result = 0;
+    private int pulse_result = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,46 +76,36 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
         final DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent=new Intent(DataRecord_BloodPressure_SBP.this,DataRecord_BloodPressure_DBP.class);
-                startActivity(intent);
-//                Intent intent = new Intent();
-//                //把返回數據存入Intent
-//                intent.putExtra("result", mNumberPicker.getValue());
-//                //設置返回數據
-//                DataRecord_BloodPressure_SBP.this.setResult(RESULT_OK, intent);
-//                //關閉Activity
-//                DataRecord_BloodPressure_SBP.this.finish();
+                finish_activity(mNumberPicker);
             }
         };
 
         bConfirmSBP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mNumberPicker.getValue()>140){
+                if(mNumberPicker.getValue()>129){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
                     build.setMessage("收縮壓太高，請注意藥物服用!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<100){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
                     build.setMessage("收縮壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else{
-                    Intent intent=new Intent(DataRecord_BloodPressure_SBP.this,DataRecord_BloodPressure_DBP.class);
-                    startActivity(intent);
-//                    Intent intent = new Intent();
-//                    //把返回數據存入Intent
-//                    intent.putExtra("result", mNumberPicker.getValue());
-//                    //設置返回數據
-//                    DataRecord_BloodPressure_SBP.this.setResult(RESULT_OK, intent);
-//                    //關閉Activity
-//                    DataRecord_BloodPressure_SBP.this.finish();
+                    finish_activity(mNumberPicker);
                 }
-
-                //紀錄資訊，傳出資訊
-//                final int outputVal= mNumberPicker.getValue();
-//                Intent intent_SBP = getIntent();
-//                startActivityForResult(intent_SBP,REQUEST_CODE);
             }
         });
 
+    }
+
+    private void finish_activity(CustomNumberPicker mNumberPicker)
+    {
+        Intent intent = new Intent();
+        //把返回數據存入Intent
+        intent.putExtra("SBP_result", mNumberPicker.getValue());
+        //設置返回數據
+        DataRecord_BloodPressure_SBP.this.setResult(RESULT_OK, intent);
+        //關閉Activity
+        DataRecord_BloodPressure_SBP.this.finish();
     }
 
 //    protected void onActivityResult(int requestCode, int resultCode, Intent data){

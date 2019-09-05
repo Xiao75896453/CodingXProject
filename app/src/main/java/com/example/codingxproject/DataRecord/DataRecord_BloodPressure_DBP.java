@@ -23,6 +23,8 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
 
     final static Calendar currentCalendar = Calendar.getInstance();
 
+    private int pulse_result = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,23 +84,14 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
         bConfirmDBP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mNumberPicker.getValue()>90){
+                if(mNumberPicker.getValue()>85){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
                     build.setMessage("舒張壓太高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
-                }else if(mNumberPicker.getValue()<60){
+                }else if(mNumberPicker.getValue()<66){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
                     build.setMessage("舒張壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else{
-                    Intent intent=new Intent(DataRecord_BloodPressure_DBP.this,DataRecord_Heartbeat.class);
-                    startActivity(intent);
-
-//                    Intent intent = new Intent();
-//                    //把返回數據存入Intent
-//                    intent.putExtra("result", mNumberPicker.getValue());
-//                    //設置返回數據
-//                    DataRecord_BloodPressure_DBP.this.setResult(RESULT_OK, intent);
-//                    //關閉Activity
-//                    DataRecord_BloodPressure_DBP.this.finish();
+                    finish_activity(mNumberPicker);
                 }
 
                 //紀錄資訊，傳出資訊
@@ -108,6 +101,17 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void finish_activity(CustomNumberPicker mNumberPicker)
+    {
+        Intent intent = new Intent();
+        //把返回數據存入Intent
+        intent.putExtra("DBP_result", mNumberPicker.getValue());
+        //設置返回數據
+        DataRecord_BloodPressure_DBP.this.setResult(RESULT_OK, intent);
+        //關閉Activity
+        DataRecord_BloodPressure_DBP.this.finish();
     }
 
     public static String setTimeForm(int currentTime) {

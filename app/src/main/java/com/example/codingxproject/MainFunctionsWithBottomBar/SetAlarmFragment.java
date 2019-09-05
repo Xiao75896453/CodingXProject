@@ -9,6 +9,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,8 @@ import com.example.codingxproject.AlarmReceiver;
 import com.example.codingxproject.MainActivity;
 import com.example.codingxproject.R;
 import com.example.codingxproject.SetTimeActivity;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -50,7 +54,6 @@ public class SetAlarmFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
         ListView lv = (ListView) getView().findViewById(R.id.lvAlarmList);
         generateListContent();
         lv.setAdapter(new MyListAdapter(getContext(), R.layout.activity_item_adapter, data));
@@ -61,6 +64,7 @@ public class SetAlarmFragment extends Fragment {
             }
         });
     }
+
     public void openSetTime(){
         Intent intent = new Intent(getActivity(), SetTimeActivity.class);
         startActivity(intent);

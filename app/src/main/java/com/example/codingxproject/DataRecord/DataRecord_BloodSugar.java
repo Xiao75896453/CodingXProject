@@ -30,6 +30,7 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_record_blood_sugar);
+
         final TextView tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
         Button resetTime = (Button) findViewById(R.id.bChangeTime);
         final CustomNumberPicker mNumberPicker = (CustomNumberPicker)findViewById(R.id.numberpicker_bloodsugar);
@@ -72,16 +73,7 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
         final DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-//                Intent intent=new Intent(DataRecord_BloodSugar.this, HomePageActivity.class);
-//                startActivity(intent);
-                //數據是使用Intent返回
-                Intent intent = new Intent();
-                //把返回數據存入Intent
-                intent.putExtra("result", mNumberPicker.getValue());
-                //設置返回數據
-                DataRecord_BloodSugar.this.setResult(RESULT_OK, intent);
-                //關閉Activity
-                DataRecord_BloodSugar.this.finish();
+                finish_activity(mNumberPicker);
             }
         };
 
@@ -94,26 +86,28 @@ public class DataRecord_BloodSugar extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {}
                     }).create().show();
-                }else if(rbAC_bloodsugar.isChecked()&&mNumberPicker.getValue()>126){
-                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
-                    build.setMessage("血糖過高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
-                }else if(rbPC_bloodsugar.isChecked()&&mNumberPicker.getValue()>180){
+                }else if(rbAC_bloodsugar.isChecked()&&mNumberPicker.getValue()>110){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
                     build.setMessage("血糖過高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<70){
                     AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodSugar.this);
                     build.setMessage("血糖太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了",dialogListener).create().show();
                 }else{
-                    Intent intent = new Intent();
-                    //把返回數據存入Intent
-                    intent.putExtra("result", mNumberPicker.getValue()-1);
-                    //設置返回數據
-                    DataRecord_BloodSugar.this.setResult(RESULT_OK, intent);
-                    //關閉Activity
-                    DataRecord_BloodSugar.this.finish();
+                    finish_activity(mNumberPicker);
                 }
             }
         });
+    }
+
+    private void finish_activity(CustomNumberPicker mNumberPicker)
+    {
+        Intent intent = new Intent();
+        //把返回數據存入Intent
+        intent.putExtra("HbA1c_result", mNumberPicker.getValue());
+        //設置返回數據
+        DataRecord_BloodSugar.this.setResult(RESULT_OK, intent);
+        //關閉Activity
+        DataRecord_BloodSugar.this.finish();
     }
 
     public static String setTimeForm(int currentTime) {

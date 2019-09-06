@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -133,11 +134,14 @@ public class SetAlarmFragment extends Fragment {
                     if (mainViewholder.open.isChecked()) {
                         Intent intent = new Intent(SetAlarmFragment.this.getActivity(), AlarmReceiver.class);
 
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 0, intent, 0);
+                        PendingIntent pendingIntent = PendingIntent.getService(getContext().getApplicationContext(), 0, intent, 0);
                         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
                         //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + hour1 + minute1, pendingIntent);
-                        alarmManager.set(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(), pendingIntent);
-                        //Toast.makeText(this, "Alarm set in " + second + " mili seconds", Toast.LENGTH_LONG).show();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(),10, pendingIntent );
+                       }
+
+
                         Toast.makeText(getActivity().getApplicationContext(), " 提醒開啟", Toast.LENGTH_LONG).show();
                     }
                     else{

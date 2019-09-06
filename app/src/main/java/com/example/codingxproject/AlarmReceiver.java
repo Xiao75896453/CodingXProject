@@ -18,9 +18,9 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent)
     {
         Toast.makeText(context, "要記得吃藥喔!", Toast.LENGTH_LONG).show( );
-        Intent intent1=new Intent(context, RemindTakeMedActivity.class);
+        Intent intents=new Intent(context, RemindTakeMedActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent1);
+        context.startActivity(intents);
     }
 }
 

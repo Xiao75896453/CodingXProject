@@ -14,10 +14,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomePageActivity extends AppCompatActivity {
 
-    private PeriodDrugFragment mPeriodDrugFragment;
-    private AddOrViewDataFragment mDataFragment;
-    private SetAlarmFragment mSetAlarmFragment;
-
+    public PeriodDrugFragment mPeriodDrugFragment;
+    public AddOrViewDataFragment mDataFragment;
+    public SetAlarmFragment mSetAlarmFragment;
+    public DetailDrugInfoFragment mDetailDrugInfoFragment;
+    public FragmentTransaction beginTransaction ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +64,11 @@ public class HomePageActivity extends AppCompatActivity {
         mDataFragment = new AddOrViewDataFragment();
         mPeriodDrugFragment = new PeriodDrugFragment();
         mSetAlarmFragment = new SetAlarmFragment();
-        FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
-        beginTransaction.add(R.id.frameMainFunctions, mPeriodDrugFragment).add(R.id.frameMainFunctions, mDataFragment).add(R.id.frameMainFunctions, mSetAlarmFragment);
-        beginTransaction.hide(mSetAlarmFragment).hide(mDataFragment).hide(mPeriodDrugFragment);
+        mDetailDrugInfoFragment=new DetailDrugInfoFragment();
+//        FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
+        beginTransaction = getSupportFragmentManager().beginTransaction();
+        beginTransaction.add(R.id.frameMainFunctions, mPeriodDrugFragment).add(R.id.frameMainFunctions, mDataFragment).add(R.id.frameMainFunctions, mSetAlarmFragment).add(R.id.frameMainFunctions,mDetailDrugInfoFragment);
+        beginTransaction.hide(mSetAlarmFragment).hide(mDataFragment).hide(mPeriodDrugFragment).hide(mDetailDrugInfoFragment);
         beginTransaction.addToBackStack(null);
 //        beginTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 //        beginTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
@@ -74,22 +77,28 @@ public class HomePageActivity extends AppCompatActivity {
         showNav(R.id.iconViewPeriodDrug);
     }
 
-    private void showNav(int nav) {
-        FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
+    public void showNav(int nav) {
+//        FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
+        beginTransaction = getSupportFragmentManager().beginTransaction();
         switch (nav) {
             case R.id.iconViewPeriodDrug:
-                beginTransaction.hide(mDataFragment).hide(mSetAlarmFragment);
+                beginTransaction.hide(mDataFragment).hide(mSetAlarmFragment).hide(mDetailDrugInfoFragment);
                 beginTransaction.show(mPeriodDrugFragment);
                 beginTransaction.commit();
                 break;
             case R.id.iconAddBodyRecord:
-                beginTransaction.hide(mPeriodDrugFragment).hide(mSetAlarmFragment);
+                beginTransaction.hide(mPeriodDrugFragment).hide(mSetAlarmFragment).hide(mDetailDrugInfoFragment);
                 beginTransaction.show(mDataFragment);
                 beginTransaction.commit();
                 break;
             case R.id.iconSetAlarm:
-                beginTransaction.hide(mDataFragment).hide(mPeriodDrugFragment);
+                beginTransaction.hide(mDataFragment).hide(mPeriodDrugFragment).hide(mDetailDrugInfoFragment);
                 beginTransaction.show(mSetAlarmFragment);
+                beginTransaction.commit();
+                break;
+            case 0:
+                beginTransaction.hide(mDataFragment).hide(mPeriodDrugFragment).hide(mSetAlarmFragment);
+                beginTransaction.show(mDetailDrugInfoFragment);
                 beginTransaction.commit();
                 break;
         }

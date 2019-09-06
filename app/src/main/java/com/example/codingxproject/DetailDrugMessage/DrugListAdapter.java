@@ -15,7 +15,7 @@ import com.example.codingxproject.R;
 
 import java.util.ArrayList;
 
-class DrugListAdapter extends RecyclerView.Adapter<DrugListAdapter.ViewHolder> {
+public class DrugListAdapter extends RecyclerView.Adapter<DrugListAdapter.ViewHolder> {
 
     private Context context;
     private ArrayList<DrugCard> drugCardArrayList = new ArrayList<DrugCard>();

@@ -30,6 +30,7 @@ public class PeriodDrugFragment extends Fragment {
     private ScrollView mMorningSV, mBreakfastSV, mLunchSV, mDinnerSV, mNightSV;
     private Button btmMorning, btmBreakfast, btmLunch, btmDinner, btmNight,bTotalDrug;
     private ConstraintLayout coverText;
+    public HomePageActivity mHomPageActivity;
 
     @Nullable
     @Override
@@ -95,7 +96,10 @@ public class PeriodDrugFragment extends Fragment {
                     mNightSV.setVisibility(View.VISIBLE);
                     setButtonClickedUI(btmNight);
                 }else if(view.getId()==R.id.bTotalDrug){
-                    startActivity(new Intent(getActivity(), DrugsInfoActivity.class));
+//                    startActivity(new Intent(getActivity(), DrugsInfoActivity.class));
+//                    mHomPageActivity.beginTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+//                    mHomPageActivity.showNav(0);
+                    ((HomePageActivity)getActivity()).showNav(0);
                 }
             }
         };

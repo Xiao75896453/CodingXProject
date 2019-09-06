@@ -134,7 +134,7 @@ public class SetAlarmFragment extends Fragment {
                     if (mainViewholder.open.isChecked()) {
                         Intent intent = new Intent(SetAlarmFragment.this.getActivity(), AlarmReceiver.class);
 
-                        PendingIntent pendingIntent = PendingIntent.getService(getContext().getApplicationContext(), 0, intent, 0);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 0, intent, 0);
                         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
                         //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + hour1 + minute1, pendingIntent);
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

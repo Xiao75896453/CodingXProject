@@ -26,7 +26,7 @@ import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
 import com.example.codingxproject.DataRecord.DataRecord_Heartbeat;
-import com.example.codingxproject.DataReview;
+import com.example.codingxproject.Remind.Timer;
 import com.example.codingxproject.R;
 
 import java.text.SimpleDateFormat;

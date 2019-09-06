@@ -138,7 +138,7 @@ public class SetAlarmFragment extends Fragment {
                         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
                         //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + hour1 + minute1, pendingIntent);
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(),10, pendingIntent );
+                            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(),10, pendingIntent );
                        }
 
 

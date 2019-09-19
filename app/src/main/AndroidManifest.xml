@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Splash"
+            android:name=".SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DataRecord.DataRecord_Heartbeat"
+            android:name=".DataRecord.DataRecord_Heartbeat_Activity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainFunctionsWithBottomBar.HomePageActivity"
@@ -33,13 +33,13 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DataRecord.DataRecord_BloodPressure_DBP"
+            android:name=".DataRecord.DataRecord_Blood_Pressure_DBP_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DataRecord.DataRecord_BloodPressure_SBP"
+            android:name=".DataRecord.DataRecord_BloodPressure_SBP_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DataRecord.DataRecord_BloodSugar"
+            android:name=".DataRecord.DataRecord_BloodSugar_Activity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".DataReview"

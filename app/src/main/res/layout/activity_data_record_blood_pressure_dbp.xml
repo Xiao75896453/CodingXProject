@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="4.5"
     android:padding="5dp"
-    tools:context=".DataRecord.DataRecord_BloodPressure_DBP">
+    tools:context=".DataRecord.DataRecord_Blood_Pressure_DBP_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"

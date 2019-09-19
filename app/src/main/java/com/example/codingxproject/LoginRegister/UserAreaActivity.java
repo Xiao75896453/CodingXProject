@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
-import com.example.codingxproject.Splash;
 
 public class UserAreaActivity extends AppCompatActivity {
 

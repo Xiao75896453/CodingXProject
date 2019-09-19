@@ -7,10 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
-import com.example.codingxproject.DataRecord.DataRecord_Heartbeat;
-import com.example.codingxproject.MainFunctionsWithBottomBar.AddOrViewDataFragment;
 import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 import com.example.codingxproject.R;
 

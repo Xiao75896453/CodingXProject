@@ -1,7 +1,5 @@
 package com.example.codingxproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,9 +12,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP_Activity;
+import com.example.codingxproject.DataRecord.DataRecord_BloodSugar_Activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -161,11 +158,11 @@ public class DataReview extends Activity {
 
                 else if (view.getId() == R.id.add_data) {
                     if (is_choose_HbA1c == true)
-                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodSugar.class), 0);
+                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodSugar_Activity.class), 0);
                     else if (is_choose_BP == true)
-                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodPressure_SBP.class), 1);
+                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodPressure_SBP_Activity.class), 1);
                     else if (is_choose_pulse == true)
-                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodPressure_SBP.class), 1);
+                        startActivityForResult(new Intent(DataReview.this, DataRecord_BloodPressure_SBP_Activity.class), 1);
                 }
             }
         };

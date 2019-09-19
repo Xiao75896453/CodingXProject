@@ -17,7 +17,7 @@ import com.example.codingxproject.R;
 
 import java.util.Calendar;
 
-public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
+public class DataRecord_BloodPressure_SBP_Activity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.datarecord.extra.REPLY";
     //public static final int nowValue = "com.example.datarecord.extra.REPLY";
@@ -46,7 +46,7 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
         resetTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new TimePickerDialog(DataRecord_BloodPressure_SBP.this, new TimePickerDialog.OnTimeSetListener() {
+                new TimePickerDialog(DataRecord_BloodPressure_SBP_Activity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMin) {
                         String hour = setTimeForm(selectedHour);
@@ -83,10 +83,10 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mNumberPicker.getValue()>129){
-                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
+                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP_Activity.this);
                     build.setMessage("收縮壓太高，請注意藥物服用!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<100){
-                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP.this);
+                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_SBP_Activity.this);
                     build.setMessage("收縮壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else{
                     finish_activity(mNumberPicker);
@@ -102,9 +102,9 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
         //把返回數據存入Intent
         intent.putExtra("SBP_result", mNumberPicker.getValue());
         //設置返回數據
-        DataRecord_BloodPressure_SBP.this.setResult(RESULT_OK, intent);
+        DataRecord_BloodPressure_SBP_Activity.this.setResult(RESULT_OK, intent);
         //關閉Activity
-        DataRecord_BloodPressure_SBP.this.finish();
+        DataRecord_BloodPressure_SBP_Activity.this.finish();
     }
 
 //    protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -139,7 +139,7 @@ public class DataRecord_BloodPressure_SBP extends AppCompatActivity {
 //                int hour = c.get(Calendar.HOUR_OF_DAY);
 //                int minute = c.get(Calendar.MINUTE);
 //                //抓現在時間
-//                new TimePickerDialog(DataRecord_BloodPressure_SBP.this, new TimePickerDialog.OnTimeSetListener() {
+//                new TimePickerDialog(DataRecord_BloodPressure_SBP_Activity.this, new TimePickerDialog.OnTimeSetListener() {
 //                    @Override
 //                    public void onTimeSet(TimePicker timePicker, int houreOfDay, int minute) {
 //                        tvTime.setText("現在時間是" + houreOfDay + ":" + minute);

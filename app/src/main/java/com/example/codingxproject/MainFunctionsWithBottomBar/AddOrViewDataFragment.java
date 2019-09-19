@@ -19,10 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
-import com.example.codingxproject.DataRecord.DataRecord_Heartbeat;
+import com.example.codingxproject.DataRecord.DataRecord_Blood_Pressure_DBP_Activity;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP_Activity;
+import com.example.codingxproject.DataRecord.DataRecord_BloodSugar_Activity;
+import com.example.codingxproject.DataRecord.DataRecord_Heartbeat_Activity;
 import com.example.codingxproject.R;
 
 import java.text.SimpleDateFormat;
@@ -242,16 +242,16 @@ Log.e("current_day",formatterday.format(date));
                 if (view.getId() == R.id.add_data) {
                     if (is_choose_HbA1c == true) {
                         if(current_day_interval[0] <= 3)
-                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar.class), 0);
+                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodSugar_Activity.class), 0);
                         else
                             Toast.makeText(getActivity(), "今日血糖數據已新增完畢", Toast.LENGTH_LONG).show();
                     }
 
                     if (is_choose_BP == true || is_choose_pulse == true) {
                         if(current_day_interval[1] <= 3) {
-                            startActivityForResult(new Intent(getActivity(), DataRecord_Heartbeat.class), 3);
-                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_DBP.class), 2);
-                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP.class), 1);
+                            startActivityForResult(new Intent(getActivity(), DataRecord_Heartbeat_Activity.class), 3);
+                            startActivityForResult(new Intent(getActivity(), DataRecord_Blood_Pressure_DBP_Activity.class), 2);
+                            startActivityForResult(new Intent(getActivity(), DataRecord_BloodPressure_SBP_Activity.class), 1);
                         }
                         else
                             Toast.makeText(getActivity(), "今日血壓、脈搏數據已新增完畢", Toast.LENGTH_LONG).show();

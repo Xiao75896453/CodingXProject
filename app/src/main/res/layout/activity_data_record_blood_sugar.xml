@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:weightSum="5"
     android:padding="5dp"
-    tools:context=".DataRecord.DataRecord_BloodSugar"
+    tools:context=".DataRecord.DataRecord_BloodSugar_Activity"
     android:orientation="vertical">
 
     <LinearLayout

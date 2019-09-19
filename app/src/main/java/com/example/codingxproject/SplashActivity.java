@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.codingxproject.LoginRegister.LoginActivity;
-import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
 
-public class Splash extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private Button logo;
     private TextView appDescription;
@@ -26,10 +24,10 @@ public class Splash extends AppCompatActivity {
         logo = findViewById(R.id.appLogo);
         appDescription=findViewById(R.id.appDescription);
 //        appEnter=findViewById(R.id.appEnter);
-        Animation myanim = AnimationUtils.loadAnimation(Splash.this, R.anim.fade_in);
+        Animation myanim = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.fade_in);
         appDescription.startAnimation(myanim);
         logo.startAnimation(myanim);
-        final Intent aftersplash = new Intent(Splash.this, LoginActivity.class);
+        final Intent aftersplash = new Intent(SplashActivity.this, LoginActivity.class);
         Thread timer = new Thread() {
             @Override
             public void run() {

@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
-import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
+import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP_Activity;
+import com.example.codingxproject.DataRecord.DataRecord_Blood_Pressure_DBP_Activity;
+import com.example.codingxproject.DataRecord.DataRecord_BloodSugar_Activity;
 import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
 import com.example.codingxproject.LoginRegister.LoginActivity;
 import com.example.codingxproject.MainFunctionsWithBottomBar.HomePageActivity;
@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 if (view.getId() == R.id.bRecordBloodPressureDBP) {
-                    intent = new Intent(MainActivity.this, DataRecord_BloodPressure_DBP.class);
+                    intent = new Intent(MainActivity.this, DataRecord_Blood_Pressure_DBP_Activity.class);
                 } else if (view.getId() == R.id.bRecordBloodPressureSBP) {
-                    intent = new Intent(MainActivity.this, DataRecord_BloodPressure_SBP.class);
+                    intent = new Intent(MainActivity.this, DataRecord_BloodPressure_SBP_Activity.class);
                 } else if (view.getId() == R.id.bRecordBloodSugar) {
-                    intent = new Intent(MainActivity.this, DataRecord_BloodSugar.class);
+                    intent = new Intent(MainActivity.this, DataRecord_BloodSugar_Activity.class);
                 } else if (view.getId() == R.id.bToRemindDrugGet) {
                     intent = new Intent(MainActivity.this, RemindDrugGetActivity.class);
                 } else if (view.getId() == R.id.bToRemindRecord) {

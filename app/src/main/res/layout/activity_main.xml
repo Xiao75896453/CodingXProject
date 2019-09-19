@@ -33,14 +33,6 @@
                 android:text="Login and Register Page" />
 
             <Button
-                android:id="@+id/bSetDrugTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="set Drug Time And View Drugs" />
-
-
-
-            <Button
                 android:id="@+id/bRecordBloodSugar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,11 +68,6 @@
                 android:layout_height="wrap_content"
                 android:text="To Remind Take Med" />
 
-            <!--<Button-->
-                <!--android:id="@+id/bToSetTime"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="To Set Time" />-->
 
             <Button
                 android:id="@+id/bToDetailDrugList"
@@ -94,11 +81,6 @@
                 android:layout_height="wrap_content"
                 android:text="Data Review" />
 
-            <!--<Button-->
-                <!--android:id="@+id/timer"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="timer" />-->
 
         </LinearLayout>
     </ScrollView>

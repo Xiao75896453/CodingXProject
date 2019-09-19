@@ -33,9 +33,6 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DailyDrugInfoAndAlarmSetting.NotificationSetting"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".DataRecord.DataRecord_BloodPressure_DBP"
             android:screenOrientation="portrait" />
         <activity
@@ -54,9 +51,6 @@
             android:name=".DetailDrugMessage.DrugsInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DrugTimePageActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".LoginRegister.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -72,14 +66,11 @@
             android:name=".Remind.RemindTakeMedActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SetTimeActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".LoginRegister.UserAreaActivity"
             android:screenOrientation="portrait" />
 
         <receiver
-            android:name=".AlarmReceiver"
+            android:name=".DailyDrugInfoAndAlarmSetting.AlarmReceiver"
             android:process=":remote" />
     </application>
 

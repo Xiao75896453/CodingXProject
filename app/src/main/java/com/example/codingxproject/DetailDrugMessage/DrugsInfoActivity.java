@@ -17,7 +17,7 @@ public class DrugsInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drugs_info);
+        setContentView(R.layout.fragment_drugs_info);
 
         drugList.add(new DrugCard(1,R.drawable.drug1_med,R.drawable.drug1_case,R.string.drug1_des,"http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=468854&SearchItem1=%B3B%A4%E8%B6%B0"));//http://140.116.253.135/NewHomePage/massrefer_handout%20forms.asp?D_id=583325%26SearchItem1=%BD%C3%B1%D0%B3%E6%B
         drugList.add(new DrugCard(2,R.drawable.drug2_med,R.drawable.drug2_case,R.string.drug2_des,"http://140.116.253.135/NewHomePage/massrefer_prescription.asp?D_id=403827&SearchItem1=%B3B%A4%E8%B6%B0"));

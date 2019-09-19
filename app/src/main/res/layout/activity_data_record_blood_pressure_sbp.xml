@@ -52,7 +52,7 @@
             android:text="收縮壓 (mmHg)"
             android:textSize="36sp" />
 
-        <com.example.codingxproject.CustomNumberPicker
+        <com.example.codingxproject.DataRecord.CustomNumberPicker
             android:id="@+id/numberpicker_SBP"
             android:layout_width="match_parent"
             android:layout_height="0dp"

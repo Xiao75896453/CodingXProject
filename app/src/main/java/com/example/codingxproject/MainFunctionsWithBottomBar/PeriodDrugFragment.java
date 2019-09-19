@@ -23,6 +23,7 @@ import com.example.codingxproject.DetailDrugMessage.DetailDrugInfoActivity;
 import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
 import com.example.codingxproject.MainActivity;
 import com.example.codingxproject.R;
+import com.example.codingxproject.Remind.RemindTakeMedActivity;
 
 
 public class PeriodDrugFragment extends Fragment {
@@ -97,8 +98,7 @@ public class PeriodDrugFragment extends Fragment {
                     setButtonClickedUI(btmNight);
                 }else if(view.getId()==R.id.bTotalDrug){
 //                    startActivity(new Intent(getActivity(), DrugsInfoActivity.class));
-//                    mHomPageActivity.beginTransaction=getActivity().getSupportFragmentManager().beginTransaction();
-//                    mHomPageActivity.showNav(0);
+//                    startActivity(new Intent(getActivity(), RemindTakeMedActivity.class));
                     ((HomePageActivity)getActivity()).showNav(0);
                 }
             }

@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.codingxproject.DetailDrugMessage.DrugCard;
 import com.example.codingxproject.DetailDrugMessage.DrugListAdapter;
-import com.example.codingxproject.DetailDrugMessage.DrugsInfoActivity;
 import com.example.codingxproject.R;
 
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class DetailDrugInfoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.activity_drugs_info,container,false);
+        View view=inflater.inflate(R.layout.fragment_drugs_info,container,false);
         return view;
     }
 

@@ -1,16 +1,13 @@
 package com.example.codingxproject.MainFunctionsWithBottomBar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +23,6 @@ import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
 import com.example.codingxproject.DataRecord.DataRecord_Heartbeat;
-import com.example.codingxproject.DataReview;
 import com.example.codingxproject.R;
 
 import java.text.SimpleDateFormat;
@@ -121,14 +117,49 @@ public class AddOrViewDataFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_add_data,container,false);
+        View view=inflater.inflate(R.layout.fragment_data_review,container,false);
         return view;
+
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //Save fragment's state here
+        outState.putIntArray("yAxisData_HbA1c_week",yAxisData_HbA1c_week);
+        outState.putIntArray("yAxisData_SBP_week",yAxisData_SBP_week);
+        outState.putIntArray("yAxisData_DBP_week",yAxisData_DBP_week);
+        outState.putIntArray("yAxisData_pulse_week",yAxisData_pulse_week);
+        outState.putIntArray("yAxisData_HbA1c_month",yAxisData_HbA1c_month);
+        outState.putIntArray("yAxisData_SBP_month",yAxisData_SBP_month);
+        outState.putIntArray("yAxisData_DBP_month",yAxisData_DBP_month);
+        outState.putIntArray("yAxisData_pulse_month",yAxisData_pulse_month);
+        outState.putIntArray("yAxisData_HbA1c_6months",yAxisData_HbA1c_6months);
+        outState.putIntArray("yAxisData_SBP_6months",yAxisData_SBP_6months);
+        outState.putIntArray("yAxisData_DBP_6months",yAxisData_DBP_6months);
+        outState.putIntArray("yAxisData_pulse_6months",yAxisData_pulse_6months);
 
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        if(savedInstanceState!=null){
+            //Restore fragment's state here
+            yAxisData_HbA1c_week=savedInstanceState.getIntArray("yAxisData_HbA1c_week");
+            yAxisData_SBP_week=savedInstanceState.getIntArray("yAxisData_SBP_week");
+            yAxisData_DBP_week=savedInstanceState.getIntArray("yAxisData_DBP_week");
+            yAxisData_pulse_week=savedInstanceState.getIntArray("yAxisData_pulse_week");
+            yAxisData_HbA1c_month=savedInstanceState.getIntArray("yAxisData_HbA1c_month");
+            yAxisData_SBP_month=savedInstanceState.getIntArray("yAxisData_SBP_month");
+            yAxisData_DBP_month=savedInstanceState.getIntArray("yAxisData_DBP_month");
+            yAxisData_pulse_month=savedInstanceState.getIntArray("yAxisData_pulse_month");
+            yAxisData_HbA1c_6months=savedInstanceState.getIntArray("yAxisData_HbA1c_6months");
+            yAxisData_SBP_6months=savedInstanceState.getIntArray("yAxisData_SBP_6months");
+            yAxisData_DBP_6months=savedInstanceState.getIntArray("yAxisData_DBP_6months");
+            yAxisData_pulse_6months=savedInstanceState.getIntArray("yAxisData_pulse_6months");
+        }
 
         cover=getView().findViewById(R.id.cover);
         chart=getView().findViewById(R.id.chart_layout);

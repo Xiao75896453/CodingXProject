@@ -23,17 +23,15 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.codingxproject.AlarmReceiver;
+import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.AlarmReceiver;
 
 import com.example.codingxproject.R;
-import com.example.codingxproject.SetTimeActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import static android.content.Context.ALARM_SERVICE;
-import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
 
 public class SetAlarmFragment extends Fragment {
 
@@ -56,17 +54,6 @@ public class SetAlarmFragment extends Fragment {
         ListView lv = (ListView) getView().findViewById(R.id.lvAlarmList);
         generateListContent();
         lv.setAdapter(new MyListAdapter(getContext(), R.layout.activity_item_adapter, data));
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openSetTime();
-            }
-        });
-    }
-
-    public void openSetTime(){
-        Intent intent = new Intent(getActivity(), SetTimeActivity.class);
-        startActivity(intent);
     }
 
     private void generateListContent() {

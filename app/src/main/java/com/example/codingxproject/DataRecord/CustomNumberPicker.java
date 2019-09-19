@@ -1,4 +1,4 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DataRecord;
 
 import android.content.Context;
 import android.util.AttributeSet;

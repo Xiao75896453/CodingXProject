@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.example.codingxproject.DailyDrugInfoAndAlarmSetting.NotificationSetting;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_DBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodPressure_SBP;
 import com.example.codingxproject.DataRecord.DataRecord_BloodSugar;
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bSetDrugTime = (Button) findViewById(R.id.bSetDrugTime);
+//        Button bSetDrugTime = (Button) findViewById(R.id.bSetDrugTime);
         Button bLoginAndRegister = (Button) findViewById(R.id.bLoginRegister);
         Button bRecordBloodPressureDBP = (Button) findViewById(R.id.bRecordBloodPressureDBP);
         Button bRecordBloodPressureSBP = (Button) findViewById(R.id.bRecordBloodPressureSBP);
@@ -65,9 +63,11 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, LoginActivity.class);
                 } else if (view.getId() == R.id.bDataReview) {
                     intent = new Intent(MainActivity.this, DataReview.class);
-                } else if (view.getId() == R.id.bSetDrugTime) {
-                    intent = new Intent(MainActivity.this, NotificationSetting.class);
-                }else if(view.getId()==R.id.bHomePage){
+                }
+//                else if (view.getId() == R.id.bSetDrugTime) {
+//                    intent = new Intent(MainActivity.this, NotificationSetting.class);
+//                }
+                else if(view.getId()==R.id.bHomePage){
                     intent = new Intent(MainActivity.this, HomePageActivity.class);
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         bHomePage.setOnClickListener(listener);
-        bSetDrugTime.setOnClickListener(listener);
+//        bSetDrugTime.setOnClickListener(listener);
         bLoginAndRegister.setOnClickListener(listener);
         bRecordBloodPressureDBP.setOnClickListener(listener);
         bRecordBloodPressureSBP.setOnClickListener(listener);

@@ -2,6 +2,7 @@ package com.example.codingxproject.MainFunctionsWithBottomBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
@@ -26,6 +27,13 @@ public class HomePageActivity extends AppCompatActivity {
         BottomNavigationView btmNavView = (BottomNavigationView) findViewById(R.id.navbBottomMenu);
 
         init();
+
+//        if(savedInstanceState!=null){
+//            mDataFragment=new AddOrViewDataFragment();
+//            mDataFragment=getSupportFragmentManager().getFragment(savedInstanceState,"overViewDataFragment");
+//        }
+
+
         btmNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -44,7 +52,6 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-
         try {
             if (getIntent().getStringExtra("chooseFragment").equals("1")) {
                 showNav(R.id.iconViewPeriodDrug);
@@ -58,6 +65,12 @@ public class HomePageActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState,"overViewDataFragment",mDataFragment);
     }
 
     private void init() { //initialize screen

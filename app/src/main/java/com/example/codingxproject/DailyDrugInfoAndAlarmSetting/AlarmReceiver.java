@@ -1,4 +1,4 @@
-package com.example.codingxproject;
+package com.example.codingxproject.DailyDrugInfoAndAlarmSetting;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

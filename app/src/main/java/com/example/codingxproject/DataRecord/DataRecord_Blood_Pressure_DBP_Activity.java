@@ -17,7 +17,7 @@ import com.example.codingxproject.R;
 
 import java.util.Calendar;
 
-public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
+public class DataRecord_Blood_Pressure_DBP_Activity extends AppCompatActivity {
 
     final static Calendar currentCalendar = Calendar.getInstance();
 
@@ -43,7 +43,7 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
         resetTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new TimePickerDialog(DataRecord_BloodPressure_DBP.this, new TimePickerDialog.OnTimeSetListener() {
+                new TimePickerDialog(DataRecord_Blood_Pressure_DBP_Activity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMin) {
                         String hour = setTimeForm(selectedHour);
@@ -75,10 +75,10 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mNumberPicker.getValue()>85){
-                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
+                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_Blood_Pressure_DBP_Activity.this);
                     build.setMessage("舒張壓太高，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else if(mNumberPicker.getValue()<66){
-                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_BloodPressure_DBP.this);
+                    AlertDialog.Builder build=new AlertDialog.Builder(DataRecord_Blood_Pressure_DBP_Activity.this);
                     build.setMessage("舒張壓太低，請立即就醫，或服用指示藥物!!").setPositiveButton("我知道了", dialogListener).create().show();
                 }else{
                     finish_activity(mNumberPicker);
@@ -99,9 +99,9 @@ public class DataRecord_BloodPressure_DBP extends AppCompatActivity {
         //把返回數據存入Intent
         intent.putExtra("DBP_result", mNumberPicker.getValue());
         //設置返回數據
-        DataRecord_BloodPressure_DBP.this.setResult(RESULT_OK, intent);
+        DataRecord_Blood_Pressure_DBP_Activity.this.setResult(RESULT_OK, intent);
         //關閉Activity
-        DataRecord_BloodPressure_DBP.this.finish();
+        DataRecord_Blood_Pressure_DBP_Activity.this.finish();
     }
 
     public static String setTimeForm(int currentTime) {
